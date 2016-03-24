@@ -1,0 +1,2 @@
+# Ignore everything by default, as need to check individual files (config, sensitive information)
+*

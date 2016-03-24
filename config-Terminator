@@ -1,0 +1,27 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+[keybindings]
+  resize_up = <Ctrl><Shift><Alt>k
+  resize_right = <Ctrl><Shift><Alt>l
+  resize_down = <Ctrl><Shift><Alt>j
+  resize_left = <Ctrl><Shift><Alt>h
+  zoom_in = <Primary>equal
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = Hack 9
+    scrollback_lines = 3000
+    background_image = None
+    foreground_color = "#839496"
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#002b36"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
