@@ -1,5 +1,6 @@
 # Dotfiles
-Some of my ~/.dotfiles and config files
-Nothing interesting here.
+Some of my dotfiles and config files
+Nothing interesting here, moreover only a few dotfiles for the moment
 ## Use
-I use a script to backup them up and restore them
+It is more for personal usage as I use a script to backup/restore them
+
