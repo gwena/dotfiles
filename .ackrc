@@ -4,6 +4,7 @@
 --type-add=js=.js.erb,.coffee
 --type-set=cucumber=.feature
 --type-set=c=.c,.cpp,.ino,.pde,.h
+--type-set=md=.md,markdown,mdown
 --ignore-dir=log
 --ignore-dir=tmp
 --sort-files
