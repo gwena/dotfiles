@@ -2,7 +2,7 @@
 :backtrace: false
 :bulk_threshold: 1000
 :sources:
-- http://gems.cloudafrica.net
+# - http://gems.cloudafrica.net
 :update_sources: true
 :verbose: true
 install: --no-rdoc --no-ri
