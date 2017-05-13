@@ -128,10 +128,6 @@ endif
 " ~~~~~~~~~~~~
 " KEYS MAPPING
 " ~~~~~~~~~~~~
-" noremap <Up> <Nop>
-" noremap <Down> <Nop>
-" noremap <Left> <Nop>
-" noremap <Right> <Nop>
 
 " Easier Split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -218,7 +214,18 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " endif
 
-" imap <buffer> <CR> <C-R>=RubyEndToken()<CR>
+" Silver Searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_use_caching = 0
+  if !exists(":Ag")
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Ag<SPACE>
+  endif
+endif
+
 " For Haskell to fix highlight with dag/vim2hs
 hi clear Conceal
 
