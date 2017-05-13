@@ -44,7 +44,8 @@ values."
               ;; haskell-enable-shm-support t
               )
      html
-     javascript
+     (javascript :variables
+                 javascript-disable-tern-missing-warning t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
