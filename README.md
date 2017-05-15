@@ -1,6 +1,6 @@
 # Dotfiles
-Some of my dotfiles and config files using GNU/Linux (mostly Ubuntu with Gnome and sometimes Xfce) and macOS. 
+Some of my dot/config :shell: files for GNU/Linux :penguin: (Ubuntu with Gnome) & macOS :apple:
 
 ## Use
-For you: Nothing really interesting I guess.
-It is more for personal usage as I use a script to backup/restore them
+Not sure you will find anything interesting here.
+It is more for personal usage, also I use a script to backup/restore them.
