@@ -92,5 +92,3 @@ bindkey "^S" history-incremental-pattern-search-forward
 
 # Shared Aliases and Exports by Bash and Zsh
 . ~/.shellrc
-
-export PATH="$HOME/.rvm/bin:$PATH" # .rvm need to be first entries
