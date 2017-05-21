@@ -303,6 +303,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; @TODO - Check more
+  ;;(setq-default dotspacemacs-persistent-server t)
   )
 
 (defun dotspacemacs/user-config ()
