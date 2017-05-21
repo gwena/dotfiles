@@ -38,25 +38,20 @@ values."
      ;; ----------------------------------------------------------------
      ruby
      ruby-on-rails
-     (haskell :variables
-              haskell-enable-ghc-mod-support t
-              haskell-enable-ghci-ng-support t
-              ;; haskell-enable-shm-support t
+     (haskell :variables haskell-enable-ghc-mod-support t
+                         haskell-enable-ghci-ng-support t
+                         ;; haskell-enable-shm-support t
               )
      html
-     (javascript :variables
-                 javascript-disable-tern-missing-warning t)
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
+     (javascript :variables javascript-disable-tern-missing-warning t)
+     (shell :variables shell-default-height 30 shell-default-position 'bottom)
      emacs-lisp
      markdown
      osx
      helm
-     (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t)
+     (auto-completion :variables auto-completion-enable-help-tooltip t
+                                 auto-completion-enable-sort-by-usage t
+                                auto-completion-enable-snippets-in-popup t)
      git
      ;; org
      ;; spell-checking
