@@ -44,7 +44,8 @@ values."
               )
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
-     (shell :variables shell-default-height 30
+     (shell :variables shell-default-shell 'ansi-term
+                       shell-default-height 30
                        shell-default-position 'bottom)
      emacs-lisp
      markdown
