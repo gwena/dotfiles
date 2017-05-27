@@ -51,8 +51,7 @@ values."
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
                                  auto-completion-return-key-behavior 'complete
-                                 auto-completion-tab-key-behavior 'cycle
-                                 )
+                                 auto-completion-tab-key-behavior 'cycle)
      git
      ;; org
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -60,7 +59,6 @@ values."
      dash
      themes-megapack
      version-control
-     ;; better-defaults ;;This layer enhances the default commands of Emacs and is primarily intended to be used with the emacs editing style as it does not change anything in the Vim key bindings.
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
