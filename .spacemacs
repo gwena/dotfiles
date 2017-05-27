@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; Install gems: pry, pry-doc, ruby_parser, rubocop
      ruby
      ruby-on-rails
      (haskell :variables haskell-enable-ghc-mod-support t
