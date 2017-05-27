@@ -35,9 +35,7 @@ values."
      ruby
      ruby-on-rails
      (haskell :variables haskell-enable-ghc-mod-support t
-                         haskell-enable-ghci-ng-support t
-                         ;; haskell-enable-shm-support t
-              )
+                         haskell-enable-ghci-ng-support t)
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
      (shell :variables shell-default-shell 'ansi-term
