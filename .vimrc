@@ -26,7 +26,8 @@ Plugin 'adimit/prolog.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'brooth/far.vim'
-Plugin 'mileszs/ack.vim'
+" Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config
+" of that plugin
 " Haskell
 Plugin 'dag/vim2hs'
 Plugin 'hdevtools/hdevtools'
