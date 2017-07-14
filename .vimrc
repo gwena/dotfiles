@@ -1,4 +1,4 @@
-" Gwena's .vimrc file
+" Gwena's .vimrc file, with the help of GitHub's repos, Practical Vim, etc.
 set nocompatible
 filetype off   " required  Arhhhh!!
   
@@ -26,16 +26,14 @@ Plugin 'adimit/prolog.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'brooth/far.vim'
-" Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config
-" of that plugin
+" Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config " of that plugin
 " Haskell
 Plugin 'dag/vim2hs'
 Plugin 'hdevtools/hdevtools'
 
 " Not needed anymore/for the moment 
-" if need again PlantUML - https://github.com/aklt/plantuml-syntax
-" Plugin 'jakykong/vim-zim'
-" Plugin 'vim-scripts/zim-syntax'
+" PlantUML - https://github.com/aklt/plantuml-syntax
+" Zim Wiki Plugin 'jakykong/vim-zim' " Plugin 'vim-scripts/zim-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,9 +61,8 @@ set nowrap
 set backspace=indent,eol,start " allow backspacing over everything in insert mode"
 set mouse=a
 set t_Co=256
-colorscheme molokai   "railsgwenacasts " molokai  " desert256
+colorscheme molokai
 set background=dark
-" Stuff from grb (remove if does not use)
 set showmatch
 set expandtab
 set tabstop=4
@@ -76,11 +73,9 @@ set cursorline
 set cmdheight=1
 set switchbuf=useopen
 set showtabline=2
-" set winwidth=79 " Not for me or will need to put it bigger
 set showcmd
 set wildmode=longest,list
 set wildmenu
-" Turn folding off for real, hopefully
 set foldmethod=manual
 set nofoldenable
 " Default global line sub
@@ -88,9 +83,8 @@ set gdefault
 " Use of ack instead of grep, see Vim Practical Tip 109
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
-" ~~~~~~~~
+
 " AUTOCMDS
-" ~~~~~~~~
 augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
@@ -138,7 +132,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 set pastetoggle=<f5>
-" that would be better but use for something else: let mapleader = "\<Space>"
 let mapleader = ','
 " Remap of ; to be used as well as : is a bad idea as then wont be able to do
 " next after a f{char}
@@ -186,35 +179,6 @@ let g:haskell_conceal_wide = 1
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" RSpec & TMux
-"let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-"map <Leader>t :call RunCurrentSpecFile()<CR>
-"map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
-"map <Leader>a :call RunAllSpecs()<CR>
-
-" From https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport
-" if !exists( "*RubyEndToken" )
-
-  " function RubyEndToken()
-    " let current_line = getline( '.' )
-    " let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
-    " let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
-      " let with_do = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
-
-      " if match(current_line, braces_at_end) >= 0
-        " return "\<CR>}\<C-O>O"
-      " elseif match(current_line, stuff_without_do) >= 0
-        " return "\<CR>end\<C-O>O"
-      " elseif match(current_line, with_do) >= 0
-        " return "\<CR>end\<C-O>O"
-      " else
-        " return "\<CR>"
-      " endif
-    " endfunction
-
-" endif
 
 " Silver Searcher
 if executable('ag')
