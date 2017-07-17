@@ -90,5 +90,10 @@ bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
+if [ -d $HOME/.jenv ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+fi
+
 # Shared Aliases and Exports by Bash and Zsh
 . ~/.shellrc
