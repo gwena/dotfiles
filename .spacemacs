@@ -41,7 +41,8 @@ values."
                          haskell-enable-hindent-style "chris-done")
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
-     elm
+     (elm :variables elm-reactor-port "8000" ; back to default 8000
+                     elm-sort-imports-on-save t)
      (shell :variables shell-default-shell 'ansi-term
                        shell-default-height 30
                        shell-default-position 'bottom)
