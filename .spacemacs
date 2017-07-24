@@ -36,9 +36,9 @@ values."
      ;; ruby-enable-enh-ruby-mode t
 
      ruby-on-rails
-     (haskell :variables haskell-enable-ghc-mod-support t
-                         haskell-enable-ghci-ng-support t
-                         haskell-enable-hindent-style "chris-done")
+     (haskell) ;; :variables ;; haskell-enable-ghc-mod-support t
+                 ;;        haskell-enable-ghci-ng-support t)
+                         ;; haskell-enable-hindent-style "chris-done")
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
      (elm :variables elm-reactor-port "8000" ; back to default 8000
@@ -311,7 +311,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; @TODO - Check more
   (setq-default dotspacemacs-persistent-server nil)
-  )
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -322,7 +322,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; FiraCode and other glyphy fonts
   (mac-auto-operator-composition-mode)
-  (setq clojure-enable-fancify-symbols t) 
+  (setq clojure-enable-fancify-symbols t)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
