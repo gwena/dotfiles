@@ -323,6 +323,16 @@ you should place your code here."
   ;; FiraCode and other glyphy fonts
   (mac-auto-operator-composition-mode)
   (setq clojure-enable-fancify-symbols t)
+
+  ;; Switching windows - Need to fix that, use C-w for the moment
+  ;; (global-set-key (kbd "<s-left>")  'evil-window-left)
+  ;; (global-set-key (kbd "<s-right>") 'evil-window-right)
+  ;; (global-set-key (kbd "<s-up>")    'evil-window-up)
+  ;; (global-set-key (kbd "<s-down>")  'evil-window-down)
+  ;; (define-key evil-window-map (kbd "<s-left>") 'evil-window-left)
+  ;; (define-key evil-window-map (kbd "<s-right>") 'evil-window-right)
+  ;; (define-key evil-window-map (kbd "<s-up>") 'evil-window-up)
+  ;; (define-key evil-window-map (kbd "<s-down>") 'evil-window-down)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
