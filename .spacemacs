@@ -36,9 +36,9 @@ values."
      ;; ruby-enable-enh-ruby-mode t
 
      ruby-on-rails
-     (haskell) ;; :variables ;; haskell-enable-ghc-mod-support t
-                 ;;        haskell-enable-ghci-ng-support t)
-                         ;; haskell-enable-hindent-style "chris-done")
+     (haskell :variables haskell-enable-ghc-mod-support t
+                         haskell-enable-ghci-ng-support t
+                         haskell-enable-hindent-style "chris-done")
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
      (elm :variables elm-reactor-port "8000" ; back to default 8000
