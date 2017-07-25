@@ -311,6 +311,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; @TODO - Check more
   (setq-default dotspacemacs-persistent-server nil)
+  (windmove-default-keybindings)
 )
 
 (defun dotspacemacs/user-config ()
