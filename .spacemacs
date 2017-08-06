@@ -312,6 +312,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; @TODO - Check more
   (setq-default dotspacemacs-persistent-server nil)
   (windmove-default-keybindings)
+  (global-set-key (kbd "M-[") 'insert-pair)
 )
 
 (defun dotspacemacs/user-config ()
