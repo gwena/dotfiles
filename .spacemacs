@@ -40,8 +40,8 @@ values."
               haskell-enable-ghc-mod-support nil
               haskell-process-type 'stack-ghci
               haskell-completion-backend 'intero
-              haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero"))
-              ;; haskell-enable-hindent-style "chris-done")
+              haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero")
+              haskell-enable-hindent-style "chris-done")
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
      (elm :variables elm-reactor-port "8000" ; back to default 8000
