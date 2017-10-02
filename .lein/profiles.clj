@@ -8,7 +8,8 @@
                   [venantius/ultra "0.5.0"]
                   [lein-kibit "0.1.3"]
                   [lein-repetition-hunter "0.1.0-SNAPSHOT"]
-                  [lein-exec "0.3.6"]]
+                  [lein-exec "0.3.6"]
+                  [venantius/ultra "0.5.1"]]
         :dependencies [[repetition-hunter "1.0.0"]]
         :test-refresh {:quiet true
                        :changes-only true}}}
