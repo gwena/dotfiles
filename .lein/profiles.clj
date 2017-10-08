@@ -7,6 +7,7 @@
                   [com.jakemccrary/lein-test-refresh "0.18.1"]
                   [venantius/ultra "0.5.0"]
                   [lein-kibit "0.1.5"]
+                  [jonase/eastwood "0.2.4"]
                   [lein-repetition-hunter "0.1.0-SNAPSHOT"]
                   [lein-exec "0.3.6"]
                   [venantius/ultra "0.5.1"]]
