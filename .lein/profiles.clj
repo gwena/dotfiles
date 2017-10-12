@@ -1,5 +1,5 @@
-{:repl {:plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
-                  [refactor-nrepl "2.3.0-SNAPSHOT"]]
+{:repl {:plugins [[cider/cider-nrepl "0.15.1"]
+                  [refactor-nrepl "2.3.1"]]
         :dependencies [[alembic "0.3.2"]
                        [org.clojure/tools.nrepl "0.2.12"]
                        [proto-repl "0.3.1"]]}
