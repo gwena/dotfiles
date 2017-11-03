@@ -20,19 +20,21 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'dracula/vim'
 Plugin 'adimit/prolog.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'brooth/far.vim'
 " Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config " of that plugin
+
 " Haskell
 Plugin 'dag/vim2hs'
 Plugin 'hdevtools/hdevtools'
 
-Plugin 'lsdr/monokai'
-
+" Color Schemes and Airline themes
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"
 " Not needed anymore/for the moment 
 " PlantUML - https://github.com/aklt/plantuml-syntax
 " Zim Wiki Plugin 'jakykong/vim-zim' " Plugin 'vim-scripts/zim-syntax'
