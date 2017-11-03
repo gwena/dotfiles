@@ -31,6 +31,8 @@ Plugin 'brooth/far.vim'
 Plugin 'dag/vim2hs'
 Plugin 'hdevtools/hdevtools'
 
+Plugin 'lsdr/monokai'
+
 " Not needed anymore/for the moment 
 " PlantUML - https://github.com/aklt/plantuml-syntax
 " Zim Wiki Plugin 'jakykong/vim-zim' " Plugin 'vim-scripts/zim-syntax'
