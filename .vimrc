@@ -20,7 +20,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
-Plugin 'dracula/vim'
 Plugin 'adimit/prolog.vim'
 Plugin 'brooth/far.vim'
 " Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config " of that plugin
@@ -32,6 +31,7 @@ Plugin 'hdevtools/hdevtools'
 " Color Schemes and Airline themes
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "
