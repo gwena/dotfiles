@@ -155,7 +155,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code Retina" ;;"Source Code Pro for Powerline"
+   dotspacemacs-default-font '("Source Code Pro for Powerline" ;; "Fira Code Retina" 
                                :size 13
                                :weight normal
                                :width condensed
@@ -341,7 +341,7 @@ you should place your code here."
    [default bold shadow italic underline bold bold-italic bold])
  '(custom-safe-themes
    (quote
-    ("4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "5999e12c8070b9090a2a1bbcd02ec28906e150bb2cdce5ace4f965c76cf30476" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "5999e12c8070b9090a2a1bbcd02ec28906e150bb2cdce5ace4f965c76cf30476" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#343d46" t)
  '(package-selected-packages
