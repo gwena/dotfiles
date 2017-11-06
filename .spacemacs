@@ -57,7 +57,7 @@ values."
      (shell :variables shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
-     osx
+     ;; osx
      (auto-completion :variables auto-completion-enable-help-tooltip t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
