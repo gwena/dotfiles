@@ -17,7 +17,7 @@ values."
    ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
    ;; lazy install any layer that support lazy installation even the layers
    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
-   ;; installation feature and you have to explicitly list a layer i n the
+   ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     helm
+     emacs-lisp
      ;; Install gems: pry, pry-doc, ruby_parser, rubocop
      (ruby :variables ruby-version-manager 'rvm)
      ;; ruby-enable-enh-ruby-mode t
@@ -46,7 +48,6 @@ values."
      (javascript :variables javascript-disable-tern-missing-warning t)
      (elm :variables elm-reactor-port "8000" ; back to default 8000
                      elm-sort-imports-on-save t)
-     emacs-lisp
      scheme
      clojure
      java
@@ -57,7 +58,6 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      osx
-     helm
      (auto-completion :variables auto-completion-enable-help-tooltip t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
