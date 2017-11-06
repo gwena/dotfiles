@@ -51,7 +51,9 @@ values."
      scheme
      clojure
      java
-     scala
+     (scala :variables scala-enable-eldoc t
+                       scala-use-unicode-arrows t
+                       scala-auto-start-ensime nil)
      vimscript
      markdown
      shell-scripts
