@@ -332,6 +332,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (setq vc-follow-symlinks t)
   ;; FiraCode and other glyphy fonts
   ;; (mac-auto-operator-composition-mode) ;; commented as error
   (setq clojure-enable-fancify-symbols t)
