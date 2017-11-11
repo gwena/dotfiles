@@ -1,0 +1,5 @@
+".*"
+ None, Thumb2, Control_L|W
+ None, Thumb1, Alt_L|Left
+ None, Left, Control_L|Page_Up
+ None, Right, Control_L|Page_Down
