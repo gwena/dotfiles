@@ -10,19 +10,25 @@ ln -sfv $script/.profile .profile
 ln -sfv $script/.spacemacs .spacemacs
 ln -sfv $script/.vimrc .vimrc
 ln -sfv $script/.ideavimrc .ideavimrc
+ln -sfv $script/.tmux.conf .tmux.conf
 ln -sfv $script/.gitconfig .gitconfig
 ln -sfv $script/.ackrc .ackrc
 ln -sfv $script/.agignore .agignore
+ln -sfv $script/.inputrc .inputrc
+ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
-ln -sfv $script/.haskeline .haskeline
 
 # @TODO - Should only do it on Linux machine
 ln -sfv $script/linux-only/.imwheelrc .imwheelrc
 ln -sfv $script/linux-only/.hidden .hidden
 
-# @TODO - Check if folder exist - else create first
+# @TODO - Check if folder exists - else create first
 chmod go-w /home/gwena/.ghc 
 cd ~/.ghc
 ln -sfv $script/ghci.conf ghci.conf
+
+# @TODO - Check if folder exists - else create first
+cd ~/.lein
+ln -sfv $script/.lein/profiles.clj profiles.clj
 
