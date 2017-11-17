@@ -32,3 +32,8 @@ ln -sfv $script/ghci.conf ghci.conf
 cd ~/.lein
 ln -sfv $script/.lein/profiles.clj profiles.clj
 
+# @TODO - same above
+cd ~/.stack
+ln -sfv $script/.stack/config.yaml config.yaml
+
+
