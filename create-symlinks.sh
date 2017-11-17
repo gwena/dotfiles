@@ -36,4 +36,6 @@ ln -sfv $script/.lein/profiles.clj profiles.clj
 cd ~/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
 
+# @TODO - Few more to be done - chec backup dotfiles, mostly Linux ones
+#         Could also add as comment the Macos ones
 
