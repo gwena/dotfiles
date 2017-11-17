@@ -19,6 +19,7 @@ ln -sfv $script/.haskeline .haskeline
 
 # @TODO - Should only do it on Linux machine
 ln -sfv $script/linux-only/.imwheelrc .imwheelrc
+ln -sfv $script/linux-only/.hidden .hidden
 
 # @TODO - Check if folder exist - else create first
 chmod go-w /home/gwena/.ghc 
