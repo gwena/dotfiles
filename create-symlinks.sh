@@ -26,6 +26,9 @@ ln -sfv $script/linux-only/.hidden .hidden
 cd ~/.config/terminator
 ln -sfn $script/linux-only/config-Terminator config
 
+cd ~/.config/gtk-3.0
+ln -sfn $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
+
 # @TODO - Check if folder exists - else create first
 chmod go-w /home/gwena/.ghc 
 cd ~/.ghc
