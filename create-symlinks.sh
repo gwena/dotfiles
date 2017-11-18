@@ -22,6 +22,9 @@ ln -sfv $script/.pryrc .pryrc
 # @TODO - Should only do it on Linux machine
 ln -sfv $script/linux-only/.imwheelrc .imwheelrc
 ln -sfv $script/linux-only/.hidden .hidden
+# @TODO - check folder
+cd ~/.config/terminator
+ln -sfn $script/linux-only/config-Terminator config
 
 # @TODO - Check if folder exists - else create first
 chmod go-w /home/gwena/.ghc 
@@ -38,4 +41,3 @@ ln -sfv $script/.stack/config.yaml config.yaml
 
 # @TODO - Few more to be done - chec backup dotfiles, mostly Linux ones
 #         Could also add as comment the Macos ones
-
