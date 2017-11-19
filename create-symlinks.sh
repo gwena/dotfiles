@@ -32,11 +32,13 @@ ln -sfv $script/.lein/profiles.clj profiles.clj
 cd ~/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
 
+cd ~/
 case "$(uname -s)" in
     Linux)
         echo '### Linux only symlinks'
         ln -sfv $script/linux-only/.imwheelrc .imwheelrc
         ln -sfv $script/linux-only/.hidden .hidden
+
         # @TODO - check folder
         cd ~/.config/terminator
         ln -sfn $script/linux-only/config-Terminator config
