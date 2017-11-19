@@ -38,6 +38,7 @@ case "$(uname -s)" in
         echo '### Linux only symlinks'
         ln -sfv $script/linux-only/.imwheelrc .imwheelrc
         ln -sfv $script/linux-only/.hidden .hidden
+        ln -sfv $script/linux-only/.gvimrc .gvimrc
 
         # @TODO - check folder
         cd ~/.config/terminator
