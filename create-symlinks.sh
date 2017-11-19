@@ -19,16 +19,6 @@ ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
 
-# @TODO - Should only do it on Linux machine
-ln -sfv $script/linux-only/.imwheelrc .imwheelrc
-ln -sfv $script/linux-only/.hidden .hidden
-# @TODO - check folder
-cd ~/.config/terminator
-ln -sfn $script/linux-only/config-Terminator config
-
-cd ~/.config/gtk-3.0
-ln -sfn $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
-
 # @TODO - Check if folder exists - else create first
 chmod go-w /home/gwena/.ghc 
 cd ~/.ghc
@@ -42,5 +32,25 @@ ln -sfv $script/.lein/profiles.clj profiles.clj
 cd ~/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
 
-# @TODO - Few more to be done - chec backup dotfiles, mostly Linux ones
-#         Could also add as comment the Macos ones
+case "$(uname -s)" in
+    Linux)
+        echo '### Linux only symlinks'
+        ln -sfv $script/linux-only/.imwheelrc .imwheelrc
+        ln -sfv $script/linux-only/.hidden .hidden
+        # @TODO - check folder
+        cd ~/.config/terminator
+        ln -sfn $script/linux-only/config-Terminator config
+
+        cd ~/.config/gtk-3.0
+        ln -sfn $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
+        ;;
+
+    Darwin)
+        echo '### MacOSX only symlinks'
+        echo 'Will not do anything special'
+        ;;
+
+    *)
+        echo '### Other OS - WEIRD!!!' 
+        ;;
+esac
