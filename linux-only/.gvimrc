@@ -1,1 +1,1 @@
-set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set gfn=Hack\ Regular\ 9
