@@ -40,12 +40,14 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
 
-        # @TODO - check folder
+        # @TODO - check folders below
+
         cd ~/.config/terminator
-        ln -sfn $script/linux-only/config-Terminator config
+        ln -sfv $script/linux-only/config-Terminator config
 
         cd ~/.config/gtk-3.0
-        ln -sfn $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
+        ln -sfv $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
+
         ;;
 
     Darwin)
