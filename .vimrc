@@ -129,6 +129,12 @@ endif
 " KEYS MAPPING
 " ~~~~~~~~~~~~
 
+" Fast/Slow Finger: still on shift while typing w
+nnoremap ; :
+command WQ wq
+command Wq wq
+command W w
+
 " Easier Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
