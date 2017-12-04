@@ -102,19 +102,13 @@ Pry.config.ls.public_method_color = :green
 Pry.config.ls.protected_method_color = :yellow
 Pry.config.ls.private_method_color = :bright_black
 
-# # Plugins
-# begin
-#   require 'awesome_print'
-#   # Enables Awesome Print and auto paging for all Pry output.
-#   Pry.config.print = lambda do |output, value|
-#     Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output)
-#   end
-
-# rescue LoadError => err
-#   puts "Awesome Print is missing, please install it:"
-#   puts "  gem install awesome_print"
-# end
-
+# Plugins
+begin
+  require 'awesome_print'
+  AwesomePrint.pry!
+rescue LoadError => err
+  puts "Awesome Print is missing, please install it: gem install awesome_print"
+end
 
 # Commands
 default_command_set = Pry::CommandSet.new do
