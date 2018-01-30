@@ -323,7 +323,9 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; @TODO - Check more
-  (setq-default dotspacemacs-persistent-server nil)
+  (setq-default dotspacemacs-persistent-server nil
+                js2-basic-offset 2
+                js-indent-level 2)
   (windmove-default-keybindings)
   (global-set-key (kbd "M-[") 'insert-pair)
 )
