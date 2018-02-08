@@ -44,3 +44,5 @@ ehthumbs.db
 # Misc 
 *.class
 *.so
+node_modules
+
