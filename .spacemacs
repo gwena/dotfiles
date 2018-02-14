@@ -335,6 +335,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
     web-mode-code-indent-offset 2
     web-mode-attr-indent-offset 2
   )
+
+  ;; orgmode is so so slow with line number on large file - toggle them off
+  (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
+
   ;; @TODO - Check more
   (windmove-default-keybindings)
   (global-set-key (kbd "M-[") 'insert-pair)
