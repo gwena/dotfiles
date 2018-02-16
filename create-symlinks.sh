@@ -22,33 +22,34 @@ ln -sfv $script/.pryrc .pryrc
 # Not in dotfiles
 ln -sfv $HOME/Documents/Scripts/.ssh .ssh
 
-# @TODO - Check if folder exists - else create first
-chmod go-w /home/gwena/.ghc 
-cd ~/.ghc
+mkdir -p $HOME/.ghc
+chmod go-w $HOME/.ghc
+cd $HOME/.ghc
 ln -sfv $script/ghci.conf ghci.conf
 
-# @TODO - Check if folder exists - else create first
-cd ~/.lein
+mkdir -p $HOME/.lein
+cd $HOME/.lein
 ln -sfv $script/.lein/profiles.clj profiles.clj
 
-# @TODO - same above
-cd ~/.stack
+mkdir -p $HOME/.stack
+cd $HOME/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
 
-cd ~/
+cd $HOME
 case "$(uname -s)" in
     Linux)
         echo '### Linux only symlinks'
+
         ln -sfv $script/linux-only/.imwheelrc .imwheelrc
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
 
-        # @TODO - check folders below
-
-        cd ~/.config/terminator
+        mkdir -p $HOME/.config
+        cd $HOME/config/terminator
         ln -sfv $script/linux-only/config-Terminator config
 
-        cd ~/.config/gtk-3.0
+        mkdir -p $HOME/.config/gtk-3.0
+        cd $HOME/.config/gtk-3.0
         ln -sfv $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
 
         ;;
