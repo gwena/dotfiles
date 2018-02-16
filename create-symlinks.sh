@@ -19,6 +19,9 @@ ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
 
+# Not in dotfiles
+ln -sfv $HOME/Documents/Scripts/.ssh .ssh
+
 # @TODO - Check if folder exists - else create first
 chmod go-w /home/gwena/.ghc 
 cd ~/.ghc
