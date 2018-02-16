@@ -22,7 +22,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'adimit/prolog.vim'
 Plugin 'brooth/far.vim'
-" Plugin 'mileszs/ack.vim'  -- check Ag below, might want to rather use config " of that plugin
 
 " Haskell
 Plugin 'dag/vim2hs'
