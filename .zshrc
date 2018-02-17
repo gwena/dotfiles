@@ -53,11 +53,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# Removed: vagrant osx 
-plugins=(git colored-man colorize github zsh-syntax-highlighting history autojump cabal)
+# OS Specific: osx , Ubuntu: command-not-found
+plugins=(git colored-man colorize github zsh-syntax-highlighting history autojump cabal osx)
 
-# Only for Ubuntu command-not-found
-
+# Only for Ubuntu 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
