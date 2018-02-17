@@ -12,6 +12,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>CloseBookmarksWindowAfterOpening</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -285,7 +287,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>433 354 1018 447 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>307 508 850 402 0 0 1680 1027 </string>
+	<string>0 80 1680 947 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 80 1680 947 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
