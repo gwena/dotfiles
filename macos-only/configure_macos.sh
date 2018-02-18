@@ -75,6 +75,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 # Disable auto-correct
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Show percentage; Hide remaining battery time
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
