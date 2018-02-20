@@ -333,7 +333,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
     web-mode-css-indent-offset 2
     web-mode-code-indent-offset 2
     web-mode-attr-indent-offset 2
-  )
+    ;; org-mode
+    org-ellipsis "⤵"
+)
 
   ;; orgmode is so so slow with line number on large file - toggle them off
   (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
