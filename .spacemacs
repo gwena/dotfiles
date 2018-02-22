@@ -321,6 +321,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (add-to-list 'exec-path "/usr/local/bin") ;; for Cider. Future: "~/.cabal/bin/"  
   (setq-default
     git-magit-status-fullscreen t
     dotspacemacs-persistent-server nil
