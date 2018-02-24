@@ -346,6 +346,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (windmove-default-keybindings)
   (global-set-key (kbd "M-[") 'insert-pair)
 
+  ;;figwheel
+  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
   ;; Ligature
   (when (window-system)
   (set-frame-font "Fira Code"))
