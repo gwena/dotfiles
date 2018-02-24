@@ -343,12 +343,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; orgmode is so so slow with line number on large file - toggle them off
   (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
 
+  ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
-
-  ;; @TODO - Check more
-  ;; (global-set-key (kbd "M-[") 'insert-pair)
-  ;; (global-set-key (kbd "M-{") 'insert-pair)
-  ;; (global-set-key (kbd "M-\"") 'insert-pair)
 
   ;;figwheel
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
