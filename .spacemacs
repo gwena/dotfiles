@@ -73,7 +73,6 @@ values."
      dash
      themes-megapack
      version-control
-     evil-cleverparens
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -348,9 +347,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;;figwheel
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
-
-  (spacemacs/toggle-evil-cleverparens-on)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
   ;; Ligature
   (when (window-system)
