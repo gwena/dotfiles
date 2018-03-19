@@ -91,6 +91,9 @@ bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
+# Alias defined for git remote -v, but grv needed
+unalias grv
+
 # Shared Aliases and Exports by Bash and Zsh
 . ~/.sharedrc
 
