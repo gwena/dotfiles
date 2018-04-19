@@ -364,8 +364,7 @@ you should place your code here."
   (mac-auto-operator-composition-mode)
   (setq clojure-enable-fancify-symbols t)
 
-
-  ;; ;; Ligature
+  ;; Ligature: Not needed anymore as using (mac-auto-operator-composition-mode) and fancify
   ;; (when (window-system)
   ;; (set-frame-font "Fira Code"))
   ;; (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
