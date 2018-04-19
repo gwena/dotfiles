@@ -345,8 +345,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
 
-  ;;figwheel
-  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
   ;; Ligature
   (when (window-system)
@@ -393,6 +391,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq vc-follow-symlinks t)
+  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
