@@ -361,6 +361,9 @@ you should place your code here."
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
 
+  (mac-auto-operator-composition-mode)
+  (setq clojure-enable-fancify-symbols t)
+
 
   ;; ;; Ligature
   ;; (when (window-system)
