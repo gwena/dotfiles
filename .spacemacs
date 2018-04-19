@@ -322,26 +322,6 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (add-to-list 'exec-path "/usr/local/bin") ;; for Cider. Future: "~/.cabal/bin/"  
-  (setq-default
-    git-magit-status-fullscreen t
-    dotspacemacs-persistent-server nil
-    ;; js2-mode
-    js2-basic-offset 2
-    js-indent-level 2
-    ;; web-mode
-    css-indent-offset 2
-    web-mode-markup-indent-offset 2
-    web-mode-css-indent-offset 2
-    web-mode-code-indent-offset 2
-    web-mode-attr-indent-offset 2
-    ;; org-mode
-    org-ellipsis "⤵"
-    org-bullets-bullet-list '("☰" "☷" "✿" "✸")
-  )
-
-  ;; orgmode is so so slow with line number on large file - toggle them off
-  (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
-
 
   ;; Ligature
   (when (window-system)
@@ -389,6 +369,26 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq vc-follow-symlinks t)
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+  (setq-default
+   git-magit-status-fullscreen t
+   dotspacemacs-persistent-server nil
+   ;; js2-mode
+   js2-basic-offset 2
+   js-indent-level 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   ;; org-mode
+   org-ellipsis "⤵"
+   org-bullets-bullet-list '("☰" "☷" "✿" "✸")
+   )
+
+  ;; orgmode is so so slow with line number on large file - toggle them off
+  (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
 
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
