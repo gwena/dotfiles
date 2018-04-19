@@ -342,9 +342,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; orgmode is so so slow with line number on large file - toggle them off
   (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off 'append)
 
-  ;; yes, finally can move between windows easily
-  (windmove-default-keybindings)
-
 
   ;; Ligature
   (when (window-system)
@@ -392,6 +389,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq vc-follow-symlinks t)
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+  ;; yes, finally can move between windows easily
+  (windmove-default-keybindings)
+
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
