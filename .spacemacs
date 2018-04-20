@@ -49,7 +49,7 @@ values."
      (elm :variables elm-reactor-port "8000" ; back to default 8000
                      elm-sort-imports-on-save t)
      scheme
-     clojure
+     (clojure :variables clojure-enable-fancify-symbols t)
      java
      (scala :variables scala-enable-eldoc t
                        scala-use-unicode-arrows t
@@ -362,9 +362,9 @@ you should place your code here."
   (windmove-default-keybindings)
 
   (mac-auto-operator-composition-mode)
-  (setq clojure-enable-fancify-symbols t)
 
   ;; Ligature: Not needed anymore as using (mac-auto-operator-composition-mode) and fancify
+  ;;                                       however might only work on mac with specific built
   ;; (when (window-system)
   ;; (set-frame-font "Fira Code"))
   ;; (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
