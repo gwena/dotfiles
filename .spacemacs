@@ -371,7 +371,7 @@ you should place your code here."
 
   ;; (mac-auto-operator-composition-mode) ;; macos specific for ligature
 
-  ;; Ligature: Not needed anymore as using (mac-auto-operator-composition-mode) and fancify
+  ;; Ligature: For Linux or macos - else not needed anymore as using (mac-auto-operator-composition-mode) and fancify
   ;;                                       however might only work on mac with specific built
   ;; (when (window-system)
   ;; (set-frame-font "Fira Code"))
