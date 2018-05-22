@@ -61,7 +61,7 @@ values."
      (shell :variables shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
-     osx
+     ;; osx
      (auto-completion :variables auto-completion-enable-help-tooltip t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
@@ -163,7 +163,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code Retina" ;; "Source Code Pro for Powerline"
+   dotspacemacs-default-font '("Source Code Pro for Powerline" ;; "Fira Code Retina"
                                :size 13
                                :weight normal
                                :width condensed
