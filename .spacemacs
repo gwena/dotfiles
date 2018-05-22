@@ -49,7 +49,8 @@ values."
      (elm :variables elm-reactor-port "8000" ; back to default 8000
                      elm-sort-imports-on-save t)
      scheme
-     (clojure :variables clojure-enable-fancify-symbols t)
+     clojure
+     ;; (clojure :variables clojure-enable-fancify-symbols t) ;; macos specific
      java
      (scala :variables scala-enable-eldoc t
                        scala-use-unicode-arrows t
@@ -61,7 +62,7 @@ values."
      (shell :variables shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; osx
+     ;; osx - macos specific
      (auto-completion :variables auto-completion-enable-help-tooltip t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
@@ -368,7 +369,7 @@ you should place your code here."
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
 
-  (mac-auto-operator-composition-mode)
+  ;; (mac-auto-operator-composition-mode) ;; macos specific for ligature
 
   ;; Ligature: Not needed anymore as using (mac-auto-operator-composition-mode) and fancify
   ;;                                       however might only work on mac with specific built
