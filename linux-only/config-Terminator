@@ -1,6 +1,10 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
 [keybindings]
+  go_down = <Shift>Down
+  go_left = <Shift>Left
+  go_right = <Shift>Right
+  go_up = <Shift>Up
   resize_down = <Ctrl><Shift><Alt>j
   resize_left = <Ctrl><Shift><Alt>h
   resize_right = <Ctrl><Shift><Alt>l
@@ -18,8 +22,8 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    background_image = None
     copy_on_selection = True
+    cursor_color = "#839496"
     font = Hack 9
     foreground_color = "#839496"
     scrollback_lines = 6000
