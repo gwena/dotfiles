@@ -1,3 +1,7 @@
 set editing-mode vi
 set keymap vi
 
+# 2 following lines are needed for sbt to be able to enter commands at the sbt shell
+# see https://github.com/jline/jline2/issues/286
+set keymap vi-command
+set keymap vi-insert
