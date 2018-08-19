@@ -63,7 +63,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # OS Specific: osx , Ubuntu: command-not-found
-plugins=(git colored-man colorize github zsh-syntax-highlighting history autojump cabal osx lein npm kubectl)
+plugins=(git colored-man colorize github zsh-syntax-highlighting history autojump cabal lein npm kubectl)
 
 # Only for Ubuntu 
 source $ZSH/oh-my-zsh.sh
