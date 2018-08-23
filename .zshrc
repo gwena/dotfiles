@@ -9,11 +9,14 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="ys"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="kolo"
-
-# See installation for cloning git repo
-# ZSH_THEME="powerlevel9k/powerlevel9k"
+# See installation for git repo to clone
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # For pure-prompt Empty as testing pure
 # ZSH_THEME=""
