@@ -2,6 +2,7 @@
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
   title_font = DroidSansMono Nerd Font Mono 9
   title_use_system_font = False
+  always_split_with_profile = True
 [keybindings]
   go_down = <Shift>Down
   go_left = <Shift>Left
@@ -16,8 +17,8 @@
   [[default]]
     [[[child1]]]
       parent = window0
-      type = Terminal
       profile = dracula
+      type = Terminal
     [[[window0]]]
       parent = ""
       type = Window
