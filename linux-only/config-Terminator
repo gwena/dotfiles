@@ -1,8 +1,8 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  always_split_with_profile = True
+  enabled_plugins = LaunchpadCodeURLHandler, OpenAnyFile, APTURLHandler
   title_font = DroidSansMono Nerd Font Mono 9
   title_use_system_font = False
-  always_split_with_profile = True
 [keybindings]
   go_down = <Shift>Down
   go_left = <Shift>Left
