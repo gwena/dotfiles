@@ -22,18 +22,23 @@ ln -sfv $script/.pryrc .pryrc
 # Not in dotfiles
 ln -sfv $HOME/Documents/Scripts/.ssh .ssh
 
+mkdir -p $HOME/.lein
+cd $HOME/.lein
+ln -sfv $script/.lein/profiles.clj profiles.clj
+
 mkdir -p $HOME/.ghc
 chmod go-w $HOME/.ghc
 cd $HOME/.ghc
 ln -sfv $script/ghci.conf ghci.conf
 
-mkdir -p $HOME/.lein
-cd $HOME/.lein
-ln -sfv $script/.lein/profiles.clj profiles.clj
-
 mkdir -p $HOME/.stack
 cd $HOME/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
+
+sbtPlugins=.sbt/0.13/plugins
+mkdir -p $HOME/$sbtPlugins
+cd $HOME/$sbtPlugins
+ln -sfv $script/$sbtPlugins/plugins.sbt plugins.sbt
 
 cd $HOME
 case "$(uname -s)" in
