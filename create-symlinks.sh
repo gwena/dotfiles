@@ -49,9 +49,8 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
 
-        mkdir -p $HOME/.config/terminator
-        cd $HOME/.config/terminator
-        ln -sfv $script/linux-only/config-Terminator config
+        cd $HOME/.config
+        ln -sfv $script/linux-only/config-terminator terminator
 
         mkdir -p $HOME/.config/gtk-3.0
         cd $HOME/.config/gtk-3.0

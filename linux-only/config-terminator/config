@@ -1,6 +1,7 @@
 [global_config]
   always_split_with_profile = True
   enabled_plugins = LaunchpadCodeURLHandler, OpenAnyFile, APTURLHandler
+  inactive_color_offset = 0.600649350649
   title_font = DroidSansMono Nerd Font Mono 9
   title_use_system_font = False
 [keybindings]
