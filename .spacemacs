@@ -33,30 +33,36 @@ values."
    '(
      helm
      emacs-lisp
+
      ;; Install gems: pry, pry-doc, ruby_parser, rubocop
      (ruby :variables ruby-version-manager 'rvm)
      ;; ruby-enable-enh-ruby-mode t
-
      ruby-on-rails
+
      (haskell :variables
               haskell-enable-ghc-mod-support nil
               haskell-process-type 'stack-ghci
               haskell-completion-backend 'intero
               haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=intero")
               haskell-enable-hindent-style "chris-done")
+
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
-     (elm :variables elm-reactor-port "8000" ; back to default 8000
-                     elm-sort-imports-on-save t)
-     scheme
+
+     ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
+     ;;                 elm-sort-imports-on-save t)
+
+     ;; scheme
+
      clojure
      ;; (clojure :variables clojure-enable-fancify-symbols t) ;; macos specific
+
      java
      (scala :variables scala-enable-eldoc t
                        scala-use-unicode-arrows t
                        scala-auto-start-ensime nil)
      python
-     vimscript
+     ;; vimscript
      org
      markdown
      shell-scripts
