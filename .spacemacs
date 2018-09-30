@@ -350,8 +350,16 @@ you should place your code here."
   ;; autosave when loosing focus
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 
+  ;; for Cider. Future: "~/.cabal/bin/"
+  (add-to-list 'exec-path "/usr/local/bin")
+
   (setq vc-follow-symlinks t)
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+  (setq flycheck-scalastyle-jar
+        "~/Lang/Scala/ScalaLib/scalastyle_2.12.jar")
+  (setq flycheck-scalastylerc
+        "~/Lang/Scala/ScalaLib/scalastyle_config.xml")
 
   (setq-default
    git-magit-status-fullscreen t
@@ -369,9 +377,6 @@ you should place your code here."
    org-ellipsis "⤵"
    org-bullets-bullet-list '("☰" "☷" "✿" "✸")
    )
-
-  ;; for Cider. Future: "~/.cabal/bin/"
-  (add-to-list 'exec-path "/usr/local/bin")
 
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
