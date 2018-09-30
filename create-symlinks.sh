@@ -19,8 +19,11 @@ ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
 
-# Not in dotfiles
-ln -sfv $HOME/Documents/Scripts/.ssh .ssh
+ln -sfv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
+
+mkdir -p $HOME/.config/redshift
+cd $HOME/.config/redshift
+ln -sfv $script/redshift.conf redshift.conf
 
 mkdir -p $HOME/.lein
 cd $HOME/.lein
