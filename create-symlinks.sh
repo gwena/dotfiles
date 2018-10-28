@@ -38,10 +38,15 @@ mkdir -p $HOME/.stack
 cd $HOME/.stack
 ln -sfv $script/.stack/config.yaml config.yaml
 
-sbtPlugins=.sbt/0.13/plugins
+sbtConfigFolder=.sbt/0.13/
+sbtPlugins=$sbtConfigFolder/plugins
 mkdir -p $HOME/$sbtPlugins
 cd $HOME/$sbtPlugins
 ln -sfv $script/$sbtPlugins/plugins.sbt plugins.sbt
+
+# Disable for now
+# cd $HOME/$sbtConfigFolder
+# ln -sfv $script/$sbtConfigFolder/global.sbt global.sbt
 
 cd $HOME
 case "$(uname -s)" in
