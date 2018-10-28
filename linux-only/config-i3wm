@@ -146,6 +146,14 @@ bindsym $mod+r mode "resize"
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 bindsym Control+Print exec gnome-screenshot -i
 
+#
+# Automatically start applications
+#
+
+# Remap Capslock to Esc
+exec xmodmap -e "clear lock"
+exec xmodmap -e "keysym Caps_Lock = Escape"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
