@@ -158,6 +158,10 @@ exec xmodmap -e "keysym Caps_Lock = Escape"
 # Configure Compose Key to be AltGr for the accents
 exec setxkbmap -layout 'us(altgr-intl)'
 
+# Trigger screensaver from shortcut.
+bindsym Ctrl+Mod1+L     exec xset s activate
+bindsym XF86ScreenSaver exec xset s activate
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
