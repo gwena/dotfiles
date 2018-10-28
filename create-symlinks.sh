@@ -64,6 +64,9 @@ case "$(uname -s)" in
         cd $HOME/.config/gtk-3.0
         ln -sfv $script/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
 
+        mkdir -p $HOME/.config/i3
+        cd $HOME/.config/i3
+        ln -sfv $script/linux-only/config-i3wm config
         ;;
 
     Darwin)
