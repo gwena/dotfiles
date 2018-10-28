@@ -146,6 +146,15 @@ bindsym $mod+r mode "resize"
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 bindsym Control+Print exec gnome-screenshot -i
 
+# Trigger screensaver from shortcut
+bindsym Ctrl+Mod1+L     exec xset s activate
+bindsym XF86ScreenSaver exec xset s activate
+
+# Volume handling
+bindsym XF86AudioMute        exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +3% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% && killall -SIGUSR1 i3status
+
 #
 # Automatically start applications
 #
@@ -157,10 +166,6 @@ exec xmodmap -e "keysym Caps_Lock = Escape"
 
 # Configure Compose Key to be AltGr for the accents
 exec setxkbmap -layout 'us(altgr-intl)'
-
-# Trigger screensaver from shortcut.
-bindsym Ctrl+Mod1+L     exec xset s activate
-bindsym XF86ScreenSaver exec xset s activate
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
