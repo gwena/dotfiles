@@ -67,15 +67,17 @@ bindsym $mod+minus split vertical
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
+# tabbeb was `w`
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# used to be space (but want to use space for launcher)
+bindsym $mod+w focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -122,10 +124,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -145,25 +147,38 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures
 bindsym Control+Print exec gnome-screenshot -i
 
 # Trigger screensaver from shortcut
-bindsym Ctrl+Mod1+L     exec xset s activate
-bindsym XF86ScreenSaver exec xset s activate
+# bindsym Ctrl+Mod1+L     exec xset s activate
+bindsym Ctrl+Mod1+L     exec i3lock
+
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+m move workspace to output right
 
 # Volume handling
 bindsym XF86AudioMute        exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +3% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% && killall -SIGUSR1 i3status
 
-#
-# Automatically start applications
-#
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Configure Compose Key to be AltGr for the accents
+exec setxkbmap -layout 'us(altgr-intl)'
 
 # Keybpard mappings. Could also be in .Xmodmap
 # Remap Capslock to Esc
 exec xmodmap -e "clear lock"
 exec xmodmap -e "keysym Caps_Lock = Escape"
 
-# Configure Compose Key to be AltGr for the accents
-exec setxkbmap -layout 'us(altgr-intl)'
+# Floating for pop up type windows
+# Based on https://www.reddit.com/r/i3wm/comments/62epdo/how_can_i_launch_dialog_windows_in_floating_mode/
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
