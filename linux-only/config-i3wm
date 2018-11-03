@@ -135,6 +135,17 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+        # move fast
+        bindsym Shift+h move left  20 px
+        bindsym Shift+j move down  20 px
+        bindsym Shift+k move up    20 px
+        bindsym Shift+l move right 20 px
+
+        bindsym Shift+Left  move left  20 px
+        bindsym Shift+Down  move down  20 px
+        bindsym Shift+Up    move up    20 px
+        bindsym Shift+Right move right 20 px
+
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
