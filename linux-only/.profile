@@ -35,15 +35,13 @@ xmodmap -e 'remove Control = Control_R'
 xmodmap -e 'add Mod4 = Control_R'
 
 # Map Ctrl to Enter (if use with another key)
-# exec xmodmap -e 'keycode 36 = 0x1234'
-# exec xmodmap -e 'add control = 0x1234'
-# exec xmodmap -e 'keycode any = Return'
-# exec xcape -e '0x1234=Return'
 xmodmap -e "remove Control = Control_R"
 xmodmap -e "keycode 0x69 = Return"
 xmodmap -e "keycode 0x24 = Control_R"
 xmodmap -e "add Control = Control_R"
-
 xcape -t 10000 -e "Control_R=Return"
 
-# should add default xcape
+# Should do the same for the Caps Lock Key for symetry
+
+# Default behavior of xcape: map Control_L to Esc is released
+xcape
