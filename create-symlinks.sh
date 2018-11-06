@@ -6,7 +6,6 @@ cd ~/
 ln -sfv $script/.zshrc .zshrc
 ln -sfv $script/.bashrc .bashrc
 ln -sfv $script/.sharedrc .sharedrc
-ln -sfv $script/.profile .profile
 ln -sfv $script/.spacemacs .spacemacs
 ln -sfv $script/.vimrc .vimrc
 ln -sfv $script/.ideavimrc .ideavimrc
@@ -56,6 +55,7 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.imwheelrc .imwheelrc
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
+        ln -sfv $script/linux-only/.profile .profile
 
         cd $HOME/.config
         ln -sfv $script/linux-only/config-terminator terminator
