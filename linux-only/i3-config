@@ -185,9 +185,14 @@ bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% &&
 exec setxkbmap -layout 'us(altgr-intl)'
 
 # Keybpard mappings. Could also be in .Xmodmap
+#
 # Remap Capslock to Esc
 exec xmodmap -e "clear lock"
 exec xmodmap -e "keysym Caps_Lock = Escape"
+
+# Map Ctrl_R to Mod4 / Super
+exec xmodmap -e 'remove Control = Control_R'
+exec xmodmap -e 'add Mod4 = Control_R'
 
 # Floating for pop up type windows
 # Based on https://www.reddit.com/r/i3wm/comments/62epdo/how_can_i_launch_dialog_windows_in_floating_mode/
