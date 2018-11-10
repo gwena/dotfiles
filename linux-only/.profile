@@ -26,22 +26,22 @@ fi
 # Configure Compose Key to be AltGr for the accents
 setxkbmap -layout 'us(altgr-intl)'
 
-# Remap Capslock to Esc
-# exec xmodmap -e "clear lock"
-# exec xmodmap -e "keysym Caps_Lock = Escape"
+# Map Ctrl to Enter (if use with another key)
+# xmodmap -e "remove Control = Control_R"
+# xmodmap -e "keycode 0x69 = Return"
+# xmodmap -e "keycode 0x24 = Control_R"
+# xmodmap -e "add Control = Control_R"
+# xcape -t 10000 -e "Control_R=Return"
 
 # Map Ctrl_R to Mod4 / Super
 xmodmap -e 'remove Control = Control_R'
 xmodmap -e 'add Mod4 = Control_R'
 
-# Map Ctrl to Enter (if use with another key)
-xmodmap -e "remove Control = Control_R"
-xmodmap -e "keycode 0x69 = Return"
-xmodmap -e "keycode 0x24 = Control_R"
-xmodmap -e "add Control = Control_R"
-xcape -t 10000 -e "Control_R=Return"
-
 # Should do the same for the Caps Lock Key for symetry
+
+# Remap Capslock to Esc
+xmodmap -e "clear lock"
+xmodmap -e "keysym Caps_Lock = Escape"
 
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
