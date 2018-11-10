@@ -67,6 +67,8 @@ case "$(uname -s)" in
         mkdir -p $HOME/.config/i3
         cd $HOME/.config/i3
         ln -sfv $script/linux-only/i3-config config
+        cd $HOME
+        ln -sfv $script/linux-only/i3blocks.conf .i3blocks.conf
         ;;
 
     Darwin)
