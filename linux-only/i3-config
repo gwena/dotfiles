@@ -125,7 +125,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -168,14 +168,26 @@ bindsym $mod+r mode "resize"
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 bindsym Control+Print exec gnome-screenshot -i
 
+# Screen layouts
+# bindsym $mod+apostrophe exec ~/.screenlayout/only-laptop.sh
+# could also use the file directly
+bindsym $mod+Ctrl+F1 exec --no-startup-id xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-2 --off --output DP-1-1 --off --output HDMI-2 --off --output DP-1-1-1 --off --output DP-1-3 --off --output DP-2 --off --output DP-1 --off --output DP-1-1-2 --off
+bindsym $mod+Ctrl+F2 exec --no-startup-id xrandr --output HDMI-1 --off --output eDP-1 --off --output DP-1-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1-1 --off --output HDMI-2 --off --output DP-1-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-3 --off --output DP-2 --off --output DP-1 --off --output DP-1-1-2 --off
+bindsym $mod+Ctrl+F3 exec --no-startup-id xrandr --output HDMI-1 --mode 1360x768 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 1360x0 --rotate normal --output DP-1-2 --off --output DP-1-1 --off --output HDMI-2 --off --output DP-1-1-1 --off --output DP-1-3 --off --output DP-2 --off --output DP-1 --off --output DP-1-1-2 --off
+
 # Trigger screensaver from shortcut
 # bindsym Ctrl+Mod1+L     exec xset s activate
-bindsym Ctrl+Mod1+L     exec i3lock
+bindsym Ctrl+Mod1+L exec i3lock
 
 # Volume handling
-bindsym XF86AudioMute        exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +3% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% && killall -SIGUSR1 i3status
+# bindsym XF86AudioMute        exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+# bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +3% && killall -SIGUSR1 i3status
+# bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% && killall -SIGUSR1 i3status
+# Change volume or toggle mute
+# the number 1 in -RTMIN+1 can be replaced to another signal number, as long as it agrees what you put for signal= in your i3blocks config
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Screen brightness controls
 # https://github.com/haikarainen/light/releases
