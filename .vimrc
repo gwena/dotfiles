@@ -23,6 +23,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'adimit/prolog.vim'
 Plugin 'brooth/far.vim'
 
+" Scala - when not using emacs
+Plugin 'derekwyatt/vim-scala'
+
 " Haskell
 Plugin 'dag/vim2hs'
 Plugin 'hdevtools/hdevtools'
