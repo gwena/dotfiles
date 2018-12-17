@@ -47,3 +47,4 @@ xmodmap -e "keysym Caps_Lock = Escape"
 xcape
 
 export I3BLOCKS_SCRIPTS=~/Documents/Scripts/i3blocks-scripts
+export I3_SCRIPTS=~/Documents/Scripts/i3-scripts
