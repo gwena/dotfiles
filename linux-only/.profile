@@ -46,5 +46,5 @@ xmodmap -e "keysym Caps_Lock = Escape"
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
 
-export I3BLOCKS_SCRIPTS=~/Documents/Scripts/i3blocks-scripts
-export I3_SCRIPTS=~/Documents/Scripts/i3-scripts
+export I3BLOCKS_SCRIPTS=$HOME/Documents/Scripts/i3blocks-scripts
+export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
