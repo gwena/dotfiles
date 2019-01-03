@@ -72,6 +72,11 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/i3-config config
         cd $HOME
         ln -sfv $script/linux-only/i3blocks.conf .i3blocks.conf
+
+        mkdir $HOME/.xmonad
+        cd $HOME/.xmonad
+        ln -sfv $script/linux-only/xmonad.hs xmonad.hs
+
         ;;
 
     Darwin)
