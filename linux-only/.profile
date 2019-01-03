@@ -45,6 +45,8 @@ xmodmap -e "keysym Caps_Lock = Escape"
 
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
+# Map Super to "non" existing key, will be used by i3wm to map Super alone
+xcape -t 150 -e 'Super_L=Super_L|Escape'
 
 export I3BLOCKS_SCRIPTS=$HOME/Documents/Scripts/i3blocks-scripts
 export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
