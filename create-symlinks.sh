@@ -42,6 +42,9 @@ sbtPlugins=$sbtConfigFolder/plugins
 mkdir -p $HOME/$sbtPlugins
 cd $HOME/$sbtPlugins
 ln -sfv $script/$sbtPlugins/plugins.sbt plugins.sbt
+cd $HOME/.sbt
+ln -sfv $script/linux-only-perso/sbt-credentials-nexus .credentials
+
 
 # Disable for now
 # cd $HOME/$sbtConfigFolder
