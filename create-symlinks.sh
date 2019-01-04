@@ -20,6 +20,10 @@ ln -sfv $script/.pryrc .pryrc
 
 ln -sfv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 
+mkdir -p $HOME/.config/ranger
+cd $HOME/.config/ranger
+ln -sfv $script/ranger.conf rc.conf
+
 mkdir -p $HOME/.config/redshift
 cd $HOME/.config/redshift
 ln -sfv $script/redshift.conf redshift.conf
