@@ -217,9 +217,40 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id duplicati
 
+# Color scheme (Gruvbox dark)
+set $color_normal_white  #a89984
+set $color_bright_white  #ebdbb2
+set $color_normal_gray   #222222
+set $color_bright_gray   #3c3836
+set $color_bright_yellow #d79921
+set $color_normal_black  #282828
+set $color_unused        #ff0000
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Colors                  border                 background             text                   indicator       child_border
+client.focused            $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_white
+client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
+client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
+client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
+client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
+
 bar {
-        status_command i3status
+  # status_command i3status
+  # status_command i3blocks # -c ~/.i3blocks.conf
+  status_command 2>/tmp/i3blocks.err i3blocks -vvv | tee /tmp/i3blocks.out
+
+  position top
+  font pango:Fira Code 10
+
+  colors {
+    # Whole color settings
+    background $color_normal_gray
+    separator  $color_bright_gray
+    statusline $color_bright_white
+
+    # Type             border                 background              font
+    focused_workspace  $color_bright_gray     $color_bright_gray      $color_bright_white
+    active_workspace   $color_unused          $color_unused           $color_unused
+    inactive_workspace $color_normal_gray     $color_normal_gray      $color_normal_white
+    urgent_workspace   $color_bright_yellow   $color_bright_yellow    $color_normal_black
+  }
 }
