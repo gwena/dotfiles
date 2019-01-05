@@ -76,7 +76,7 @@ case "$(uname -s)" in
         cd $HOME
         ln -sfv $script/linux-only/i3blocks.conf .i3blocks.conf
 
-        mkdir $HOME/.xmonad
+        mkdir -p $HOME/.xmonad
         cd $HOME/.xmonad
         ln -sfv $script/linux-only/xmonad.hs xmonad.hs
 
