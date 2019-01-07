@@ -125,8 +125,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # window-jumper
 bindsym $mod+g exec $I3_SCRIPTS/dmenu-i3-window-jumper.sh
 
@@ -194,6 +192,25 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# Locker + logout | suspend | hibernate | reboot | shutdown
+set $Locker i3lock && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+Shift+e mode "$mode_system"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # Floating for pop up type windows
 # Based on https://www.reddit.com/r/i3wm/comments/62epdo/how_can_i_launch_dialog_windows_in_floating_mode/
 for_window [window_role="pop-up"] floating enable
@@ -213,6 +230,7 @@ for_window [class="(?i)spotify"] border none
 for_window [class="(?i)Slack"] border none
 
 # Autostart
+exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id duplicati
