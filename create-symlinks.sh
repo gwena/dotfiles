@@ -62,6 +62,7 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
         ln -sfv $script/linux-only/.profile .profile
+        ln -sfv $script/linux-only/.screenlayout .screenlayout
 
         cd $HOME/.config
         ln -sfv $script/linux-only/config-terminator terminator
