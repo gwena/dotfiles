@@ -226,6 +226,7 @@ for_window [class="Evernote Web Clipper"] floating enable
 
 # Border none
 for_window [class="(?i)Chromium"] border none
+for_window [class="(?i)Chrome"] border none
 for_window [class="(?i)spotify"] border none
 for_window [class="(?i)Slack"] border none
 
