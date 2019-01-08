@@ -235,6 +235,7 @@ exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id duplicati
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/debian.jpg
 
 # Color scheme (Gruvbox dark)
 set $color_normal_white  #a89984
