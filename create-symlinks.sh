@@ -22,9 +22,6 @@ ln -sfv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 
 cd .config
 ln -sfv $script/ranger ranger
-
-mkdir -p $HOME/.config/redshift
-cd $HOME/.config/redshift
 ln -sfv $script/redshift.conf redshift.conf
 
 mkdir -p $HOME/.lein
