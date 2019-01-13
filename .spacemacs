@@ -62,7 +62,7 @@ values."
                        scala-use-unicode-arrows t
                        scala-auto-start-ensime nil)
      python
-     ;; vimscript
+     vimscript
      org
      markdown
      shell-scripts
