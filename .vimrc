@@ -1,7 +1,7 @@
 " Gwena's .vimrc file, with the help of GitHub's repos, Practical Vim, etc.
 set nocompatible
 filetype off   " required  Arhhhh!!
-  
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -37,7 +37,7 @@ Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "
-" Not needed anymore/for the moment 
+" Not needed anymore/for the moment
 " PlantUML - https://github.com/aklt/plantuml-syntax
 " Zim Wiki Plugin 'jakykong/vim-zim' " Plugin 'vim-scripts/zim-syntax'
 
@@ -174,7 +174,7 @@ imap <F8> <Esc>:TagbarToggle<CR>a
 vmap <leader>ts <Plug>SendSelectionToTmux
 nmap <leader>ts <Plug>NormalModeSendToTmux
 map <leader>trm <Plug>SetTmuxVars
- 
+
 " delimitMate
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
