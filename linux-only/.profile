@@ -45,8 +45,13 @@ xmodmap -e "keysym Caps_Lock = Escape"
 
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
-# Map Super to "non" existing key, will be used by i3wm to map Super alone
-xcape -t 150 -e 'Super_L=Super_L|Escape'
 
+# Only for i3
+# Map Super to "non" existing key, will be used by i3wm to map Super alone (simpler, same as Gnome)
+if [ $XDG_CURRENT_DESKTOP = "i3" ]; then
+    xcape -t 150 -e 'Super_L=Super_L|Escape'
+fi
+
+# Keep them even even if not running i3
 export I3BLOCKS_SCRIPTS=$HOME/Documents/Scripts/i3blocks-scripts
 export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
