@@ -18,10 +18,10 @@ ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
 
-ln -sfv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
+ln -sfnv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 
 cd .config
-ln -sfv $script/ranger ranger
+ln -sfnv $script/ranger ranger
 ln -sfv $script/redshift.conf redshift.conf
 
 mkdir -p $HOME/.lein
@@ -59,10 +59,10 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
         ln -sfv $script/linux-only/.profile .profile
-        ln -sfv $script/linux-only/.screenlayout .screenlayout
+        ln -sfnv $script/linux-only/.screenlayout .screenlayout
 
         cd $HOME/.config
-        ln -sfv $script/linux-only/config-terminator terminator
+        ln -sfnv $script/linux-only/config-terminator terminator
 
         mkdir -p $HOME/.config/gtk-3.0
         cd $HOME/.config/gtk-3.0
