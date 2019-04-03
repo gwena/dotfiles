@@ -350,11 +350,16 @@ you should place your code here."
   ;; autosave when loosing focus
   (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 
-  ;; for Cider. Future: "~/.cabal/bin/"
-  (add-to-list 'exec-path "/usr/local/bin")
+  ;; Bug: https://github.com/syl20bnr/spacemacs/issues/11146
+  (setq sayid-inject-dependencies-at-jack-in nil)
 
   (setq vc-follow-symlinks t)
+
+  ;; Clojure-Cider
+  (add-to-list 'exec-path "/usr/local/bin") ; for Haskell/Cabal, might need similar "~/.cabal/bin/"
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+  (add-hook 'cider-repl-mode-hook #'company-mode)
+  (add-hook 'cider-mode-hook #'company-mode)
 
   (setq flycheck-scalastyle-jar
         "~/Lang/Scala/ScalaLib/scalastyle_2.12.jar")
