@@ -55,3 +55,6 @@ fi
 # Keep them even even if not running i3
 export I3BLOCKS_SCRIPTS=$HOME/Documents/Scripts/i3blocks-scripts
 export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
+
+# Homebrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
