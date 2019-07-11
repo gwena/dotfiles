@@ -17,6 +17,7 @@ ln -sfv $script/.inputrc .inputrc
 ln -sfv $script/.haskeline .haskeline
 ln -sfv $script/.gemrc .gemrc
 ln -sfv $script/.pryrc .pryrc
+ln -sfv $script/.joker .joker
 
 ln -sfnv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 
@@ -27,6 +28,11 @@ ln -sfv $script/redshift.conf redshift.conf
 mkdir -p $HOME/.lein
 cd $HOME/.lein
 ln -sfv $script/.lein/profiles.clj profiles.clj
+
+mkdir -p $HOME/.jokerd
+cd $HOME/.jokerd
+ln -sfv $script/joker-linter.cljc linter.cljc
+
 
 mkdir -p $HOME/.ghc
 chmod go-w $HOME/.ghc

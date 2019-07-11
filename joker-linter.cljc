@@ -1,0 +1,6 @@
+(declare deftest)
+(declare deftest-)
+(declare use-fixtures)
+(declare testing)
+(declare is)
+(declare are)
