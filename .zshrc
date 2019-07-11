@@ -66,7 +66,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # OS Specific: osx , Ubuntu: command-not-found
-plugins=(command-not-found git git-extras github colorize history autojump cabal lein npm sbt scala docker kubectl)
+# Removed: autojump - issue
+# Not used: cabal
+plugins=(command-not-found git git-extras github colorize history lein npm sbt scala docker kubectl)
 
 # Only for Ubuntu
 source $ZSH/oh-my-zsh.sh
@@ -112,3 +114,7 @@ unalias grv
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Autojump - Disabled as issue
+# [[ -s /home/gwena/.autojump/etc/profile.d/autojump.sh ]] && source /home/gwena/.autojump/etc/profile.d/autojump.sh
+# autoload -U compinit && compinit -u
