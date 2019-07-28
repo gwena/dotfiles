@@ -58,3 +58,5 @@ export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
 
 # Homebrew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+sh $HOME/Documents/Scripts/dotfiles/linux-only-perso/profile-private.sh
