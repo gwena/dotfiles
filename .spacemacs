@@ -49,11 +49,6 @@ values."
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
 
-     ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
-     ;;                 elm-sort-imports-on-save t)
-
-     ;; scheme
-
      clojure
      ;; (clojure :variables clojure-enable-fancify-symbols t) ;; macos specific
      clojure-lint
@@ -70,18 +65,23 @@ values."
      (shell :variables shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; osx - macos specific
      (auto-completion :variables auto-completion-enable-help-tooltip t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
                                  auto-completion-return-key-behavior 'complete
                                  auto-completion-tab-key-behavior 'cycle)
      git
+     version-control
      (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      dash
      themes-megapack
-     version-control
+     ;; osx - macos specific
+     ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
+     ;;                 elm-sort-imports-on-save t)
+
+     ;; scheme
+
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
