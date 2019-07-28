@@ -90,6 +90,7 @@ values."
    dotspacemacs-additional-packages '(editorconfig
                                       pretty-mode
                                       kibit-helper
+                                      flycheck-clj-kondo
                                       flycheck-joker)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -363,48 +364,60 @@ you should place your code here."
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
   (add-hook 'cider-repl-mode-hook #'company-mode)
   (add-hook 'cider-mode-hook #'company-mode)
+  (setq cider-font-lock-dynamically '(macro core function var))
 
-  (require 'flycheck-joker)
-
-  ;; Scala
-  (setq flycheck-scalastyle-jar
-        "~/Lang/Scala/ScalaLib/scalastyle_2.12.jar")
-  (setq flycheck-scalastylerc
-        "~/Lang/Scala/ScalaLib/scalastyle_config.xml")
-  (defcustom
-    scala-mode-prettify-symbols
-    '(("->" . ?→)
-      ("<-" . ?←)
-      ("=>" . ?⇒)
-      ("<=" . ?≤)
-      (">=" . ?≥)
-      ("!=" . ?≠)
-      ("implicit" . ?ⅈ))
-    "Prettify symbols for scala-mode.")
-
-  (use-package scala-mode
-    :pin melpa
-    :interpreter ("scala" . scala-mode)
+  (use-package clojure-mode
+    :ensure t
     :config
-    (add-hook 'scala-mode-hook
-	            (lambda ()
-	              (setq prettify-symbols-alist scala-mode-prettify-symbols)
-	              (prettify-symbols-mode t)
-	              (setq fill-column 80)
-	              (ensime-mode))))
+    (require 'flycheck-joker)
+    (require 'flycheck-clj-kondo)
+    (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+      (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+    (dolist (checkers '((clj-kondo-clj . clojure-joker)
+                        (clj-kondo-cljs . clojurescript-joker)
+                        (clj-kondo-cljc . clojure-joker)
+                        (clj-kondo-edn . edn-joker)))
+      (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
 
-  ;; Enhanced Scala Interaction Mode for text Editors
-  (use-package ensime
-    :pin melpa ;; pining to melpa uses cutting-edge snapshot version
-    :commands ensime ensime-mode
-    :init
-    :config
-    (require 'ensime-expand-region)
-    (setq ensime-startup-notification nil
-	        ensime-startup-snapshot-notification nil))
+  ;; ;; Scala
+  ;; (setq flycheck-scalastyle-jar
+  ;;       "~/Lang/Scala/ScalaLib/scalastyle_2.12.jar")
+  ;; (setq flycheck-scalastylerc
+  ;;       "~/Lang/Scala/ScalaLib/scalastyle_config.xml")
+  ;; (defcustom
+  ;;   scala-mode-prettify-symbols
+  ;;   '(("->" . ?→)
+  ;;     ("<-" . ?←)
+  ;;     ("=>" . ?⇒)
+  ;;     ("<=" . ?≤)
+  ;;     (">=" . ?≥)
+  ;;     ("!=" . ?≠)
+  ;;     ("implicit" . ?ⅈ))
+  ;;   "Prettify symbols for scala-mode.")
 
-  (use-package sbt-mode
-    :pin melpa)
+  ;; (use-package scala-mode
+  ;;   :pin melpa
+  ;;   :interpreter ("scala" . scala-mode)
+  ;;   :config
+  ;;   (add-hook 'scala-mode-hook
+	;;             (lambda ()
+	;;               (setq prettify-symbols-alist scala-mode-prettify-symbols)
+	;;               (prettify-symbols-mode t)
+	;;               (setq fill-column 80)
+	;;               (ensime-mode))))
+
+  ;; ;; Enhanced Scala Interaction Mode for text Editors
+  ;; (use-package ensime
+  ;;   :pin melpa ;; pining to melpa uses cutting-edge snapshot version
+  ;;   :commands ensime ensime-mode
+  ;;   :init
+  ;;   :config
+  ;;   (require 'ensime-expand-region)
+  ;;   (setq ensime-startup-notification nil
+	;;         ensime-startup-snapshot-notification nil))
+
+  ;; (use-package sbt-mode
+  ;;   :pin melpa)
 
   (setq-default
    git-magit-status-fullscreen t
@@ -426,44 +439,105 @@ you should place your code here."
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
 
+  ;; START - using Using prettify-symbols
+  (defun fira-code-mode--make-alist (list)
+    "Generate prettify-symbols alist from LIST."
+    (let ((idx -1))
+      (mapcar
+      (lambda (s)
+        (setq idx (1+ idx))
+        (let* ((code (+ #Xe100 idx))
+            (width (string-width s))
+            (prefix ())
+            (suffix '(?\s (Br . Br)))
+            (n 1))
+      (while (< n width)
+        (setq prefix (append prefix '(?\s (Br . Bl))))
+        (setq n (1+ n)))
+      (cons s (append prefix suffix (list (decode-char 'ucs code))))))
+      list)))
+
+  (defconst fira-code-mode--ligatures
+    '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+      "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+      "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+      "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+      ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+      "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+      "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+      "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+      ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+      "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+      "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+      "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+      "x" ":" "+" "+" "*"))
+
+  (defvar fira-code-mode--old-prettify-alist)
+
+  (defun fira-code-mode--enable ()
+    "Enable Fira Code ligatures in current buffer."
+    (setq-local fira-code-mode--old-prettify-alist prettify-symbols-alist)
+    (setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist))
+    (prettify-symbols-mode t))
+
+  (defun fira-code-mode--disable ()
+    "Disable Fira Code ligatures in current buffer."
+    (setq-local prettify-symbols-alist fira-code-mode--old-prettify-alist)
+    (prettify-symbols-mode -1))
+
+  (define-minor-mode fira-code-mode
+    "Fira Code ligatures minor mode"
+    :lighter " Fira Code"
+    (setq-local prettify-symbols-unprettify-at-point 'right-edge)
+    (if fira-code-mode
+        (fira-code-mode--enable)
+      (fira-code-mode--disable)))
+
+  (defun fira-code-mode--setup ()
+    "Setup Fira Code Symbols"
+    (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
+
+  (provide 'fira-code-mode)
+  ;; END - using Using prettify-symbols
+
   ;; (mac-auto-operator-composition-mode) ;; macos specific for ligature
 
-  ;; Ligature: For Linux
-  ;;               or macos if not using (mac-auto-operator-composition-mode) and fancify
-  (when (window-system)
-    (set-frame-font "Fira Code"))
-  (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
-               (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
-               (36 . ".\\(?:>\\)")
-               (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
-               (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
-               (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
-               (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-               (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-               ;; (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
-               (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
-               (48 . ".\\(?:x[a-zA-Z]\\)")
-               (58 . ".\\(?:::\\|[:=]\\)")
-               (59 . ".\\(?:;;\\|;\\)")
-               (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
-               (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
-               (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
-               ;; (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
-               (91 . ".\\(?:]\\)")
-               (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
-               (94 . ".\\(?:=\\)")
-               (119 . ".\\(?:ww\\)")
-               (123 . ".\\(?:-\\)")
-               (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-               )))
-  (dolist (char-regexp alist)
-    (set-char-table-range composition-function-table (car char-regexp)
-                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
-  (add-hook 'helm-major-mode-hook
-            (lambda ()
-              (setq auto-composition-mode nil)))
-  ;; Ligature - end
+  ;; ;; Ligature: For Linux
+  ;; ;;               or macos if not using (mac-auto-operator-composition-mode) and fancify
+  ;; (when (window-system)
+  ;;   (set-frame-font "Fira Code"))
+  ;; (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+  ;;              (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+  ;;              (36 . ".\\(?:>\\)")
+  ;;              (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+  ;;              (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+  ;;              (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+  ;;              (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+  ;;              (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+  ;;              ;; (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+  ;;              (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+  ;;              (48 . ".\\(?:x[a-zA-Z]\\)")
+  ;;              (58 . ".\\(?:::\\|[:=]\\)")
+  ;;              (59 . ".\\(?:;;\\|;\\)")
+  ;;              (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+  ;;              (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+  ;;              (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+  ;;              ;; (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+  ;;              (91 . ".\\(?:]\\)")
+  ;;              (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+  ;;              (94 . ".\\(?:=\\)")
+  ;;              (119 . ".\\(?:ww\\)")
+  ;;              (123 . ".\\(?:-\\)")
+  ;;              (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+  ;;              (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+  ;;              )))
+  ;; (dolist (char-regexp alist)
+  ;;   (set-char-table-range composition-function-table (car char-regexp)
+  ;;                         `([,(cdr char-regexp) 0 font-shape-gstring]))))
+  ;; (add-hook 'helm-major-mode-hook
+  ;;           (lambda ()
+  ;;             (setq auto-composition-mode nil)))
+  ;; ;; Ligature - end
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -481,7 +555,7 @@ you should place your code here."
  '(fci-rule-color "#343d46" t)
  '(package-selected-packages
    (quote
-    (kibit-helper flycheck-joker transient lv yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic winum sesman evil-cleverparens spacegray-dark-theme pretty-mode white-sand-theme rebecca-theme org-mime exotica-theme ghub let-alist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot rainbow-mode rainbow-identifiers color-identifiers-mode noflet ensime sbt-mode scala-mode zeal-at-point solarized-theme madhat2r-theme fuzzy company-emacs-eclim eclim editorconfig insert-shebang fish-mode company-shell geiser clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode flycheck-elm elm-mode vimrc-mode dactyl-mode evil-easymotion enh-ruby-mode flyspell-correct-helm flyspell-correct auto-dictionary git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl company-quickhelp helm-dash dash-at-point zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode projectile-rails inflections livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-css-scss haml-mode feature-mode emmet-mode company-web web-completion-data company-tern dash-functional tern coffee-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl xterm-color smeargle shell-pop orgit org multi-term magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link flycheck-pos-tip pos-tip flycheck-haskell evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet company-statistics company-cabal auto-yasnippet ac-ispell auto-complete rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby mmm-mode markdown-toc markdown-mode gh-md intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+    (flycheck-clj-kondo kibit-helper flycheck-joker transient lv yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic winum sesman evil-cleverparens spacegray-dark-theme pretty-mode white-sand-theme rebecca-theme org-mime exotica-theme ghub let-alist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot rainbow-mode rainbow-identifiers color-identifiers-mode noflet ensime sbt-mode scala-mode zeal-at-point solarized-theme madhat2r-theme fuzzy company-emacs-eclim eclim editorconfig insert-shebang fish-mode company-shell geiser clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode flycheck-elm elm-mode vimrc-mode dactyl-mode evil-easymotion enh-ruby-mode flyspell-correct-helm flyspell-correct auto-dictionary git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl company-quickhelp helm-dash dash-at-point zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode projectile-rails inflections livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-css-scss haml-mode feature-mode emmet-mode company-web web-completion-data company-tern dash-functional tern coffee-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl xterm-color smeargle shell-pop orgit org multi-term magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link flycheck-pos-tip pos-tip flycheck-haskell evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet company-statistics company-cabal auto-yasnippet ac-ispell auto-complete rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby mmm-mode markdown-toc markdown-mode gh-md intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
  '(standard-indent 2)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
