@@ -21,7 +21,8 @@ ln -sfv $script/.joker .joker
 
 ln -sfnv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 
-cd .config
+cd ~/.config
+rm -rf ranger
 ln -sfnv $script/ranger ranger
 ln -sfv $script/redshift.conf redshift.conf
 
