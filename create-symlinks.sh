@@ -34,7 +34,6 @@ mkdir -p $HOME/.jokerd
 cd $HOME/.jokerd
 ln -sfv $script/joker-linter.cljc linter.cljc
 
-
 mkdir -p $HOME/.ghc
 chmod go-w $HOME/.ghc
 cd $HOME/.ghc
@@ -51,7 +50,6 @@ cd $HOME/$sbtPlugins
 ln -sfv $script/$sbtPlugins/plugins.sbt plugins.sbt
 cd $HOME/.sbt
 ln -sfv $script/linux-only-perso/sbt-credentials-nexus .credentials
-
 
 # Disable for now
 # cd $HOME/$sbtConfigFolder
