@@ -428,6 +428,8 @@ you should place your code here."
 
   (setq vc-follow-symlinks t)
 
+  (setq create-lockfiles nil)
+
   ;; Clojure-Cider
   (add-to-list 'exec-path "/usr/local/bin") ; for Haskell/Cabal, might need similar "~/.cabal/bin/"
   (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
