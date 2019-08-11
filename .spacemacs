@@ -87,12 +87,17 @@ This function should only modify configuration layer settings."
      vimscript
      dash
      themes-megapack
+     (ranger :variables
+             ranger-show-preview t
+             ranger-show-hidden t
+             ranger-cleanup-eagerly t
+             ranger-cleanup-on-disable t
+             ranger-ignored-extensions '("mkv" "flv" "iso" "mp4"))
      ;; osx - macos specific
      ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
      ;;                 elm-sort-imports-on-save t)
 
      ;; scheme
-
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
