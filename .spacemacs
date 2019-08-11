@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
-     ;; treemacs
+     treemacs
      version-control
 
      ;; Install gems: pry, pry-doc, ruby_parser, rubocop
