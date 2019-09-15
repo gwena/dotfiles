@@ -4,39 +4,38 @@ filetype off   " required  Arhhhh!!
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'aklt/plantuml-syntax'
-Plugin 'ervandew/supertab'
-Plugin 'jgdavey/tslime.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'majutsushi/tagbar'
-Plugin 'adimit/prolog.vim'
-Plugin 'brooth/far.vim'
+ Plugin 'VundleVim/Vundle.vim'
+ Plugin 'Raimondi/delimitMate'
+ Plugin 'aklt/plantuml-syntax'
+ Plugin 'ervandew/supertab'
+ Plugin 'jgdavey/tslime.vim'
+ Plugin 'ctrlpvim/ctrlp.vim'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'scrooloose/syntastic'
+ Plugin 'thoughtbot/vim-rspec'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'tpope/vim-unimpaired'
+ Plugin 'tpope/vim-surround'
+ Plugin 'vim-ruby/vim-ruby'
+ Plugin 'Lokaltog/vim-easymotion'
+ Plugin 'majutsushi/tagbar'
+ Plugin 'adimit/prolog.vim'
+ Plugin 'brooth/far.vim'
 
 " Scala - when not using emacs
-Plugin 'derekwyatt/vim-scala'
+ Plugin 'derekwyatt/vim-scala'
 
 " Haskell
-Plugin 'dag/vim2hs'
-Plugin 'hdevtools/hdevtools'
+ Plugin 'dag/vim2hs'
+ Plugin 'hdevtools/hdevtools'
 
 " Color Schemes and Airline themes
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"
+ Plugin 'tomasr/molokai'
+ Plugin 'altercation/vim-colors-solarized'
+ Plugin 'dracula/vim'
+ Plugin 'vim-airline/vim-airline'
+ Plugin 'vim-airline/vim-airline-themes'
+
 " Not needed anymore/for the moment
 " PlantUML - https://github.com/aklt/plantuml-syntax
 " Zim Wiki Plugin 'jakykong/vim-zim' " Plugin 'vim-scripts/zim-syntax'
