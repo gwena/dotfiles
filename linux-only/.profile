@@ -56,6 +56,8 @@ fi
 export I3BLOCKS_SCRIPTS=$HOME/Documents/Scripts/i3blocks-scripts
 export I3_SCRIPTS=$HOME/Documents/Scripts/i3-scripts
 
+export JDK_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 # Homebrew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
