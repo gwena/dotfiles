@@ -11,6 +11,7 @@ ln -sfv $script/.vimrc .vimrc
 ln -sfv $script/.ideavimrc .ideavimrc
 ln -sfv $script/.tmux.conf .tmux.conf
 ln -sfv $script/.gitconfig .gitconfig
+ln -sfv $script/.gitignore_global .gitignore_global
 ln -sfv $script/.ackrc .ackrc
 ln -sfv $script/.agignore .agignore
 ln -sfv $script/.inputrc .inputrc
