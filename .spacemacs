@@ -75,16 +75,17 @@ This function should only modify configuration layer settings."
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
 
-     clojure
+     ;; clojure
+     (clojure :variables
+              clojure-enable-linters 'clj-kondo)
      ;; (clojure :variables clojure-enable-fancify-symbols t) ;; macos specific
-     clojure-lint
+     ;; clojure-lint
 
      java
      (scala :variables scala-enable-eldoc t
                        scala-use-unicode-arrows t
                        scala-auto-start-ensime nil)
      python
-     vimscript
      dash
      themes-megapack
      (ranger :variables
@@ -93,6 +94,7 @@ This function should only modify configuration layer settings."
              ranger-cleanup-eagerly t
              ranger-cleanup-on-disable t
              ranger-ignored-extensions '("mkv" "flv" "iso" "mp4"))
+     ;; vimscript
      ;; osx - macos specific
      ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
      ;;                 elm-sort-imports-on-save t)
@@ -109,8 +111,8 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(editorconfig
                                       pretty-mode
                                       kibit-helper
-                                      flycheck-clj-kondo
                                       flycheck-joker)
+                                      ;;flycheck-clj-kondo - remove as different way now
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -442,18 +444,18 @@ you should place your code here."
   (add-hook 'cider-mode-hook #'company-mode)
   (setq cider-font-lock-dynamically '(macro core function var))
 
-  (use-package clojure-mode
-    :ensure t
-    :config
-    (require 'flycheck-joker)
-    (require 'flycheck-clj-kondo)
-    (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
-      (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
-    (dolist (checkers '((clj-kondo-clj . clojure-joker)
-                        (clj-kondo-cljs . clojurescript-joker)
-                        (clj-kondo-cljc . clojure-joker)
-                        (clj-kondo-edn . edn-joker)))
-      (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
+  ;; (use-package clojure-mode
+  ;;   :ensure t
+  ;;   :config
+  ;;   (require 'flycheck-joker)
+  ;;   ;; (require 'flycheck-clj-kondo)
+  ;;   (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+  ;;     (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+  ;;   (dolist (checkers '((clj-kondo-clj . clojure-joker)
+  ;;                       (clj-kondo-cljs . clojurescript-joker)
+  ;;                       (clj-kondo-cljc . clojure-joker)
+  ;;                       (clj-kondo-edn . edn-joker)))
+  ;;     (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
 
   ;; ;; Scala
   ;; (setq flycheck-scalastyle-jar
