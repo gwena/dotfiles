@@ -1,0 +1,47 @@
+Xft.dpi:                        109
+URxvt*termName:                 rxvt-256color
+URxvt*font:                     xft:DroidSansMono Nerd Font Mono:pixelsize=14
+URxvt.depth:                    0
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+! URxvt.internalBorder:           35
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
+
+! Needed for less
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! URxvt.perl-ext-common:          default,clipboard
+URxvt.perl-ext-common: matcher,font-size,keyboard-select,clipboard
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+! Colors
+! *cursorColor:  #9aedfe
+*cursorColor:  #e85f26
+
+! Dracula color scheme
+URxvt.foreground: #F8F8F2
+URxvt.background: #282A36
+URxvt.color0:     #000000
+URxvt.color8:     #44475A
+URxvt.color1:     #FF5555
+URxvt.color9:     #FFB86C
+URxvt.color2:     #50FA7B
+URxvt.color10:    #50FA7B
+URxvt.color3:     #E6DB74
+URxvt.color11:    #F1FA8C
+URxvt.color4:     #6272A4
+URxvt.color12:    #6272A4
+URxvt.color5:     #BD93F9
+URxvt.color13:    #FF79C6
+URxvt.color6:     #8BE9FD
+URxvt.color14:    #66D9EF
+URxvt.color7:     #666666
+URxvt.color15:    #FFFFFF
