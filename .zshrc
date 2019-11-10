@@ -68,7 +68,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # OS Specific: osx , Ubuntu: command-not-found
 # Removed: autojump - issue
 # Not used: cabal
-plugins=(command-not-found git git-extras github colorize history lein npm sbt scala docker kubectl)
+plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein npm sbt scala docker kubectl)
 
 # Only for Ubuntu
 source $ZSH/oh-my-zsh.sh
