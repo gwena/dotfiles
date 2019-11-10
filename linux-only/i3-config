@@ -25,6 +25,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# other app shortcuts
+bindsym $mod+n exec nautilus
+bindsym $mod+z exec urxvt -e ranger
+bindsym $mod+x exec /usr/bin/emacs
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
