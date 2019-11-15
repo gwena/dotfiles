@@ -37,7 +37,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 # only need to press Super, however make sure xcape in .profile has been setup
 bindsym $mod+Escape exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
-# bindsym $mod+Shift-d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 500 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "San Francisco Display 18" -hlfg "#9575cd"
+bindsym $mod+Shift-d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 500 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "San Francisco Display 18" -hlfg "#9575cd"
 
 # change focus
 bindsym $mod+h focus left
@@ -257,7 +257,7 @@ for_window [class="(?i)Slack"] border none
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id duplicati
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wood.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/galaxy.jpg
 exec --no-startup-id emacs --daemon &
 
 # Color scheme (Gruvbox dark)
