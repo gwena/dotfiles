@@ -257,11 +257,13 @@ for_window [class="(?i)Slack"] border none
 
 # Autostart
 # exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/galaxy.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
-exec --no-startup-id duplicati
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/galaxy.jpg
 exec --no-startup-id emacs --daemon &
+exec --no-startup-id flameshot
+exec --no-startup-id parcellite
+# exec --no-startup-id duplicati # Need to fix it
 
 # Color scheme (Gruvbox dark)
 set $color_normal_white  #a89984
