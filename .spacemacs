@@ -86,6 +86,7 @@ This function should only modify configuration layer settings."
                        scala-use-unicode-arrows t
                        scala-auto-start-ensime nil)
      python
+     docker
      dash
      themes-megapack
      (ranger :variables
