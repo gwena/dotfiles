@@ -31,6 +31,10 @@ mkdir -p $HOME/.lein
 cd $HOME/.lein
 ln -sfv $script/.lein/profiles.clj profiles.clj
 
+mkdir -p $HOME/.clojure
+cd $HOME/.clojure
+ln -sfv $script/.clojure/deps.edn deps.edn
+
 mkdir -p $HOME/.jokerd
 cd $HOME/.jokerd
 ln -sfv $script/joker-linter.cljc linter.cljc
