@@ -37,12 +37,6 @@ setxkbmap -layout 'us(altgr-intl)'
 xmodmap -e 'remove Control = Control_R'
 xmodmap -e 'add Mod4 = Control_R'
 
-# Should do the same for the Caps Lock Key for symetry
-
-# Remap Capslock to Esc
-xmodmap -e "clear lock"
-xmodmap -e "keysym Caps_Lock = Escape"
-
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
 
