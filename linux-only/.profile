@@ -21,10 +21,12 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Mostly key mappings
 
+# sudo dpkg-reconfigure keyboard-configuration
 # Configure Compose Key to be AltGr for the accents
 setxkbmap -layout 'us(altgr-intl)'
+# See kc kq alias if needed to switch
+setxkbmap us -variant colemak
 
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
