@@ -118,3 +118,5 @@ export NVM_DIR="$HOME/.nvm"
 # Autojump - Disabled as issue
 # [[ -s /home/gwena/.autojump/etc/profile.d/autojump.sh ]] && source /home/gwena/.autojump/etc/profile.d/autojump.sh
 # autoload -U compinit && compinit -u
+
+source /home/gwena/.config/broot/launcher/bash/br
