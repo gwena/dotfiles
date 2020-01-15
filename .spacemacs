@@ -88,18 +88,19 @@ This function should only modify configuration layer settings."
      python
      docker
      dash
-     themes-megapack
      (ranger :variables
              ranger-show-preview t
              ranger-show-hidden t
              ranger-cleanup-eagerly t
              ranger-cleanup-on-disable t
              ranger-ignored-extensions '("mkv" "flv" "iso" "mp4"))
+
+     ;; Not needed anymore (at least for now)
+     ;; themes-megapack
      ;; vimscript
      ;; osx - macos specific
      ;; (elm :variables elm-reactor-port "8000" ; back to default 8000
      ;;                 elm-sort-imports-on-save t)
-
      ;; scheme
      )
    ;; List of additional packages that will be installed without being
