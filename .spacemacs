@@ -85,10 +85,13 @@ This function should only modify configuration layer settings."
               )
 
      java
+
      (scala :variables scala-enable-eldoc t
                        scala-use-unicode-arrows t
                        scala-auto-start-ensime nil)
-     python
+
+     (python :variables python-backend 'lsp)
+
      docker
      dash
      (ranger :variables
