@@ -75,11 +75,14 @@ This function should only modify configuration layer settings."
      html
      (javascript :variables javascript-disable-tern-missing-warning t)
 
-     ;; clojure
      (clojure :variables
-              clojure-enable-linters 'clj-kondo)
-     ;; (clojure :variables clojure-enable-fancify-symbols t) ;; macos specific
-     ;; clojure-lint
+              clojure-enable-linters 'clj-kondo
+              clojure-enable-clj-refactor t
+              cljr-add-ns-to-blank-clj-files t
+              cljr-auto-sort-ns t
+              cljr-magic-requires t
+              clojure-enable-fancify-symbols t
+              )
 
      java
      (scala :variables scala-enable-eldoc t
