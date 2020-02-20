@@ -525,6 +525,18 @@ you should place your code here."
   ;; yes, finally can move between windows easily
   (windmove-default-keybindings)
 
+  ;; avoid org mode way for arrow keys - TO FIX/NOT WORKING
+  (setq org-replace-disputed-keys t)
+  (setq org-support-shift-select 'always)
+  (add-hook 'org-shiftup-final-hook 'windmove-up)
+  (add-hook 'org-shiftleft-final-hook 'windmove-left)
+  (add-hook 'org-shiftdown-final-hook 'windmove-down)
+  (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+  (define-key smartparens-mode-map (kbd "M-(") 'sp-wrap-round)
+  (define-key smartparens-mode-map (kbd "M-[") 'sp-wrap-square)
+  (define-key smartparens-mode-map (kbd "M-{") 'sp-wrap-curly)
+
   ;; START - using Using prettify-symbols
   (defun fira-code-mode--make-alist (list)
     "Generate prettify-symbols alist from LIST."
