@@ -29,9 +29,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+n exec nautilus
 bindsym $mod+z exec urxvt -e ranger
 bindsym $mod+x exec /usr/bin/emacs
-# @TODO - Use $SCRIPTS - was not evaluated
-bindsym $mod+p exec /home/gwena/Documents/Scripts/pulse-unmute.sh
-bindsym $mod+Shift+p exec /home/gwena/Documents/Scripts/pulse-mute.sh
+bindsym $mod+p exec ~/Documents/Scripts/pulse-unmute.sh
+bindsym $mod+Shift+p exec ~/Documents/Scripts/pulse-mute.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -208,7 +207,7 @@ assign [class="(?i)google-chrome"] 1
 assign [class="nautilus"] 2
 assign [class="(?i)slack"] 9
 # Bug with Spotify, https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace 10
+for_window [class="Spotify"] move to workspace 0
 
 # Floating for pop up type windows
 # Based on https://www.reddit.com/r/i3wm/comments/62epdo/how_can_i_launch_dialog_windows_in_floating_mode/
@@ -231,7 +230,7 @@ for_window [class="(?i)Slack"] border none
 
 # Autostart
 # exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/galaxy.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/HVtFzWG.png
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id emacs --daemon &
