@@ -31,6 +31,9 @@ setxkbmap us -variant colemak
 # Default behavior of xcape: map Control_L to Esc is released
 xcape
 
+# No suspend/screen blanker
+xset dpms 0 0 0
+
 # Only for i3
 # Map Super to "non" existing key, will be used by i3wm to map Super alone (simpler, same as Gnome)
 if [ $XDG_CURRENT_DESKTOP = "i3" ]; then
