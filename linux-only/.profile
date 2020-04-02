@@ -49,4 +49,8 @@ export JDK_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # Homebrew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-sh $HOME/Documents/Scripts/dotfiles/linux-only-perso/profile-private.sh
+source $HOME/Documents/Scripts/dotfiles/linux-only-perso/profile-private.sh
+
+# Turn off system beep in console:
+xset b off
+xset b 0 0 0
