@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
      helm
      markdown
      ;; multiple-cursors
-     org
+     org ;; (org :variables org-enable-trello-support t)
      (shell :variables shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
@@ -217,8 +217,8 @@ values."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code" ;; "Source Code Pro for Powerline" ;; "Fira Code Retina"
-                               :size 13
+   dotspacemacs-default-font '("Fira Code" ;;"Source Code Pro for Powerline" "Fira Code Retina"
+                               :size 12
                                :weight normal
                                :width condensed
                                :powerline-scale 1.1)
