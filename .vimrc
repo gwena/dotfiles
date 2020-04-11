@@ -84,7 +84,7 @@ set wildmenu
 set foldmethod=manual
 set nofoldenable
 " Default global line sub
-set gdefault 
+set gdefault
 " Use of ack instead of grep, see Vim Practical Tip 109
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
@@ -114,7 +114,7 @@ augroup vimrcEx
   " au FileType zim setlocal noexpandtab
 augroup END
 
-" To be able to use % for not only single character, really really cool!! 
+" To be able to use % for not only single character, really really cool!!
 " Work in Ruby and more. Need to have filetype plugin on, and set nocompatible
 runtime macros/matchit.vim
 
@@ -149,7 +149,7 @@ let mapleader = ','
 
 set clipboard=unnamed
 vmap <C-c> "+y
-noremap <C-v> p 
+noremap <C-v> p
 
 " to be able to use C-s to save - heah, that was a long time
 " and now in both cases after saving I stay Esc, as more logical
