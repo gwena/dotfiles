@@ -1,6 +1,15 @@
 Xft.dpi:                        109
 URxvt*termName:                 rxvt-256color
-URxvt*font:                     xft:DroidSansMono Nerd Font Mono:pixelsize=14
+
+! URxvt.font:           xft:DroidSansMono Nerd Font Mono:pixelsize=14:Regular
+! URxvt.boldFont:       xft:DroidSansMono Nerd Font Mono:pixelsize=14:Bold
+! URxvt.italicFont:     xft:DroidSansMono Nerd Font Mono:pixelsize=14:Italic
+! URxvt.boldItalicFont: xft:DroidSansMono Nerd Font Mono:pixelsize=14:Bold:Italic
+URxvt.font:           xft:SauceCodePro Nerd Font Mono:pixelsize=14:Regular
+URxvt.boldFont:       xft:SauceCodePro Nerd Font Mono:pixelsize=14:Bold
+URxvt.italicFont:     xft:SauceCodePro Nerd Font Mono:pixelsize=14:Italic
+URxvt.boldItalicFont: xft:SauceCodePro Nerd Font Mono:pixelsize=14:Bold:Italic
+
 URxvt.depth:                    0
 URxvt*lineSpace:                1
 URxvt.letterSpace:              -1
@@ -10,20 +19,46 @@ URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
 ! URxvt.internalBorder:           35
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-URxvt.clipboard.autocopy:       true
 
-! Needed for less
+! Needed for less, but will not work with mouse
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-! URxvt.perl-ext-common:          default,clipboard
-URxvt.perl-ext-common: matcher,font-size,keyboard-select,clipboard
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.perl-ext-common: matcher,resize-font,keyboard-select
+
+! See https://github.com/muennich/urxvt-perls
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+
+! Follow url with left button (need matcher extension)
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.M-u: perl:matcher:select
+URxvt.matcher.rend.0: Uline Bold fg5
+
+! clipboard extension obsolete, see https://github.com/muennich/urxvt-perls/tree/master/deprecated
+! URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+! URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+! URxvt.clipboard.autocopy:       true
+
+! See https://github.com/simmel/urxvt-resize-font/blob/master/resize-font
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
 
 ! Colors
-! *cursorColor:  #9aedfe
 *cursorColor:  #e85f26
 
 ! Dracula color scheme
