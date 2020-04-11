@@ -20,7 +20,7 @@ call vundle#begin()
  Plugin 'Lokaltog/vim-easymotion'
  Plugin 'majutsushi/tagbar'
  Plugin 'adimit/prolog.vim'
- Plugin 'brooth/far.vim'
+" Plugin 'brooth/far.vim'
 
 " Scala - when not using emacs
  Plugin 'derekwyatt/vim-scala'
