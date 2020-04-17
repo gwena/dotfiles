@@ -61,6 +61,16 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# FZH related
+# Set fzf installation directory path
+export FZF_BASE=/home/linuxbrew/.linuxbrew/bin/fzf
+# Uncomment the following line to disable fuzzy completion
+# export DISABLE_FZF_AUTO_COMPLETION="true"
+# Uncomment the following line to disable key bindings (CTRL-T, CTRL-R, ALT-C)
+# export DISABLE_FZF_KEY_BINDINGS="true"
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -68,7 +78,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # OS Specific: osx , Ubuntu: command-not-found
 # Removed: autojump - issue
 # Not used: cabal
-plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein npm sbt scala docker kubectl)
+plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein npm sbt scala docker kubectl fzf)
 
 # Only for Ubuntu
 source $ZSH/oh-my-zsh.sh
@@ -120,3 +130,7 @@ export NVM_DIR="$HOME/.nvm"
 # autoload -U compinit && compinit -u
 
 source /home/gwena/.config/broot/launcher/bash/br
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
