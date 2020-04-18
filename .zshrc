@@ -68,8 +68,8 @@ export FZF_BASE=/home/linuxbrew/.linuxbrew/bin/fzf
 # export DISABLE_FZF_AUTO_COMPLETION="true"
 # Uncomment the following line to disable key bindings (CTRL-T, CTRL-R, ALT-C)
 # export DISABLE_FZF_KEY_BINDINGS="true"
-# Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
+# Setting fd as the default source for fzf (use full name as if use alias then issue)
+export FZF_DEFAULT_COMMAND='fdfind --type f'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
