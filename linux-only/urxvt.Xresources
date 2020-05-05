@@ -10,15 +10,18 @@ URxvt.boldFont:       xft:SauceCodePro Nerd Font Mono:pixelsize=14:Bold
 URxvt.italicFont:     xft:SauceCodePro Nerd Font Mono:pixelsize=14:Italic
 URxvt.boldItalicFont: xft:SauceCodePro Nerd Font Mono:pixelsize=14:Bold:Italic
 
-URxvt.depth:                    0
-URxvt*lineSpace:                1
-URxvt.letterSpace:              -1
-URxvt.iso14755:                 false
-URxvt.iso14755_52:              false
-URxvt*geometry:                 65x17
-URxvt.scrollBar:                false
-URxvt*loginShell:               true
+URxvt.depth:            0
+URxvt*lineSpace:        1
+URxvt.letterSpace:      -1
+URxvt*geometry:         65x17
+URxvt.scrollBar:        false
+URxvt*loginShell:       true
+urxvt.saveLines:        100000
 ! URxvt.internalBorder:           35
+
+!Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
 
 ! Needed for less, but will not work with mouse
 URxvt.secondaryScreen: 1
