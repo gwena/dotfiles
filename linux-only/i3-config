@@ -222,6 +222,7 @@ exec --no-startup-id emacs --daemon &
 exec --no-startup-id flameshot
 exec --no-startup-id parcellite
 # exec --no-startup-id duplicati # Need to fix it
+exec --no-startup-id pasystray
 
 # Color scheme (Gruvbox dark)
 set $color_normal_white  #a89984
