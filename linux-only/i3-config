@@ -28,6 +28,7 @@ bindsym $mod+n exec nautilus
 bindsym $mod+z exec urxvt -e ranger
 bindsym $mod+x exec /usr/bin/emacs
 bindsym $mod+c exec zenity --calendar
+# To remove at obsolete now with new volume control
 bindsym $mod+p exec ~/Documents/Scripts/pulse-unmute.sh
 bindsym $mod+Shift+p exec ~/Documents/Scripts/pulse-mute.sh
 
@@ -116,8 +117,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # window-jumper
 bindsym $mod+g exec $I3_SCRIPTS/dmenu-i3-window-jumper.sh
 
@@ -181,15 +184,12 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-# bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+Shift+e mode "$mode_system"
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#
+
 # Specified workspace
 assign [class="(?i)Chromium"] 1
 assign [class="(?i)google-chrome"] 1
-# assign [class="ranger"] 2
-assign [class="nautilus"] 2
 assign [class="(?i)slack"] 9
 # Bug with Spotify, https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace 0
