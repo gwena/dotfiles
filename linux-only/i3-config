@@ -155,15 +155,11 @@ bindsym $mod+semicolon        exec --no-startup-id $screen-layout/single-awesome
 bindsym Ctrl+Mod1+L exec i3lock
 
 # Volume handling
-# bindsym XF86AudioMute        exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
-# bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +3% && killall -SIGUSR1 i3status
-# bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -3% && killall -SIGUSR1 i3status
-# Change volume or toggle mute
+# Use xev to find values below
+set $XF86AudioLowerVolume 0x1008ff11
+set $XF86AudioRaiseVolume 0x1008ff13
+set $XF86AudioMute        0x1008ff12
 # the number 1 in -RTMIN+1 can be replaced to another signal number, as long as it agrees what you put for signal= in your i3blocks config
-set $XF86AudioLowerVolume 0xffbf
-set $XF86AudioRaiseVolume 0xffc0
-set $XF86AudioMute        0xffbe
-# Defined above as variable, remove $ if not using them
 bindsym $XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-    && pkill -RTMIN+1 i3blocks
 bindsym $XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+    && pkill -RTMIN+1 i3blocks
 bindsym $XF86AudioMute        exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
