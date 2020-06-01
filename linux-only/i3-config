@@ -218,7 +218,7 @@ for_window [class="(?i)Slack"]    border none
 # exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/HVtFzWG.png
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id flameshot
 exec --no-startup-id parcellite
