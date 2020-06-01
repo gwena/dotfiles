@@ -24,6 +24,7 @@ floating_modifier $mod
 
 # apps shortcuts
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec urxvt -e bash
 bindsym $mod+n exec nautilus
 bindsym $mod+z exec urxvt -e ranger
 bindsym $mod+x exec /usr/bin/emacs
