@@ -1,4 +1,5 @@
-Xft.dpi:                        109
+! 34" monitor is 110, rather use a multiple of 96, however here with 1.2
+Xft.dpi:                        115.2
 URxvt*termName:                 rxvt-256color
 
 ! URxvt.font:           xft:DroidSansMono Nerd Font Mono:pixelsize=14:Regular
