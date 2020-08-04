@@ -8,6 +8,7 @@ ln -sfv $script/.bashrc .bashrc
 ln -sfv $script/.sharedrc .sharedrc
 ln -sfv $script/.spacemacs .spacemacs
 ln -sfv $script/.vimrc .vimrc
+ln -sfv $script/.alacritty.yml .alacritty.yml
 ln -sfv $script/.ideavimrc .ideavimrc
 ln -sfv $script/.tmux.conf .tmux.conf
 ln -sfv $script/.gitconfig .gitconfig
