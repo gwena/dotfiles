@@ -120,7 +120,8 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(editorconfig
                                       pretty-mode
                                       kibit-helper
-                                      flycheck-joker)
+                                      flycheck-joker
+                                      4clojure)
                                       ;;flycheck-clj-kondo - remove as different way now
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
