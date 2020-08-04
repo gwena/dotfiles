@@ -5,7 +5,6 @@ filetype off   " required  Arhhhh!!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
  Plugin 'VundleVim/Vundle.vim'
- Plugin 'Raimondi/delimitMate'
  Plugin 'aklt/plantuml-syntax'
  Plugin 'ervandew/supertab'
  Plugin 'jgdavey/tslime.vim'
