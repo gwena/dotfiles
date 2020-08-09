@@ -207,7 +207,6 @@ for_window [class="(?i)arandr"]           floating enable
 for_window [class="Yad"]                  floating enable
 for_window [class="Evernote Web Clipper"] floating enable
 for_window [class="(?i)blueman"]          floating enable
-for_window [class=zoom]                   floating enable
 for_window [class="(?i)pavucontrol"]      floating enable
 for_window [class="(?i)nm-connection-editor"] floating enable
 # Limit floating window sizes
