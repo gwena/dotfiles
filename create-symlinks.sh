@@ -22,6 +22,7 @@ ln -sfv $script/.pryrc .pryrc
 ln -sfv $script/.joker .joker
 
 ln -sfnv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
+ln -sfnv $HOME/Documents/Scripts/doom.d .doom.d # Own Git Repo
 
 cd ~/.config
 rm -rf ranger
@@ -71,8 +72,9 @@ case "$(uname -s)" in
         ln -sfv $script/linux-only/.gvimrc .gvimrc
         ln -sfv $script/linux-only/.profile .profile
         ln -sfv $script/linux-only/urxvt.Xresources .Xresources
-        ln -sfnv $script/linux-only/.screenlayout .screenlayout
         ln -sfnv $script/linux-only/.urxvt .urxvt
+        ln -sfnv $script/linux-only/.screenlayout .screenlayout
+        ln -sfnv $script/linux-only-perso/.xsessionrc .xsessionrc
 
         cd $HOME/.config
         ln -sfnv $script/linux-only/config-terminator terminator
@@ -99,6 +101,6 @@ case "$(uname -s)" in
         ;;
 
     *)
-        echo '### Other OS - WEIRD!!!' 
+        echo '### Other OS - WEIRD!!!'
         ;;
 esac
