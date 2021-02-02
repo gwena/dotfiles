@@ -84,14 +84,13 @@ export FZF_BASE=/home/linuxbrew/.linuxbrew/bin/fzf
 # Setting fd as the default source for fzf (use full name as if use alias then issue)
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# OS Specific: osx , Ubuntu: command-not-found
-# Removed: autojump - issue
-# Not used: cabal
-plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein npm sbt scala docker kubectl fzf)
+# Not used at the moment: osx (specific) cabal, autojump (issue), npm, sbt, scala
+plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein docker kubectl fzf)
 
 # Only for Ubuntu
 source $ZSH/oh-my-zsh.sh
@@ -133,14 +132,6 @@ unalias grv
 
 # Shared Aliases and Exports by Bash and Zsh
 . ~/.sharedrc
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Autojump - Disabled as issue
-# [[ -s /home/gwena/.autojump/etc/profile.d/autojump.sh ]] && source /home/gwena/.autojump/etc/profile.d/autojump.sh
-# autoload -U compinit && compinit -u
 
 source /home/gwena/.config/broot/launcher/bash/br
 
