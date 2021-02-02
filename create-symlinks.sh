@@ -4,6 +4,7 @@ script="$HOME/Documents/Scripts/dotfiles"
 
 cd ~/
 ln -sfv $script/.zshrc .zshrc
+ln -sfv $script/.p10k.zsh .p10k.zsh
 ln -sfv $script/.bashrc .bashrc
 ln -sfv $script/.sharedrc .sharedrc
 ln -sfv $script/.spacemacs .spacemacs
