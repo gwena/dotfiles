@@ -134,11 +134,13 @@ unalias grv
 # Shared Aliases and Exports by Bash and Zsh
 . ~/.sharedrc
 
+# Fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 source /home/gwena/.config/broot/launcher/bash/br
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
