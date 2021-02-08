@@ -20,23 +20,23 @@ Plug 'tomasr/molokai'
 " Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-" BASIC CONFIG
+"" BASIC CONFIG
 colorscheme molokai
-syntax on             " Enable syntax highlighting
+syntax on
 set hidden
 set history=2000
-" timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays.
+"" timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays.
 set timeout timeoutlen=1000 ttimeoutlen=100
 set hlsearch
 set incsearch
-noh " clear the initial highlight after sourcing
+"" clear the initial highlight after sourcing
+noh
 set ignorecase smartcase
 set number
-" set relativenumber
-" treat all numerals as decimals (when using <C-x>)
+"" treat all numerals as decimals (when using <C-x>)
 set nrformats=
 set scrolloff=3
-set laststatus=2 " always show the status bar
+set laststatus=2
 set noswapfile
 set nobackup
 set nowritebackup
@@ -60,42 +60,26 @@ set wildmode=longest,list
 set wildmenu
 set foldmethod=manual
 set nofoldenable
-" Default global line sub
+"" Default global line sub
 set gdefault
-" Use of ack instead of grep, see Vim Practical Tip 109
-set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
 
-" AUTOCMDS
+"" AUTOCMDS
 augroup vimrcEx
-  " Clear all autocmds in the group
+  "" Clear all autocmds in the group
   autocmd!
   " Open the file at last cursor position
 	:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-  " autoindent with two spaces, always expand tabs
+  "" autoindent with two spaces, always expand tabs
   au BufNewFile,BufReadPost * set ai ts=2 sw=2 sts=2 et
-
-  " check for external file changes
-  " commented for the moment, was creating conflict with q/
-  " autocmd CursorHold,CursorMoved,BufEnter * checktime
-
-  " au BufEnter *.hs compiler ghc
-        " commented as remove some plugin before code kata
-
-  " Haskell, Hdevtools
-  au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-  au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-
-  " Zim Wiki - must not expand tabs to spaces
-  " au FileType zim setlocal noexpandtab
 augroup END
 
-" To be able to use % for not only single character, really really cool!!
-" Work in Ruby and more. Need to have filetype plugin on, and set nocompatible
+"" To be able to use % for not only single character, really really cool!!
+"" Work in Ruby and more. Need to have filetype plugin on, and set nocompatible
 runtime macros/matchit.vim
 
-" Cursor Color - Need to add shape (but problem with terminator)
+"" Cursor Color - Need to add shape (but problem with terminator)
 if &term =~ "xterm\\|rxvt"
   let &t_SI = "\<Esc>]12;red\x7"
   let &t_EI = "\<Esc>]12;lightblue\x7"
@@ -103,9 +87,7 @@ if &term =~ "xterm\\|rxvt"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
 endif
 
-" ~~~~~~~~~~~~
-" KEYS MAPPING
-" ~~~~~~~~~~~~
+"" KEYS MAPPING
 
 " Fast/Slow Finger: still on shift while typing w
 nnoremap ; :
@@ -113,7 +95,7 @@ command WQ wq
 command Wq wq
 command W w
 
-" Easier Split navigations
+"" Easier Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -140,78 +122,13 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 map <leader>e :edit %%
 map <leader>v :view %%
 
-nmap <F8> :TagbarToggle<CR>
-imap <F8> <Esc>:TagbarToggle<CR>a
+" nmap <F8> :TagbarToggle<CR>
+" imap <F8> <Esc>:TagbarToggle<CR>a
 
 "inoremap <c-s> <esc>:w<CR>
 "map <c-s> <c-c>:w<CR>
 
-" tslime (tmux stuff)
-vmap <leader>ts <Plug>SendSelectionToTmux
-nmap <leader>ts <Plug>NormalModeSendToTmux
-map <leader>trm <Plug>SetTmuxVars
-
-" delimitMate
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 1
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" Haskell
-let g:haskell_conceal_wide = 1
-    " needed if want more than 1 character to be change: e.g -> Sum, <- ::
-
 " Cursor shape - for iTerm2 on OS X
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" Silver Searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  let g:ctrlp_use_caching = 0
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
-endif
-
-" For Haskell to fix highlight with dag/vim2hs
-hi clear Conceal
-
-" For Haskell with hasktags (cabal) and Vim's Tagbar
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
