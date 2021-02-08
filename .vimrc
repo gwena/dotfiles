@@ -1,7 +1,27 @@
 " Gwena's .vimrc file, with the help of GitHub's repos, Practical Vim, etc.
 set nocompatible
 
+call plug#begin('~/.vim/plugged')
+Plug 'tomasr/molokai'
+" Plug 'ervandew/supertab'
+" Plug 'jgdavey/tslime.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/syntastic'
+" Plug 'thoughtbot/vim-rspec'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-surround'
+" Plug 'Lokaltog/vim-easymotion'
+" Plug 'brooth/far.vim'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'dracula/vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
 " BASIC CONFIG
+colorscheme molokai
 syntax on             " Enable syntax highlighting
 set hidden
 set history=2000
@@ -24,7 +44,6 @@ set nowrap
 set backspace=indent,eol,start " allow backspacing over everything in insert mode"
 set mouse=a
 set t_Co=256
-" colorscheme molokai
 set background=dark
 set showmatch
 set expandtab
