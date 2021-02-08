@@ -147,9 +147,13 @@ bindsym $mod+Shift+minus move scratchpad
 # Never used that before and conflict with horizontal splitting
 # bindsym $mod+minus scratchpad show
 
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+# For Workspaces use ,.
+# next/previous workspace
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+# move the current workspace to right/left output (to change if screens not horizontal)
+bindsym $mod+Shift+comma move workspace to output left
+bindsym $mod+Shift+period move workspace to output right
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
