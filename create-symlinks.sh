@@ -56,8 +56,8 @@ sbtPlugins=$sbtConfigFolder/plugins
 mkdir -p $HOME/$sbtPlugins
 cd $HOME/$sbtPlugins
 ln -sfv $script/$sbtPlugins/plugins.sbt plugins.sbt
-cd $HOME/.sbt
-ln -sfv $script/linux-only-perso/sbt-credentials-nexus .credentials
+# cd $HOME/.sbt
+# ln -sfv $script/linux-only-perso/sbt-credentials-nexus .credentials
 
 # Disable for now
 # cd $HOME/$sbtConfigFolder
@@ -68,7 +68,7 @@ case "$(uname -s)" in
     Linux)
         echo '### Linux only symlinks'
 
-        ln -sfv $script/linux-only/.imwheelrc .imwheelrc
+        # ln -sfv $script/linux-only/.imwheelrc .imwheelrc
         ln -sfv $script/linux-only/.hidden .hidden
         ln -sfv $script/linux-only/.gvimrc .gvimrc
         ln -sfv $script/linux-only/.profile .profile
@@ -77,8 +77,8 @@ case "$(uname -s)" in
         ln -sfnv $script/linux-only/.screenlayout .screenlayout
         ln -sfnv $script/linux-only-perso/.xsessionrc .xsessionrc
 
-        cd $HOME/.config
-        ln -sfnv $script/linux-only/config-terminator terminator
+        # cd $HOME/.config
+        # ln -sfnv $script/linux-only/config-terminator terminator
 
         mkdir -p $HOME/.config/gtk-3.0
         cd $HOME/.config/gtk-3.0
@@ -90,9 +90,6 @@ case "$(uname -s)" in
         cd $HOME
         ln -sfv $script/linux-only/i3blocks.conf .i3blocks.conf
 
-        mkdir -p $HOME/.xmonad
-        cd $HOME/.xmonad
-        ln -sfv $script/linux-only/xmonad.hs xmonad.hs
 
         ;;
 
