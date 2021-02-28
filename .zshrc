@@ -76,14 +76,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # FZH related
-# Set fzf installation directory path
-export FZF_BASE=/home/linuxbrew/.linuxbrew/bin/fzf
 # Uncomment the following line to disable fuzzy completion
 # export DISABLE_FZF_AUTO_COMPLETION="true"
 # Uncomment the following line to disable key bindings (CTRL-T, CTRL-R, ALT-C)
 # export DISABLE_FZF_KEY_BINDINGS="true"
 # Setting fd as the default source for fzf (use full name as if use alias then issue)
-export FZF_DEFAULT_COMMAND='fdfind --type f'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -93,7 +91,6 @@ export FZF_DEFAULT_COMMAND='fdfind --type f'
 # Not used at the moment: osx (specific) cabal, autojump (issue), npm, sbt, scala
 plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein docker kubectl fzf)
 
-# Only for Ubuntu
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -144,3 +141,6 @@ source /home/gwena/.config/broot/launcher/bash/br
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
