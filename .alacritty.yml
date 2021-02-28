@@ -77,7 +77,7 @@ scrolling:
     #   - (macOS) open
     #   - (Linux) xdg-open
     #   - (Windows) explorer
-    launcher: open
+    launcher: xdg-open
 
     # URL modifiers
     #
@@ -89,7 +89,7 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
@@ -114,27 +114,25 @@ live_config_reload: true
 font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
-  normal:
     # family: Iosevka
-    family: "Fira Code"
+    # family: "MesloLGSNF"
+    # family: "Fira Code"
     # family: "Source Code Pro"
+  normal:
+    family: "MesloLGSNF"
     # style: Retina
 
   # The bold font face
   bold:
-    # family: Iosevka
-    family: "Fira Code"
-    # family: "Source Code Pro"
+    family: "MesloLGSNF"
 
   # The italic font face
   italic:
-    # family: Iosevka
-    family: "Fira Code"
-    # family: "Source Code Pro"
+    family: "MesloLGSNF"
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 9.0
+  size: 12.0
 
 # Colors
 colors:
