@@ -26,10 +26,11 @@ ln -sfnv $HOME/Documents/Scripts/.ssh .ssh # Not in dotfiles
 ln -sfnv $HOME/Documents/Scripts/doom.d .doom.d # Own Git Repo
 
 cd ~/.config
-rm -rf ranger
-ln -sfnv $script/ranger ranger
 
 ln -sfv $script/redshift.conf redshift.conf
+# Use Manjaro's Config
+# rm -rf ranger
+# ln -sfnv $DOTS_PATH/ranger ranger
 
 mkdir -p $HOME/.lein
 cd $HOME/.lein
