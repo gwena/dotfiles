@@ -41,11 +41,18 @@ bindsym $mod+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start program launcher
+# Launchers
+# only need to press Super, however make sure xcape in .profile has been setup
+# i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
+bindsym $mod+Escape exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
+
+# start program launcher (original Manjaro i3)
 bindsym $mod+d exec --no-startup-id dmenu_recency
 
-# launch categorized menu
+# launch categorized menu (original Manjaro i3)
 bindsym $mod+z exec --no-startup-id morc_menu
+
+bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -65,8 +72,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-# @TODO check to replace with Firefox or whatever
-bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # Config de i3 manjaro was not working: bindsym $mod+F4 exec ranger
