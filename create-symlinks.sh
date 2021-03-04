@@ -27,9 +27,8 @@ ln -sfnv $SCRIPTS/doom.d .doom.d
 
 cd ~/.config
 
-# Use Manjaro's Config
-# rm -rf ranger
-# ln -sfnv $DOTS_PATH/ranger ranger
+rm -rf ranger
+ln -sfnv $DOTS_PATH/ranger ranger
 
 ln -sfv $DOTS_PATH/redshift.conf redshift.conf
 
