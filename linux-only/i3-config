@@ -219,11 +219,11 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-
-# Specified workspace - @@TODO Mine - merge with above
-assign [class="(?i)Chromium"] 1
+# assign [class="(?i)Chromium"] 1
 assign [class="(?i)google-chrome"] 1
+assign [class="(?i)firefox"] 1
 assign [class="(?i)slack"] 9
+assign [class="(?i)teams"] 9
 # Bug with Spotify, https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace 0
 
