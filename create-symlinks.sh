@@ -30,6 +30,9 @@ cd ~/.config
 rm -rf ranger
 ln -sfnv $DOTS_PATH/ranger ranger
 
+rm -rf rclone
+ln -sfnv $SCRIPTS/rclone rclone
+
 ln -sfv $DOTS_PATH/redshift.conf redshift.conf
 
 mkdir -p $HOME/.lein
