@@ -1,2 +1,4 @@
 # Ignore everything by default, as need to check individual files (config, sensitive information)
 *
+# but not .gitignore (to have one file in Doom emacs's Ivy)
+!.gitignore
