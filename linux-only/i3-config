@@ -363,9 +363,10 @@ exec --no-startup-id redshift-gtk
 
 # Screen layouts
 set $screen-layout ~/.screenlayout/
-bindsym $mod+apostrophe       exec --no-startup-id $screen-layout/only-laptop.sh
+bindsym $mod+apostrophe       exec --no-startup-id $screen-layout/on-xps-only-laptop.sh
 bindsym $mod+Shift+apostrophe exec --no-startup-id $screen-layout/dual-dp-fullhd.sh
-bindsym $mod+semicolon        exec --no-startup-id $screen-layout/single-awesomeness.sh
+bindsym $mod+semicolon        exec --no-startup-id $screen-layout/on-xps-single-awesomeness-via-dp.sh
+
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
