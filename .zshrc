@@ -88,8 +88,8 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# Not used at the moment: osx (specific) cabal, autojump (issue), npm, sbt, scala
-plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein docker kubectl fzf)
+# Not used at the moment: osx (specific) cabal, autojump (issue), npm, sbt, scala, kubectl
+plugins=(command-not-found emacs vi-mode git git-extras github colorize history lein docker fzf fd httpie terraform z)
 
 source $ZSH/oh-my-zsh.sh
 
