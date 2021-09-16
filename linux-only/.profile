@@ -13,7 +13,7 @@ if [ $XDG_CURRENT_DESKTOP = "i3" ]; then
     xcape -t 150 -e 'Super_L=Super_L|Escape'
 fi
 
-source $HOME/Documents/Scripts/dotfiles/linux-only-perso/profile-private.sh
+source $HOME/Documents/Scripts/linux-only-perso/profile-private.sh
 
 # Disabled for now - to check later
 #
