@@ -78,15 +78,26 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # Config de i3 manjaro was not working: bindsym $mod+F4 exec ranger
 bindsym $mod+F4 exec urxvt -e ranger
 bindsym $mod+F5 exec terminal -e 'mocp'
+# 2 shorcuts for calendar too, let's see which one win
+bindsym $mod+c exec zenity --calendar
 bindsym $mod+F6 exec zenity --calendar
 # fs for fullscreen, was having another without but never use
+# 2 shorcuts for emacs, let's see if going back to x
+bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+F12 exec /usr/bin/emacs -fs
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
+
+# Screenshot - 4 options
+bindsym Print exec flameshot gui
+# fullscreen
+bindsym $mod+Ctrl+Print exec --no-startup-id i3-scrot
+# window
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+# selection
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
 # Disable as conflict when using Vim style and obsolete mostly with my changes
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -220,7 +231,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 # assign [class="(?i)Chromium"] 1
-assign [class="(?i)google-chrome"] 1
+# assign [class="(?i)google-chrome"] 1 # rather where I am opening it, also due to Clj/Portal
 assign [class="(?i)firefox"] 1
 assign [class="(?i)slack"] 9
 assign [class="(?i)teams"] 9
