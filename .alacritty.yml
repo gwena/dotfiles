@@ -119,16 +119,16 @@ font:
     # family: "Fira Code"
     # family: "Source Code Pro"
   normal:
-    family: "MesloLGSNF"
+    family: "MesloLGS NF"
     # style: Retina
 
   # The bold font face
-  bold:
-    family: "MesloLGSNF"
+  # bold:
+    # family: "MesloLGSNF"
 
   # The italic font face
-  italic:
-    family: "MesloLGSNF"
+  # italic:
+    # family: "MesloLGSNF"
     # style: "Medium Italic"
 
   # Point size of the font
