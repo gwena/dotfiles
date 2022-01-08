@@ -3,27 +3,30 @@ echo "Create Symbolic links for dotfiles/config files"
 
 cd $HOME
 ln -sfv $DOTS_PATH/.zshrc .zshrc
-ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh
-ln -sfv $DOTS_PATH/.bashrc .bashrc
+# might be better to regenerate each time
+# with list of choices
+# ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
-ln -sfv $DOTS_PATH/.vimrc .vimrc
 ln -sfv $DOTS_PATH/.alacritty.yml .alacritty.yml
+# not needed anymore and obsolete
+# ln -sfv $DOTS_PATH/.bashrc .bashrc
+ln -sfv $DOTS_PATH/.vimrc .vimrc
 ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
 ln -sfv $DOTS_PATH/.gitconfig .gitconfig
 ln -sfv $DOTS_PATH/.gitignore_global .gitignore_global
 ln -sfv $DOTS_PATH/.ackrc .ackrc
 ln -sfv $DOTS_PATH/.agignore .agignore
-ln -sfv $DOTS_PATH/.inputrc .inputrc
-ln -sfv $DOTS_PATH/.haskeline .haskeline
-ln -sfv $DOTS_PATH/.gemrc .gemrc
-ln -sfv $DOTS_PATH/.pryrc .pryrc
+# ln -sfv $DOTS_PATH/.inputrc .inputrc # was only for sbt (bug)
+# ln -sfv $DOTS_PATH/.haskeline .haskeline
+# ln -sfv $DOTS_PATH/.gemrc .gemrc
+# ln -sfv $DOTS_PATH/.pryrc .pryrc
 # ln -sfv $DOTS_PATH/.joker .joker
 # ln -sfv $DOTS_PATH/.tmux.conf .tmux.conf
 # ln -sfv $DOTS_PATH/.spacemacs .spacemacs
 
 # Not in dotfiles
-ln -sfnv $SCRIPTS/.ssh .ssh
-ln -sfnv $SCRIPTS/doom.d .doom.d
+ln -sfnv ${SCRIPTS}.ssh .ssh
+ln -sfnv ${SCRIPTS}doom.d .doom.d
 
 cd ~/.config
 
@@ -34,6 +37,9 @@ rm -rf rclone
 ln -sfnv $SCRIPTS/rclone rclone
 
 ln -sfv $DOTS_PATH/redshift.conf redshift.conf
+
+rm -rf kitty
+ln -sfnv $DOTS_PATH/kitty kitty
 
 mkdir -p $HOME/.lein
 cd $HOME/.lein
@@ -79,25 +85,20 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/linux-only/.Xresources .Xresources
         ln -sfnv $DOTS_PATH/linux-only/.urxvt .urxvt
         ln -sfnv $DOTS_PATH/linux-only/.screenlayout .screenlayout
-        ln -sfnv $DOTS_PATH/linux-only-perso/.xsessionrc .xsessionrc
-
-        # cd $HOME/.config
-        # ln -sfnv $DOTS_PATH/linux-only/config-terminator terminator
-
-        mkdir -p $HOME/.config/gtk-3.0
-        cd $HOME/.config/gtk-3.0
-        ln -sfv $DOTS_PATH/linux-only-perso/bookmarks-gtk3-nautilus bookmarks
 
         mkdir -p $HOME/.i3
         cd $HOME/.i3
         ln -sfv $DOTS_PATH/linux-only/i3-config config
 
-        # cd $HOME
-        # ln -sfv $DOTS_PATH/linux-only/i3blocks.conf .i3blocks.conf
-
         cd $HOME/.config
-        ln -sfv $DOTS_PATH/linux-only-perso/spotify-tui spotify-tui
-
+        rm -rf pcmanfm
+        ln -sfv $DOTS_PATH/linux-only/pcmanfm pcmanfm
+        rm -rf i3status-rust
+	      ln -sfv $DOTS_PATH/linux-only/i3status-rust i3status-rust
+        rm -rf spotify-tui
+        ln -sfv $SCRIPTS/linux-only-perso/spotify-tui spotify-tui
+        rm -rf idasen-controller
+        ln -sfv $SCRIPTS/linux-only-perso/idasen-controller idasen-controller
         ;;
 
     Darwin)
