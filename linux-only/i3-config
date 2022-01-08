@@ -34,6 +34,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec terminal
+bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 # bindsym $mod+Shift+Return exec i3-sensible-terminal or exec urxvt -e zsh
@@ -45,6 +46,7 @@ bindsym $mod+Shift+q kill
 # only need to press Super, however make sure xcape in .profile has been setup
 # i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
 bindsym $mod+Escape exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 16" -show combi -icon-theme "Papirus" -show-icons
+bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -theme solarized -font "hack 16" -show window -icon-theme "Papirus" -show-icons -filter "emacs "
 
 # start program launcher (original Manjaro i3)
 bindsym $mod+d exec --no-startup-id dmenu_recency
@@ -70,24 +72,23 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-# Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+# Launch Applications
+# -s for presentatino, -f for fullscreen (headings on the side)
+bindsym $mod+F1 exec evince -f ~/Documents/Self/NotesOrgMode/IT/Topic/SE/Shortcuts_Wallpaper.pdf
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-# Config de i3 manjaro was not working: bindsym $mod+F4 exec ranger
-bindsym $mod+F4 exec urxvt -e ranger
+bindsym $mod+F3 exec thunar
+bindsym $mod+Shift+F3 exec pcmanfm
+# was previous config, not available anymore anyway
+# bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+bindsym $mod+F4 exec alacritty -e ranger
 bindsym $mod+F5 exec terminal -e 'mocp'
-# 2 shorcuts for calendar too, let's see which one win
-bindsym $mod+c exec zenity --calendar
-bindsym $mod+F6 exec zenity --calendar
 # fs for fullscreen, was having another without but never use
-# 2 shorcuts for emacs, let's see if going back to x
+bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
-bindsym $mod+F12 exec /usr/bin/emacs -fs
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 
 # Screenshot - 4 options
 bindsym Print exec flameshot gui
