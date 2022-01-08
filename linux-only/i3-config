@@ -340,7 +340,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 # will replace feh above, see option as can scan folder randomly
 # exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/HVtFzWG.png
-exec --no-startup-id manjaro-hello
+#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -358,18 +358,17 @@ exec_always --no-startup-id fix_xcursor
 ##### exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
 exec --no-startup-id redshift-gtk
 # exec --no-startup-id emacs --daemon &
-# exec --no-startup-id flameshot
+exec --no-startup-id flameshot
 ###### exec --no-startup-id duplicati # Need to fix it
 # that is for the audio, see https://www.reddit.com/r/i3wm/comments/4s0aev/how_to_add_volume_control_applet_to_status_bar/
 # got some good feedback
-# exec --no-startup-id pasystray
+exec --no-startup-id pasystray
 
 # Screen layouts
 set $screen-layout ~/.screenlayout/
-bindsym $mod+apostrophe       exec --no-startup-id $screen-layout/on-xps-only-laptop.sh
-bindsym $mod+Shift+apostrophe exec --no-startup-id $screen-layout/dual-dp-fullhd.sh
-bindsym $mod+semicolon        exec --no-startup-id $screen-layout/on-xps-single-awesomeness-via-dp.sh
-
+bindsym $mod+apostrophe       exec --no-startup-id $screen-layout/on-xps-laptop.sh
+bindsym $mod+Shift+apostrophe exec --no-startup-id $screen-layout/on-xps-laptop-and-awesomeness.sh
+bindsym $mod+semicolon        exec --no-startup-id $screen-layout/on-xps-awesomeness.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
