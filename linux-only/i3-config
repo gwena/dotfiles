@@ -20,10 +20,10 @@ bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
 # Border none - Coming from old config, adapt/discard, maybe to emacs & firefox too
-for_window [class="(?i)Chromium"] border none
-for_window [class="(?i)Chrome"]   border none
-for_window [class="(?i)spotify"]  border none
-for_window [class="(?i)Slack"]    border none
+# for_window [class="(?i)Chromium"] border none
+# for_window [class="(?i)Chrome"]   border none
+# for_window [class="(?i)spotify"]  border none
+# for_window [class="(?i)Slack"]    border none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,8 +34,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec terminal
-bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Return exec alacritty
+bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 # bindsym $mod+Shift+Return exec i3-sensible-terminal or exec urxvt -e zsh
 
@@ -47,13 +47,10 @@ bindsym $mod+Shift+q kill
 # i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
 bindsym $mod+Escape exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 16" -show combi -icon-theme "Papirus" -show-icons
 bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -theme solarized -font "hack 16" -show window -icon-theme "Papirus" -show-icons -filter "emacs "
-
 # start program launcher (original Manjaro i3)
 bindsym $mod+d exec --no-startup-id dmenu_recency
-
 # launch categorized menu (original Manjaro i3)
 bindsym $mod+z exec --no-startup-id morc_menu
-
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 ################################################################################################
@@ -78,11 +75,7 @@ bindsym $mod+F1 exec evince -f ~/Documents/Self/NotesOrgMode/IT/Topic/SE/Shortcu
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+Shift+F3 exec pcmanfm
-# was previous config, not available anymore anyway
-# bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F4 exec alacritty -e ranger
-bindsym $mod+F5 exec terminal -e 'mocp'
-# fs for fullscreen, was having another without but never use
 bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+t exec --no-startup-id pkill picom
@@ -99,31 +92,17 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 # selection
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
-# Disable as conflict when using Vim style and obsolete mostly with my changes
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
+# change focus, removed vim version due to colemak/moonlander
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -160,14 +139,13 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Ctrl+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 # Never used that before and conflict with horizontal splitting
-# bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus scratchpad show
 
-# For Workspaces use ,.
 # next/previous workspace
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
@@ -227,17 +205,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
-# assign [class="(?i)Chromium"] 1
-# assign [class="(?i)google-chrome"] 1 # rather where I am opening it, also due to Clj/Portal
 assign [class="(?i)firefox"] 1
 assign [class="(?i)slack"] 9
 assign [class="(?i)teams"] 9
 # Bug with Spotify, https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace 0
+for_window [class="Spotify"] move to workspace $ws0
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -338,37 +310,29 @@ bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-# will replace feh above, see option as can scan folder randomly
-# exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/HVtFzWG.png
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-# Don't use it at all, and generally consumes 0.25%, ok that is nothing but not needed, and cleaner
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-# Autostart from Debian - to merge @TODO
-##### exec --no-startup-id xss-lock -- i3lock -n -i $I3_SCRIPTS/lock.png
 exec --no-startup-id redshift-gtk
-# exec --no-startup-id emacs --daemon &
 exec --no-startup-id flameshot
-###### exec --no-startup-id duplicati # Need to fix it
-# that is for the audio, see https://www.reddit.com/r/i3wm/comments/4s0aev/how_to_add_volume_control_applet_to_status_bar/
-# got some good feedback
+# for the audio, see https://www.reddit.com/r/i3wm/comments/4s0aev/how_to_add_volume_control_applet_to_status_bar/
 exec --no-startup-id pasystray
 
 # Screen layouts
-set $screen-layout ~/.screenlayout/
-bindsym $mod+apostrophe       exec --no-startup-id $screen-layout/on-xps-laptop.sh
-bindsym $mod+Shift+apostrophe exec --no-startup-id $screen-layout/on-xps-laptop-and-awesomeness.sh
-bindsym $mod+semicolon        exec --no-startup-id $screen-layout/on-xps-awesomeness.sh
+set $screen ~/.screenlayout/
+bindsym $mod+apostrophe       exec --no-startup-id $screen/on-xps-laptop.sh
+bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
+bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-awesomeness.sh
+bindsym $mod+Ctrl+semicolon  exec --no-startup-id $screen/on-xps-awesomeness-x.sh
+bindsym $mod+Ctrl+apostrophe  exec --no-startup-id $screen/on-xps-laptop-x.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -401,41 +365,10 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-# bar {
-# 	i3bar_command i3bar
-# 	status_command i3status
-# 	position top
-
-#     font pango:Fira Code 10
-
-# ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-# #	tray_output primary
-# #	tray_output eDP1
-
-# 	bindsym button4 nop
-# 	bindsym button5 nop
-# #   font xft:URWGothic-Book 11
-# 	strip_workspace_numbers yes
-
-#     colors {
-#         background #222D31
-#         statusline #F9FAF9
-#         separator  #454947
-
-# #                      border  backgr. text
-#         focused_workspace  #F9FAF9 #16a085 #292F34
-#         active_workspace   #595B5B #353836 #FDF6E3
-#         inactive_workspace #595B5B #222D31 #EEE8D5
-#         binding_mode       #16a085 #2C2C2C #F9FAF9
-#         urgent_workspace   #16a085 #FDF6E3 #E5201D
-#     }
-# }
-
 bar {
     # See i3status-rust integrate it into i3 section for correctly
     # naming the fonts
-    font pango:DejaVu Sans Mono, FontAwesome 5 Free
+    font pango:DejaVu Sans Mono, FontAwesome 6 Free
     position top
     status_command /usr/bin/i3status-rs .config/i3status-rust/config.toml
     colors {
