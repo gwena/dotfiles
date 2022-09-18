@@ -59,9 +59,9 @@ bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn
 # Version with Pulseaudio (install_pulse script run)
 #exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+# exec --no-startup-id start-pulseaudio-x11
+# exec --no-startup-id pa-applet
+# bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -74,10 +74,12 @@ bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+F1 exec evince -f ~/Documents/Self/NotesOrgMode/IT/Topic/SE/Shortcuts_Wallpaper.pdf
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
+bindsym $mod+j exec thunar
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec alacritty -e ranger
 bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
+bindsym $mod+g exec prime-run gthumb  
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -140,10 +142,8 @@ bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Ctrl+minus move scratchpad
-
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-# Never used that before and conflict with horizontal splitting
 bindsym $mod+Shift+minus scratchpad show
 
 # next/previous workspace
@@ -268,12 +268,13 @@ bindsym $mod+Shift+r restart
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+e mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, re(Shift+b)oot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, re(Shift+b)oot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     # use directly what the script would do except the lock
     # bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    # switch_(u)ser, 
     # bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -314,24 +315,24 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+exec --no-startup-id pasystray
+exec --no-startup-id redshift-gtk
+exec --no-startup-id flameshot
 # exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 30 -locker blurlock
+# exec_always --no-startup-id sbxkb
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id redshift-gtk
-exec --no-startup-id flameshot
 # for the audio, see https://www.reddit.com/r/i3wm/comments/4s0aev/how_to_add_volume_control_applet_to_status_bar/
-exec --no-startup-id pasystray
 
 # Screen layouts
 set $screen ~/.screenlayout/
 bindsym $mod+apostrophe       exec --no-startup-id $screen/on-xps-laptop.sh
 bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
 bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-awesomeness.sh
-bindsym $mod+Ctrl+semicolon  exec --no-startup-id $screen/on-xps-awesomeness-x.sh
+bindsym $mod+Ctrl+semicolon  exec --no-startup-id $screen/on-xps-awesomeness-60.sh
 bindsym $mod+Ctrl+apostrophe  exec --no-startup-id $screen/on-xps-laptop-x.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
