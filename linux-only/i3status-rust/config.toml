@@ -1,0 +1,93 @@
+#theme = "slick" 
+#theme = "solarized-dark"
+#theme = "nord-dark"
+theme = "gruvbox-dark"
+[icons]
+name = "awesome6"
+[icons.overrides]
+pomodoro = "\ue082"
+
+[[block]]
+block = "weather"
+format = "{weather} ({location}) {temp}, {wind} m/s {direction}"
+service = { name = "openweathermap", units = "metric" }
+
+# [[block]]
+# Not used anymore as there is a pomodoro block, more integrated etc.
+# block = "custom"
+# command = "i3-gnome-pomodoro status --always | sed 's/Pomodoro/\uf2f2/g' | sed 's/Break/\uf4d8/g'"
+# on_click = "i3-gnome-pomodoro start-stop"
+# interval = 60
+
+[[block]]
+block = "pomodoro"
+length = 25
+break_length = 5
+message = "Break time!"
+break_message = "Focus time!"
+notifier = "notifysend"
+
+[[block]]
+block = "custom"
+command = "echo \uf2d2"
+on_click = "rofi -modi window -no-fixed-num-lines -theme solarized -font 'hack 16' -show window -icon-theme 'Papirus' -show-icons -location 3"
+interval = "once"
+
+[[block]]
+block = "custom"
+command = "echo \uf70c"
+on_click = "idasen-controller --stand"
+interval = "once"
+
+[[block]]
+block = "custom"
+# "\uf6c0" else "\uf6c1" is more modern chair with Font-Awesome 6, not working
+command = "echo \uf4b8"
+on_click = "idasen-controller --sit"
+interval = "once"
+
+[[block]]
+block = "custom"
+command = "echo \uf53f"
+on_click = "zenity --color-selection"
+interval = "once"
+
+# [[block]]
+# block = "nvidia_gpu"
+# show_memory = false
+# show_clocks = true
+# interval = 1
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used} /{mem_total}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "sound"
+headphones_indicator = true
+
+[[block]]
+block = "time"
+interval = 5
+format = "%d-%m %R"
+on_click = "zenity --calendar"
