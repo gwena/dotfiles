@@ -3,13 +3,57 @@
 #theme = "nord-dark"
 theme = "gruvbox-dark"
 [icons]
-name = "awesome6"
+name = "awesome" # seems not needed to specify awesome6 
 [icons.overrides]
 pomodoro = "\ue082"
+time = "\uf073" # Needed with pro
+# not matching below
+weather_sun = "\uf185"
+weather_default = "\uf185"
+
+## Webcam controls
+[[block]]
+block = "custom"
+command =  "echo \uf355"
+on_click = "webcam-control.sh set pan_absolute -1"
+interval = "once"
+
+[[block]]
+block = "custom"
+command =  "echo \uf356"
+on_click = "webcam-control.sh set pan_absolute 1"
+interval = "once"
+
+[[block]]
+block = "custom"
+command =  "echo \uf146"
+on_click = "webcam-control.sh set tilt_absolute -1"
+interval = "once"
+
+[[block]]
+block = "custom"
+command =  "echo \uf5e5"
+on_click = "webcam-control.sh set tilt_absolute 1"
+interval = "once"
+
+[[block]]
+block = "custom"
+command =  "echo \uf146" # should be f010 for minus magnifying glass
+on_click = "webcam-control.sh set zoom_absolute -1"
+interval = "once"
+
+[[block]]
+block = "custom"
+command =  "echo \uf00e"
+on_click = "webcam-control.sh set zoom_absolute 1"
+interval = "once"
+
+## Rest 
 
 [[block]]
 block = "weather"
-format = "{weather} ({location}) {temp}, {wind} m/s {direction}"
+# format = "{weather} ({location}) {temp}, {wind} m/s {direction}"
+format = "{weather_verbose} {temp}, {wind_kmh} km/h {direction}"
 service = { name = "openweathermap", units = "metric" }
 
 # [[block]]
@@ -41,8 +85,7 @@ interval = "once"
 
 [[block]]
 block = "custom"
-# "\uf6c0" else "\uf6c1" is more modern chair with Font-Awesome 6, not working
-command = "echo \uf4b8"
+command =  "echo \uf6c1"
 on_click = "idasen-controller --sit"
 interval = "once"
 
@@ -51,12 +94,6 @@ block = "custom"
 command = "echo \uf53f"
 on_click = "zenity --color-selection"
 interval = "once"
-
-# [[block]]
-# block = "nvidia_gpu"
-# show_memory = false
-# show_clocks = true
-# interval = 1
 
 [[block]]
 block = "disk_space"
@@ -83,11 +120,43 @@ interval = 1
 format = "{1m}"
 
 [[block]]
-block = "sound"
-headphones_indicator = true
-
-[[block]]
 block = "time"
 interval = 5
 format = "%d-%m %R"
 on_click = "zenity --calendar"
+
+[[block]]
+block = "custom"
+interval = 60
+signal = 0 # 0 corresponds to -SIGRTMIN that will be sent at the end of on_click below
+command = "mic-icon.sh"
+on_click = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
+
+# ---- Not used but these blocks could be useful
+
+# [[block]]
+# block = "nvidia_gpu"
+# label = "GPU"
+# show_memory = false
+# show_clocks = false
+# interval = 1
+
+# Seems to be problematic... when going full screen, etc.
+# at least tested in November 2022
+# [[block]]
+# block = "music"
+# on_collapsed_click = "spotify"
+
+# In fact not using it as sound at 100% and control with DX3 Pro+
+# issue with icon as well, and not needed for headphone
+# however other interesting option if needed
+# [[block]]
+# block = "sound"
+# headphones_indicator = true
+
+# Not needed, only working on laptop
+# [[block]]
+# block = "xrandr"
+# icons = true
+# resolution = true
+
