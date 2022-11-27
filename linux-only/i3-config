@@ -152,6 +152,9 @@ bindsym $mod+Shift+minus scratchpad show
 # next/previous workspace
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+bindsym --whole-window button8 workspace prev
+bindsym --whole-window button9 workspace next
+
 # move the current workspace to right/left output (to change if screens not horizontal)
 bindsym $mod+Shift+comma move workspace to output left
 bindsym $mod+Shift+period move workspace to output right
