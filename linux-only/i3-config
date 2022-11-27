@@ -97,6 +97,9 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
+# speed up - scrolling wheel
+bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
+bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
 
 # change focus, removed vim version due to colemak/moonlander
 bindsym $mod+Left focus left
