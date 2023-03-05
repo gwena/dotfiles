@@ -27,7 +27,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 11
+font pango:monospace 13 # Crazy monitor (11 on Awesome)
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -45,8 +45,9 @@ bindsym $mod+Shift+q kill
 # Launchers
 # only need to press Super, however make sure xcape in .profile has been setup
 # i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
-bindsym $mod+Escape exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 16" -show combi -icon-theme "Papirus" -show-icons
-bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -theme solarized -font "hack 16" -show window -icon-theme "Papirus" -show-icons -filter "emacs "
+# ssh removed from window and drun as not used
+bindsym $mod+Escape exec rofi -combi-modi window#drun -show combi
+bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
 # start program launcher (original Manjaro i3)
 bindsym $mod+d exec --no-startup-id dmenu_recency
 # launch categorized menu (original Manjaro i3)
@@ -71,7 +72,7 @@ bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn
 
 # Launch Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
-bindsym $mod+F1 exec evince -f "$ORG/IT/Topic/SE/Shortcuts_Wallpaper.pdf"
+bindsym $mod+F1 exec evince -f "$ORG/IT/Shortcut/Shortcuts_Wallpaper.pdf"
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+j exec thunar
@@ -156,8 +157,8 @@ bindsym --whole-window button8 workspace prev
 bindsym --whole-window button9 workspace next
 
 # move the current workspace to right/left output (to change if screens not horizontal)
-bindsym $mod+Shift+comma move workspace to output left
-bindsym $mod+Shift+period move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -223,7 +224,7 @@ for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Calculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
@@ -277,7 +278,10 @@ bindsym $mod+Shift+e mode "$mode_system"
 set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, re(Shift+b)oot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
-    # use directly what the script would do except the lock
+    # Use directly what the script would do except the lock
+    # Next one use also the lock, not useful as WFH, will switch off in bag
+    # and tricky as not sur if need to enter pwd, and sometimes do it in chat
+    # see differences with just suspend and systemcl suspend
     # bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     # switch_(u)ser, 
@@ -336,10 +340,13 @@ exec_always --no-startup-id fix_xcursor
 # Screen layouts
 set $screen ~/.screenlayout/
 bindsym $mod+apostrophe       exec --no-startup-id $screen/on-xps-laptop.sh
-bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
-bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-awesomeness.sh
-bindsym $mod+Ctrl+semicolon  exec --no-startup-id $screen/on-xps-awesomeness-60.sh
+bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-craziness.sh
 bindsym $mod+Ctrl+apostrophe  exec --no-startup-id $screen/on-xps-laptop-x.sh
+bindsym $mod+equal            exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
+# Should do also a HDMI 4K version
+# To fix/migrate to craziness one, don't think need 60/30 equivalent
+bindsym $mod+Ctrl+semicolon   exec --no-startup-id $screen/on-xps-awesomeness-60.sh
+bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -374,8 +381,9 @@ set_from_resource $term_color15    color15
 
 bar {
     # See i3status-rust integrate it into i3 section for correctly
-    # naming the fonts
-    font pango:DejaVu Sans Mono, FontAwesome 6 Free
+    # naming the fonts, Pro version seems to change chevron around battery
+    # for Crazy monitor use 14 or 16 for size
+    font pango:DejaVu Sans Mono, FontAwesome 6 Free 16 
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
@@ -416,6 +424,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
+# To disable if want to use center unique window
 smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
@@ -458,3 +467,8 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Refine, just for now, also might want to change bindings
+bindsym $mod+o gaps horizontal current set 800
+bindsym $mod+i gaps horizontal current set 0
+
