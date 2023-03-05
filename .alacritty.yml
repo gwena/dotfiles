@@ -132,7 +132,8 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 12.0
+  # size: 12.0 # awesome 34" monitor
+  size: 14.0 # crazy 40" monitor 
 
 # Colors
 colors:
