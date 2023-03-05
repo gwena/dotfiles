@@ -95,6 +95,8 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/linux-only/pcmanfm pcmanfm
         rm -rf i3status-rust
 	      ln -sfv $DOTS_PATH/linux-only/i3status-rust i3status-rust
+        rm -rf rofi
+	      ln -sfv $DOTS_PATH/linux-only/rofi rofi
         rm -rf spotify-tui
         ln -sfv $SCRIPTS/linux-only-perso/spotify-tui spotify-tui
         rm -rf idasen-controller
