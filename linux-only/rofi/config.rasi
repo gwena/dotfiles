@@ -1,0 +1,13 @@
+configuration {
+    font: "Hack:style=Bold 32";
+    show-icons: true;
+    display-drun: "㑐";
+    drun-display-format : "{name}";
+    display-window: "🗔";
+    disable-history: false;
+    sidebar-mode: false;
+    icon-theme: "Faenza"; /* not working */ 
+    fallback-icon:  "/usr/share/icons/Faenza/apps/48/gcolor2.png"; /* not working, other with fallback-application-icon */
+}
+
+@theme "solarized_extra"

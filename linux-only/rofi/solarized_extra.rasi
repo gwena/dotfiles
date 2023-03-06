@@ -1,0 +1,6 @@
+@import "solarized"
+element-icon {
+    size:                           48;
+    border:                         0px;
+}
+
