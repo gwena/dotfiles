@@ -431,6 +431,10 @@ smart_gaps on
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
+# Center on ultrawide monitor when one window, but won't work if smart_gaps on. To be refined
+bindsym $mod+o gaps horizontal current set 800
+bindsym $mod+i gaps horizontal current set 0
+
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -467,8 +471,4 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# Refine, just for now, also might want to change bindings
-bindsym $mod+o gaps horizontal current set 800
-bindsym $mod+i gaps horizontal current set 0
 
