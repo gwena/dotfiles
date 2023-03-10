@@ -5,7 +5,8 @@
 !! Xft.dpi:       96
 Xft.dpi: 144
 !! See https://blog.yossarian.net/2020/12/24/A-few-HiDPI-tricks-for-Linux
-janus.fractionalDpi: 1.44
+!! Next one not use directly but to be extracted to be used with force-device-scale-factor  
+ext.fractionalDpi: 1.44
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
