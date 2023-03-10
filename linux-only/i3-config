@@ -382,8 +382,8 @@ set_from_resource $term_color15    color15
 bar {
     # See i3status-rust integrate it into i3 section for correctly
     # naming the fonts, Pro version seems to change chevron around battery
-    # for Crazy monitor use 14 or 16 for size
-    font pango:DejaVu Sans Mono, FontAwesome 6 Free 16 
+    # Size should not change a lot, more control by ppi in .Xresources
+    font pango:DejaVu Sans Mono, FontAwesome 6 Free 12 
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {

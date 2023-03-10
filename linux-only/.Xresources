@@ -1,8 +1,11 @@
 !! 34 inch monitor is 110, rather use a multiple of 96, however here with 1.2
+!! 40 inch monitor is 140, rather use a multiple of 96, here with 1.5 => 144
+!! XPS 17, 192 is good
 !! Xft.dpi:       115.2
 !! Xft.dpi:       96
-!! for XPS 17, 192 is good
-Xft.dpi:       110
+Xft.dpi: 144
+!! See https://blog.yossarian.net/2020/12/24/A-few-HiDPI-tricks-for-Linux
+janus.fractionalDpi: 1.44
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
