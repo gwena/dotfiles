@@ -48,6 +48,8 @@ bindsym $mod+Shift+q kill
 # ssh removed from window and drun as not used
 bindsym $mod+Escape exec rofi -combi-modi window#drun -show combi
 bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
+# similar to i3status without the location
+bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 # start program launcher (original Manjaro i3)
 bindsym $mod+d exec --no-startup-id dmenu_recency
 # launch categorized menu (original Manjaro i3)
