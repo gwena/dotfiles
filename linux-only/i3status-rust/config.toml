@@ -74,7 +74,8 @@ notifier = "notifysend"
 [[block]]
 block = "custom"
 command = "echo \uf2d2"
-on_click = "rofi -modi window -no-fixed-num-lines -theme solarized -font 'hack 16' -show window -icon-theme 'Papirus' -show-icons -location 3"
+# Align to i3 config
+on_click = "rofi -modi window -no-fixed-num-lines -show window -location 3"
 interval = "once"
 
 [[block]]
