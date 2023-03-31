@@ -1,9 +1,10 @@
 #theme = "slick" 
 #theme = "solarized-dark"
 #theme = "nord-dark"
+[theme]
 theme = "gruvbox-dark"
 [icons]
-name = "awesome" # seems not needed to specify awesome6 
+icons = "awesome6" # seems not needed to specify awesome6
 [icons.overrides]
 pomodoro = "\ue082"
 time = "\uf073" # Needed with pro
@@ -12,41 +13,41 @@ weather_sun = "\uf185"
 weather_default = "\uf185"
 
 ## Webcam controls
-[[block]]
-block = "custom"
-command =  "echo \uf355"
-on_click = "webcam-control.sh set pan_absolute -1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf355"
+# on_click = "webcam-control.sh set pan_absolute -1"
+# interval = "once"
 
-[[block]]
-block = "custom"
-command =  "echo \uf356"
-on_click = "webcam-control.sh set pan_absolute 1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf356"
+# on_click = "webcam-control.sh set pan_absolute 1"
+# interval = "once"
 
-[[block]]
-block = "custom"
-command =  "echo \uf146"
-on_click = "webcam-control.sh set tilt_absolute -1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf146"
+# on_click = "webcam-control.sh set tilt_absolute -1"
+# interval = "once"
 
-[[block]]
-block = "custom"
-command =  "echo \uf5e5"
-on_click = "webcam-control.sh set tilt_absolute 1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf5e5"
+# on_click = "webcam-control.sh set tilt_absolute 1"
+# interval = "once"
 
-[[block]]
-block = "custom"
-command =  "echo \uf146" # should be f010 for minus magnifying glass
-on_click = "webcam-control.sh set zoom_absolute -1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf146" # should be f010 for minus magnifying glass
+# on_click = "webcam-control.sh set zoom_absolute -1"
+# interval = "once"
 
-[[block]]
-block = "custom"
-command =  "echo \uf00e"
-on_click = "webcam-control.sh set zoom_absolute 1"
-interval = "once"
+# [[block]]
+# block = "custom"
+# command =  "echo \uf00e"
+# on_click = "webcam-control.sh set zoom_absolute 1"
+# interval = "once"
 
 ## Rest 
 
@@ -63,53 +64,66 @@ service = { name = "openweathermap", units = "metric" }
 # on_click = "i3-gnome-pomodoro start-stop"
 # interval = 60
 
-[[block]]
-block = "pomodoro"
-length = 25
-break_length = 5
-message = "Break time!"
-break_message = "Focus time!"
-notifier = "notifysend"
+# [[block]]
+# block = "pomodoro"
+# length = 25
+# break_length = 5
+# message = "Break time!"
+# break_message = "Focus time!"
+# notifier = "notifysend"
 
 [[block]]
 block = "custom"
 command = "echo \uf2d2"
-# Align to i3 config
-on_click = "rofi -modi window -no-fixed-num-lines -show window -location 3"
 interval = "once"
+[[block.click]]
+button = "left"
+# Align to i3 config
+cmd = "rofi -modi window -no-fixed-num-lines -show window -location 3"
 
 [[block]]
 block = "custom"
 command = "echo \uf70c"
-on_click = "idasen-controller --stand"
 interval = "once"
+[[block.click]]
+button = "left"
+cmd = "idasen-controller --stand"
 
 [[block]]
 block = "custom"
 command =  "echo \uf6c1"
-on_click = "idasen-controller --sit"
 interval = "once"
+[[block.click]]
+button = "left"
+cmd = "idasen-controller --sit"
 
 [[block]]
 block = "custom"
 command = "echo \uf53f"
-on_click = "zenity --color-selection"
 interval = "once"
+[[block.click]]
+button = "left"
+cmd = "zenity --color-selection"
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
 info_type = "available"
-unit = "GB"
+alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+format = " $icon root: $available.eng(w:2) "
+
+# [[block]]
+# block = "memory"
+# display_type = "memory"
+# format_mem = "{mem_used} /{mem_total}"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used} /{mem_total}"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "cpu"
@@ -128,15 +142,17 @@ format = "{percentage} {time}"
 [[block]]
 block = "time"
 interval = 5
-format = "%d-%m %R"
-on_click = "zenity --calendar"
+format = " $timestamp.datetime(f:'%d-%m %R') "
+[[block.click]]
+button = "left"
+cmd = "zenity --calendar"
 
-[[block]]
-block = "custom"
-interval = 60
-signal = 0 # 0 corresponds to -SIGRTMIN that will be sent at the end of on_click below
-command = "mic-icon.sh"
-on_click = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
+# [[block]]
+# block = "custom"
+# interval = 60
+# signal = 0 # 0 corresponds to -SIGRTMIN that will be sent at the end of on_click below
+# command = "mic-icon.sh"
+# on_click = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
 
 # ---- Not used but these blocks could be useful
 
@@ -165,4 +181,3 @@ on_click = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle
 # block = "xrandr"
 # icons = true
 # resolution = true
-
