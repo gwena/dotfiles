@@ -4,7 +4,7 @@
 [theme]
 theme = "gruvbox-dark"
 [icons]
-icons = "awesome6" # seems not needed to specify awesome6
+icons = "awesome6"
 [icons.overrides]
 pomodoro = "\ue082"
 time = "\uf073" # Needed with pro
@@ -49,20 +49,12 @@ weather_default = "\uf185"
 # on_click = "webcam-control.sh set zoom_absolute 1"
 # interval = "once"
 
-## Rest 
-
 [[block]]
 block = "weather"
-# format = "{weather} ({location}) {temp}, {wind} m/s {direction}"
-format = "{weather_verbose} {temp}, {wind_kmh} km/h {direction}"
-service = { name = "openweathermap", units = "metric" }
-
-# [[block]]
-# Not used anymore as there is a pomodoro block, more integrated etc.
-# block = "custom"
-# command = "i3-gnome-pomodoro status --always | sed 's/Pomodoro/\uf2f2/g' | sed 's/Break/\uf4d8/g'"
-# on_click = "i3-gnome-pomodoro start-stop"
-# interval = 60
+format = " $icon $weather $temp, $wind_kmh km/h $direction "
+[block.service]
+name = "openweathermap"
+units = "metric"
 
 # [[block]]
 # block = "pomodoro"
@@ -111,9 +103,9 @@ path = "/"
 info_type = "available"
 alert_unit = "GB"
 interval = 20
-warning = 20.0
-alert = 10.0
-format = " $icon root: $available.eng(w:2) "
+warning = 50.0
+alert = 20.0
+format = " $icon $available.eng(w:2) "
 
 # [[block]]
 # block = "memory"
@@ -122,37 +114,43 @@ format = " $icon root: $available.eng(w:2) "
 
 [[block]]
 block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2) "
-format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+format = " $icon $mem_used / $mem_total "
+# format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "cpu"
 interval = 1
+format = " $icon $barchart $utilization "
+format_alt = " $icon $frequency "
 
 [[block]]
 block = "load"
-interval = 1
-format = "{1m}"
+format = " $icon $1m.eng(w:4) "
+interval = 5
 
 [[block]]
 block = "battery"
 interval = 60
-format = "{percentage} {time}"
+format = " $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
 
 [[block]]
 block = "time"
-interval = 5
+interval = 10
 format = " $timestamp.datetime(f:'%d-%m %R') "
 [[block.click]]
 button = "left"
 cmd = "zenity --calendar"
 
-# [[block]]
-# block = "custom"
-# interval = 60
-# signal = 0 # 0 corresponds to -SIGRTMIN that will be sent at the end of on_click below
-# command = "mic-icon.sh"
-# on_click = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
+[[block]]
+block = "custom"
+interval = 60
+signal = 0 # corresponds to -SIGRTMIN sent at the end of click below
+command = "mic-icon.sh"
+[[block.click]]
+button = "left"
+cmd = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
 
 # ---- Not used but these blocks could be useful
 
