@@ -107,11 +107,6 @@ warning = 50.0
 alert = 20.0
 format = " $icon $available.eng(w:2) "
 
-# [[block]]
-# block = "memory"
-# display_type = "memory"
-# format_mem = "{mem_used} /{mem_total}"
-
 [[block]]
 block = "memory"
 format = " $icon $mem_used / $mem_total "
