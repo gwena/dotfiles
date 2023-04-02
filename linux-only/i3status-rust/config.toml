@@ -1,16 +1,16 @@
+[theme]
 #theme = "slick" 
 #theme = "solarized-dark"
-#theme = "nord-dark"
-[theme]
-theme = "gruvbox-dark"
+theme = "nord-dark"
+#theme = "gruvbox-dark"
 [icons]
 icons = "awesome6"
 [icons.overrides]
 pomodoro = "\ue082"
 time = "\uf073" # Needed with pro
-# not matching below
-weather_sun = "\uf185"
-weather_default = "\uf185"
+# weather_sun = "\uf185" # Sun looks like a gear
+weather_sun = "\uf892"
+weather_default = "\uf892"
 
 ## Webcam controls
 # [[block]]
@@ -55,6 +55,11 @@ format = " $icon $weather $temp, $wind_kmh km/h $direction "
 [block.service]
 name = "openweathermap"
 units = "metric"
+
+[[block]]
+block = "custom"
+command = "so-status.sh"
+interval = 600
 
 # [[block]]
 # block = "pomodoro"
