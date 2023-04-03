@@ -152,6 +152,18 @@ command = "mic-icon.sh"
 button = "left"
 cmd = "pactl get-default-source | xargs -I% pactl set-source-mute % 'toggle';pkill -SIGRTMIN i3status-rs"
 
+[[block]]
+block = "custom"
+interval = 60
+command = "sink-icon.sh"
+[[block.click]]
+button = "left"
+cmd = "pkill pasystray;pasystray"
+[[block.click]]
+button = "right"
+cmd = "pavucontrol"
+
+
 # ---- Not used but these blocks could be useful
 
 # [[block]]
