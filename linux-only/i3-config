@@ -263,6 +263,7 @@ for_window [class="Yad"]                  floating enable
 for_window [class="Evernote Web Clipper"] floating enable
 for_window [class="(?i)blueman"]          floating enable
 for_window [class="(?i)nm-connection-editor"] floating enable
+for_window [class="(?i)copyq"] floating enable
 # Limit floating window sizes
 floating_maximum_size 1200 x 1000
 
@@ -330,7 +331,9 @@ exec --no-startup-id nitrogen --set-auto --random ~/Pictures/Wallpapers/Wallpape
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+# Running both clipboard manager for now, then select
 exec --no-startup-id clipit
+exec --no-startup-id copyq
 exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
