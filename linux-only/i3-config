@@ -225,6 +225,9 @@ assign [class="(?i)teams"] 9
 for_window [class="Spotify"] move to workspace $ws0
 
 # Open specific applications in floating mode
+# Use xprop:
+# class -> WM_CLASS
+# title -> WM_NAME
 for_window [window_role="pop-up"]         floating enable
 for_window [window_role="bubble"]         floating enable
 for_window [window_role="task_dialog"]    floating enable
