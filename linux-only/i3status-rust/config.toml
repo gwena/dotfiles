@@ -105,6 +105,14 @@ cmd = "idasen-controller --sit"
 
 [[block]]
 block = "custom"
+command = "echo \uf1ec"
+interval = "once"
+[[block.click]]
+button = "left"
+cmd = "io.elementary.calculator"
+
+[[block]]
+block = "custom"
 command = "echo \uf53f"
 interval = "once"
 [[block.click]]
