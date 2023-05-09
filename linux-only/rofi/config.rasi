@@ -1,7 +1,7 @@
 configuration {
     font: "Hack:style=Bold 32";
     show-icons: true;
-    display-drun: "㑐";
+    display-drun: "𓂀";
     drun-display-format : "{name}";
     display-window: "🗔";
     disable-history: false;
