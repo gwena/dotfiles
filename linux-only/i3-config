@@ -213,9 +213,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 # Open applications on specific workspaces
-assign [class="(?i)firefox"] 1
-assign [class="(?i)slack"] 9
-assign [class="(?i)teams"] 9
+assign [class="(?i)firefox"] $ws1
+assign [class="(?i)slack"] $ws9
+assign [class="(?i)teams"] $ws9
 assign [class="(?i)spotify"] $ws0
 
 # Open specific applications in floating mode
