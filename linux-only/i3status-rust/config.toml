@@ -49,10 +49,10 @@ weather_default = "\uf892"
 # on_click = "webcam-control.sh set zoom_absolute 1"
 # interval = "once"
 
-# GTK-Theme
+# Dunst toggle notification
 [[block]]
 block = "custom"
-cycle = ["gsettings set org.gnome.desktop.interface gtk-theme Adapta; echo \U0001f311", "gsettings set org.gnome.desktop.interface gtk-theme None; echo \U0001f315"]
+cycle = ["dunstctl set-paused false; echo \U0001f311", "dunstctl set-paused true; echo \U0001f315"]
 interval = "once"
 [[block.click]]
 button = "left"
