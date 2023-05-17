@@ -216,8 +216,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 assign [class="(?i)firefox"] 1
 assign [class="(?i)slack"] 9
 assign [class="(?i)teams"] 9
-# Bug with Spotify, https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $ws0
+assign [class="(?i)spotify"] $ws0
 
 # Open specific applications in floating mode
 # Use xprop:
