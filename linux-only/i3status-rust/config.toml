@@ -11,6 +11,7 @@ time = "\uf073" # Needed with pro
 # weather_sun = "\uf185" # Sun looks like a gear
 weather_sun = "\uf892"
 weather_default = "\uf892"
+notification = "\uf075"
 
 ## Webcam controls
 # [[block]]
@@ -52,8 +53,11 @@ weather_default = "\uf892"
 # Dunst toggle notification
 [[block]]
 block = "custom"
-cycle = ["dunstctl set-paused false; echo \U0001f311", "dunstctl set-paused true; echo \U0001f315"]
+# cycle = ["dunstctl set-paused false; echo \U0001f311", "dunstctl set-paused true; echo \U0001f315"]
+cycle = ["dunstctl set-paused false; echo '{\"icon\":\"notification\",\"state\":\"Idle\", \"text\": \"\"}'",
+         "dunstctl set-paused true; echo '{\"icon\":\"notification\",\"state\":\"Warning\", \"text\": \"\"}'"]
 interval = "once"
+json = true
 [[block.click]]
 button = "left"
 action = "cycle"
