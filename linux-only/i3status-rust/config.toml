@@ -97,7 +97,7 @@ command = "echo \uf70c"
 interval = "once"
 [[block.click]]
 button = "left"
-cmd = "idasen-controller --stand"
+cmd = "idasen-controller --move-to stand"
 
 [[block]]
 block = "custom"
@@ -105,7 +105,7 @@ command =  "echo \uf6c1"
 interval = "once"
 [[block.click]]
 button = "left"
-cmd = "idasen-controller --sit"
+cmd = "idasen-controller --move-to sit"
 
 [[block]]
 block = "custom"
