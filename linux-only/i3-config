@@ -356,12 +356,13 @@ exec_always --no-startup-id fix_xcursor
 set $screen ~/.screenlayout/
 bindsym $mod+apostrophe       exec --no-startup-id $screen/on-xps-laptop.sh
 bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-craziness.sh
-bindsym $mod+Ctrl+apostrophe  exec --no-startup-id $screen/on-xps-laptop-x.sh
 bindsym $mod+equal            exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 # Should do also a HDMI 4K version
+
 # To fix/migrate to craziness one, don't think need 60/30 equivalent
-bindsym $mod+Ctrl+semicolon   exec --no-startup-id $screen/on-xps-awesomeness-60.sh
-bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
+# bindsym $mod+Ctrl+semicolon   exec --no-startup-id $screen/on-xps-awesomeness-60.sh
+# bindsym $mod+Shift+apostrophe exec --no-startup-id $screen/on-xps-laptop-and-awesomeness.sh
+# bindsym $mod+Ctrl+apostrophe  exec --no-startup-id $screen/on-xps-laptop-x.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
