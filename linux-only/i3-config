@@ -56,16 +56,6 @@ bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn
 # for_window [title="fzf-menu-random123"] floating enable
 
 ################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-# Version with Pulseaudio (install_pulse script run)
-#exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-# exec --no-startup-id start-pulseaudio-x11
-# exec --no-startup-id pa-applet
-# bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -86,6 +76,7 @@ bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+m exec pavucontrol
 
 # Screenshot - 4 options
 bindsym Print exec flameshot gui
