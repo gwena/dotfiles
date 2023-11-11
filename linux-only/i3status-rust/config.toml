@@ -109,6 +109,14 @@ cmd = "idasen-controller --move-to sit"
 
 [[block]]
 block = "custom"
+command = "echo \uf30f"
+interval = "once"
+[[block.click]]
+button = "left"
+cmd = "floating-shortcuts.sh"
+
+[[block]]
+block = "custom"
 command = "echo \uf1ec"
 interval = "once"
 [[block.click]]
