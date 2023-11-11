@@ -73,7 +73,7 @@ bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn
 
 # Launch Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
-bindsym $mod+F1 exec "$SCRIPTS/floating-stuff.sh"
+bindsym Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+j exec thunar
