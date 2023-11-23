@@ -195,7 +195,7 @@ button = "left"
 cmd = "pkill pasystray;pasystray"
 [[block.click]]
 button = "right"
-cmd = "pavucontrol"
+cmd = "pavucontrol-qt"
 
 
 # ---- Not used but these blocks could be useful
