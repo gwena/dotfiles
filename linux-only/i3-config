@@ -27,12 +27,11 @@ font pango:monospace 13
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# start a terminal
-# bindsym $mod+Return exec terminal
+# Options for terminal
 bindsym $mod+Return exec alacritty
 bindsym $mod+Ctrl+Return exec kitty
-bindsym $mod+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
-# bindsym $mod+Shift+Return exec i3-sensible-terminal or exec urxvt -e zsh
+bindsym $mod+Shift+Return exec tabby
+bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 
 # kill focused window
 bindsym $mod+Shift+q kill
