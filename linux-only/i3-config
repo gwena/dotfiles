@@ -341,7 +341,7 @@ exec_always --no-startup-id fix_xcursor
 # Screen layouts
 set $screen ~/.screenlayout/
 bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
-bindsym $mod+semicolon  exec --no-startup-id $screen/on-xps-craziness.sh
+bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
 bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 # Should do also a HDMI 4K version
 
