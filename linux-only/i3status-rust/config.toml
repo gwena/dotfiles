@@ -50,6 +50,10 @@ notification = "\uf075"
 # on_click = "webcam-control.sh set zoom_absolute 1"
 # interval = "once"
 
+[[block]]
+block = "net"
+format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device "
+
 # Dunst toggle notification
 [[block]]
 block = "custom"
