@@ -334,20 +334,15 @@ exec --no-startup-id copyq
 exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
-# exec --no-startup-id blueman-applet
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 30 -locker blurlock
-# exec_always --no-startup-id sbxkb
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-# for the audio, see https://www.reddit.com/r/i3wm/comments/4s0aev/how_to_add_volume_control_applet_to_status_bar/
 
 # Screen layouts
 set $screen ~/.screenlayout/
-bindsym $mod+apostrophe       exec --no-startup-id $screen/on-xps-laptop.sh
-bindsym $mod+semicolon        exec --no-startup-id $screen/on-xps-craziness.sh
-bindsym $mod+equal            exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
+bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
+bindsym $mod+semicolon  exec --no-startup-id $screen/on-xps-craziness.sh
+bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 # Should do also a HDMI 4K version
 
 # To fix/migrate to craziness one, don't think need 60/30 equivalent
