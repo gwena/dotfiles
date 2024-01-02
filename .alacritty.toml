@@ -1,4 +1,3 @@
-dynamic_title = true
 live_config_reload = true
 
 [colors]
@@ -95,19 +94,15 @@ mode = "~Alt"
 mods = "Shift"
 
 [scrolling]
-hide_when_typing = false
 history = 100000
 multiplier = 3
-
-[scrolling.url]
-launcher = "xdg-open"
-modifiers = "None"
 
 [selection]
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
+dynamic_title = true
 decorations = "none"
 dynamic_padding = false
 startup_mode = "Windowed"
@@ -119,3 +114,10 @@ lines = 85
 [window.padding]
 x = 2
 y = 2
+
+[mouse]
+hide_when_typing = false
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
