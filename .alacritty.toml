@@ -41,6 +41,14 @@ yellow = "0xe6c547"
 background = "0x000000"
 foreground = "0xeaeaea"
 
+[colors.selection]
+background = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.vi_mode_cursor]
+cursor = "#B4BEFE"
+text = "#1E1E2E"
+
 [cursor]
 unfocused_hollow = true
 
@@ -57,7 +65,9 @@ TERM = "xterm-256color"
 size = 14.0
 
 [font.normal]
-family = "MesloLGS NF"
+# family = "MesloLGS NF"
+family = "FiraCode Nerd Font"
+style = "Regular"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -118,6 +128,7 @@ y = 2
 [mouse]
 hide_when_typing = false
 
-[[hints.enabled]]
-command = "xdg-open"
-hyperlinks = true
+# Do not use for hyperlinks
+# [[hints.enabled]]
+# command = "xdg-open"
+# hyperlinks = true
