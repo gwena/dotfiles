@@ -52,7 +52,7 @@ notification = "\uf075"
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device "
+format = " $icon {$signal_strength $ssid $frequency|1Gb/s}"
 
 # Dunst toggle notification
 [[block]]
