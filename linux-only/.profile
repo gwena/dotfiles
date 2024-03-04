@@ -1,3 +1,5 @@
+# Will be sourced from .xprofile
+
 export GDK_SCALE=1 # 2 will too big for Thunar
 export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -22,6 +24,7 @@ export PATH="$PATH:$SCRIPTS"
 export DOTS_PATH="$SCRIPTS/dotfiles"
 
 source "$SCRIPTS/linux-only-perso/profile-private.sh"
+source "$HOME/.config/broot/launcher/bash/br"
 
 # Disabled for now - to check later
 #

@@ -80,6 +80,7 @@ case "$(uname -s)" in
         echo '### Linux only symlinks'
 
         ln -sfv $DOTS_PATH/linux-only/.profile .profile
+        ln -sfv $DOTS_PATH/linux-only/.xprofile .xprofile
         ln -sfv $DOTS_PATH/linux-only/.hidden .hidden # Nautilus but also PCManFM
         ln -sfv $DOTS_PATH/linux-only/.gvimrc .gvimrc
         ln -sfv $DOTS_PATH/linux-only/.Xresources .Xresources
