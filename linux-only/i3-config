@@ -66,7 +66,7 @@ bindsym Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
 bindsym $mod+F2 exec firefox
 bindsym $mod+j exec thunar
 bindsym $mod+Shift+F3 exec pcmanfm
-bindsym $mod+k exec alacritty -e ranger
+bindsym $mod+k exec alacritty -T Ranger -e ranger
 bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+g exec prime-run gthumb  
