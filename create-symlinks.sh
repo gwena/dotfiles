@@ -78,9 +78,10 @@ cd $HOME
 case "$(uname -s)" in
     Linux)
         echo '### Linux only symlinks'
-
+        # Will be deprecated with Wayland, check /etc/environment and Hyprland config
         ln -sfv $DOTS_PATH/linux-only/.profile .profile
         ln -sfv $DOTS_PATH/linux-only/.xprofile .xprofile
+
         ln -sfv $DOTS_PATH/linux-only/.hidden .hidden # Nautilus but also PCManFM
         ln -sfv $DOTS_PATH/linux-only/.gvimrc .gvimrc
         ln -sfv $DOTS_PATH/linux-only/.Xresources .Xresources
@@ -102,6 +103,8 @@ case "$(uname -s)" in
 	      ln -sfv $DOTS_PATH/linux-only/dunst dunst
         rm -rf hypr
         ln -sfv $DOTS_PATH/linux-only/hypr hypr
+        rm -rf waybar
+        ln -sfv $DOTS_PATH/linux-only/waybar waybar
         rm -rf spotify-tui
         ln -sfv $SCRIPTS/linux-only-perso/spotify-tui spotify-tui
         rm -rf idasen-controller
