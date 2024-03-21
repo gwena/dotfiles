@@ -69,7 +69,8 @@
     },
     "custom/power":{
         "format": " ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+        "on-click": "wlogout"
+        // "on-click": "bash ~/.config/rofi/leave/leave.sh",
     },
     "custom/idasen-stand":{
         "format": "\uf70c ",
