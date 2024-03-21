@@ -3,7 +3,7 @@
     // Using margin-bottom with a negative value in order to reduce the space between Hyprland window and waybar
     "margin-bottom": -10,
     "margin-top": 10,
-    "modules-left": ["custom/launcher", "custom/spotify"],
+    "modules-left": ["custom/launcher", "custom/idasen-stand", "custom/idasen-sit", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["cpu","memory", "network","pulseaudio","clock", "battery", "custom/power", "tray"],
 
@@ -70,6 +70,14 @@
     "custom/power":{
         "format": " ",
         "on-click": "bash ~/.config/rofi/leave/leave.sh",
+    },
+    "custom/idasen-stand":{
+        "format": "\uf70c ",
+        "on-click": "idasen-controller --move-to stand",
+    },
+    "custom/idasen-sit":{
+        "format": "\uf6c1 ",
+        "on-click": "idasen-controller --move-to sit",
     },
     // The code following below is given in the great documentation for Waybar status bar under Useful Utilities in Hyprland wiki
     "hyrpland/workspaces": {
