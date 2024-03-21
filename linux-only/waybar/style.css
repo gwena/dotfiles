@@ -125,17 +125,6 @@ window#waybar.hidden {
     }
 }
 
-#backlight {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F8BD96;
-}
 #clock {
 	margin-top: 6px;
 	margin-left: 8px;
