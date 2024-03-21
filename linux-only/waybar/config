@@ -5,7 +5,7 @@
     "margin-top": 10,
     "modules-left": ["custom/launcher", "cpu","memory", "network","custom/spotify", "tray"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["backlight","pulseaudio","clock", "battery", "custom/power"],
+    "modules-right": ["pulseaudio","clock", "battery", "custom/power"],
 
     "pulseaudio": {
         "tooltip": false,
@@ -26,13 +26,6 @@
         "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
         },
-    "backlight": {
-        "tooltip": false,
-        "format": " {}%",
-        "interval":1,
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5"
-    },
     "battery": {
         "states": {
             "good": 95,
