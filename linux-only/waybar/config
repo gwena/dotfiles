@@ -8,7 +8,7 @@
     "modules-right": ["pulseaudio","clock", "battery", "custom/power"],
 
     "pulseaudio": {
-        "tooltip": false,
+        "tooltip": true,
         "scroll-step": 5,
         "format": "{icon} {volume}%",
         "format-muted": "{icon} {volume}%",
@@ -43,7 +43,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %I:%M %p   %d/%m/%Y}"
+        "format": "{: %H:%M %m-%d}"
     },
     "cpu": {
         "interval": 15,
