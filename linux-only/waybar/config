@@ -3,7 +3,7 @@
     // Using negative value to reduce the space between Hyprland window and waybar
     "margin-bottom": -10,
     "margin-top": 10,
-    "modules-left": ["custom/launcher", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
+    "modules-left": ["custom/launcher", "custom/wallpaper", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["cpu","memory", "network","pulseaudio","clock", "battery", "custom/power", "tray"],
 
@@ -72,12 +72,16 @@
         "on-click": "wlogout"
         // "on-click": "bash ~/.config/rofi/leave/leave.sh",
     },
+    "custom/wallpaper":{
+        "format": "\uf5aa",
+        "on-click": "hyprpaper-random-selection.sh"
+    },
     "custom/idasen-stand":{
-        "format": "\uf70c ",
+        "format": "\uf70c",
         "on-click": "idasen-controller --move-to stand",
     },
     "custom/idasen-sit":{
-        "format": "\uf6c1 ",
+        "format": "\uf6c1",
         "on-click": "idasen-controller --move-to sit",
     },
     "custom/weather": {
