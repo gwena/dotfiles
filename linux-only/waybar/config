@@ -5,7 +5,7 @@
     "margin-top": 10,
     "modules-left": ["custom/launcher", "custom/wallpaper", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["cpu","memory", "network","pulseaudio","clock", "battery", "custom/power", "tray"],
+    "modules-right": ["cpu","memory", "network","pulseaudio","clock", "battery", "tray", "custom/power"],
 
     "pulseaudio": {
         "tooltip": true,
