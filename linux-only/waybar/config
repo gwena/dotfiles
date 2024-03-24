@@ -89,7 +89,6 @@
     "custom/power":{
         "format": " ",
         "on-click": "wlogout"
-        // "on-click": "bash ~/.config/rofi/leave/leave.sh",
     },
     "custom/wallpaper":{
         "format": "\uf5aa",
