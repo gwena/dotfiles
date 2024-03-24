@@ -12,7 +12,7 @@
         "scroll-step": 5,
         "format": "{icon} {volume}%",
         "format-muted": "{icon} {volume}%",
-        "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click": "pavucontrol-qt",
         "format-icons": {
             "default": ["", "", ""]
         }
