@@ -1,7 +1,7 @@
 * {
 	border: none;
 	border-radius: 10px;
-	font-family: "Font Awesome";
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 	font-size: 17px;
 	min-height: 10px;
 }
@@ -25,7 +25,6 @@ window#waybar.hidden {
 	margin-top: 6px;
 	padding-left: 10px;
 	padding-right: 10px;
-	border-radius: 10px;
 	transition: none;
     color: transparent;
 	background: transparent;
@@ -62,6 +61,11 @@ window#waybar.hidden {
     border-bottom: 2px solid #ABE9B3;
 }
 
+#workspaces button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
+}
+
 #workspaces button:hover {
 	transition: none;
 	box-shadow: inherit;
@@ -93,7 +97,7 @@ window#waybar.hidden {
 	margin-top: 6px;
 	margin-left: 8px;
 	padding-left: 10px;
-	padding-right: 18px;
+	padding-right: 10px;
 	margin-bottom: 0px;
 	transition: none;
 }
@@ -128,11 +132,6 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
-#clock {
-	color: #161320;
-	background: #ABE9B3;
-}
-
 #memory {
 	color: #161320;
 	background: #DDB6F2;
@@ -143,25 +142,14 @@ window#waybar.hidden {
 	background: #96CDFB;
 }
 
-#tray {
+#tray, #custom-launcher {
 	color: #B5E8E0;
 	background: #161320;
 }
 
-#custom-launcher {
-	font-size: 24px;
-    color: #89DCEB;
-    background: #161320;
-}
-
-#custom-power, #temperature.critical {
+#clock, #custom-idasen-stand {
 	color: #161320;
-	background: #F28FAD;
-}
-
-#custom-spotify {
-	color: #161320;
-	background: #F2CDCD;
+	background: #ABE9B3;
 }
 
 #custom-idasen-sit {
@@ -169,9 +157,14 @@ window#waybar.hidden {
 	background: #F28FAD;
 }
 
-#custom-idasen-stand {
+#custom-power, #temperature.critical {
 	color: #161320;
-	background: #ABE9B3;
+	background: #F22222;
+}
+
+#custom-spotify {
+	color: #161320;
+	background: #F2CDCD;
 }
 
 #custom-weather, #custom-wallpaper {
