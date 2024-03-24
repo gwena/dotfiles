@@ -5,7 +5,7 @@
     "margin-top": 10,
     "modules-left": ["custom/launcher", "custom/wallpaper", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["cpu","memory", "network","pulseaudio","clock", "battery", "tray", "custom/power"],
+    "modules-right": ["cpu", "temperature", "memory", "network","pulseaudio","clock", "battery", "tray", "custom/power"],
 
     "pulseaudio": {
         "tooltip": true,
@@ -64,6 +64,10 @@
         "interval": 15,
         "format": " {}%",
         "max-length": 10
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "format": "{temperatureC}°C "
     },
     "memory": {
         "interval": 30,
