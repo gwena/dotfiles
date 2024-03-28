@@ -11,11 +11,11 @@
 @define-color black-write #1d2021;
 
 * {
-	border: none;
-	border-radius: 10px;
+    border: none;
+    border-radius: 10px;
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-	font-size: 17px;
-	min-height: 10px;
+    font-size: 17px;
+    min-height: 10px;
 }
 
 @keyframes blink {
@@ -26,49 +26,49 @@
 }
 
 window#waybar {
-	background: transparent;
+    background: transparent;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+    opacity: 0.2;
 }
 
 #window {
-	margin-top: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
-	transition: none;
+    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
     color: transparent;
-	background: transparent;
+    background: transparent;
 }
 
 #workspaces {
-	margin-top: 6px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	background: @black-write;
-	transition: none;
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 4px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    background: @black-write;
+    transition: none;
 }
 
 #workspaces button {
-	transition: none;
-	color: @blue;
-	background: transparent;
-	font-size: 16px;
-	border-radius: 2px;
+    transition: none;
+    color: @blue;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 2px;
 }
 
 #workspaces button.occupied {
-	transition: none;
-	color: @red-light;
-	background: transparent;
-	font-size: 4px;
+    transition: none;
+    color: @red-light;
+    background: transparent;
+    font-size: 4px;
 }
 
 #workspaces button.active {
-	color: @green;
+    color: @green;
     border-top: 2px solid @green;
     border-bottom: 2px solid @green;
 }
@@ -79,12 +79,12 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-	transition: none;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	color: @yellow;
-	border-color: @red-light;
-	color: @red-light;
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: @yellow;
+    border-color: @red-light;
+    color: @red-light;
 }
 
 #workspaces button.active:hover {
@@ -106,31 +106,31 @@ window#waybar.hidden {
 #custom-idasen-sit,
 #custom-idasen-stand,
 #custom-weather {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    transition: none;
 }
 
 #network {
-	color: @black-write;
-	background: @purple-light;
+    color: @black-write;
+    background: @purple-light;
 }
 
 #pulseaudio {
-	color: @black-write;
-	background: @yellow;
+    color: @black-write;
+    background: @yellow;
 }
 
 #battery {
-	color: @black-write;
-	background: @green;
+    color: @black-write;
+    background: @green;
 }
 
 #battery.charging, #battery.plugged {
-	color: @black-write;
+    color: @black-write;
     background-color: @green;
 }
 
@@ -145,41 +145,41 @@ window#waybar.hidden {
 }
 
 #memory {
-	color: @black-write;
-	background: @purple;
+    color: @black-write;
+    background: @purple;
 }
 
 #cpu, #temperature {
-	color: @black-write;
-	background: @blue;
+    color: @black-write;
+    background: @blue;
 }
 
 #tray, #custom-launcher {
-	color: @black-write;
-	background: @black-light;
+    color: @black-write;
+    background: @black-light;
 }
 
 #clock, #custom-idasen-stand {
-	color: @black-write;
-	background: @green;
+    color: @black-write;
+    background: @green;
 }
 
 #custom-idasen-sit {
-	color: @black-write;
-	background: @orange;
+    color: @black-write;
+    background: @orange;
 }
 
 #custom-power, #temperature.critical {
-	color: @black-write;
-	background: @red;
+    color: @black-write;
+    background: @red;
 }
 
 #custom-spotify {
-	color: @black-write;
-	background: @green-spotify;
+    color: @black-write;
+    background: @green-spotify;
 }
 
 #custom-weather, #custom-wallpaper {
-	color: @black-write;
-	background: @yellow;
+    color: @black-write;
+    background: @yellow;
 }
