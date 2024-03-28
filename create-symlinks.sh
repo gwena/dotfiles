@@ -79,32 +79,31 @@ case "$(uname -s)" in
     Linux)
         echo '### Linux only symlinks'
         # Will be deprecated with Wayland, check /etc/environment and Hyprland config
-        ln -sfv $DOTS_PATH/linux-only/.profile .profile
-        ln -sfv $DOTS_PATH/linux-only/.xprofile .xprofile
+        ln -sfv $DOTS_PATH/.profile .profile
+        ln -sfv $DOTS_PATH/.xprofile .xprofile
 
-        ln -sfv $DOTS_PATH/linux-only/.hidden .hidden # Nautilus but also PCManFM
-        ln -sfv $DOTS_PATH/linux-only/.gvimrc .gvimrc
-        ln -sfv $DOTS_PATH/linux-only/.Xresources .Xresources
-        ln -sfnv $DOTS_PATH/linux-only/.urxvt .urxvt
-        ln -sfnv $DOTS_PATH/linux-only/.screenlayout .screenlayout
-
-        mkdir -p $HOME/.i3
-        cd $HOME/.i3
-        ln -sfv $DOTS_PATH/linux-only/i3-config config
+        ln -sfv $DOTS_PATH/.hidden .hidden # Nautilus but also PCManFM
+        ln -sfv $DOTS_PATH/.gvimrc .gvimrc
+        ln -sfv $DOTS_PATH/.Xresources .Xresources
+        ln -sfv $DOTS_PATH/.urxvt .urxvt
+        rm -rf .screenlayout
+        ln -sfv $DOTS_PATH/.screenlayout .screenlayout
+        rm -rf .i3 
+        ln -sfv $DOTS_PATH/.i3 .i3
 
         cd $HOME/.config
         rm -rf pcmanfm
-        ln -sfv $DOTS_PATH/linux-only/pcmanfm pcmanfm
+        ln -sfv $DOTS_PATH/pcmanfm pcmanfm
         rm -rf i3status-rust
-	      ln -sfv $DOTS_PATH/linux-only/i3status-rust i3status-rust
+	      ln -sfv $DOTS_PATH/i3status-rust i3status-rust
         rm -rf rofi
-	      ln -sfv $DOTS_PATH/linux-only/rofi rofi
+	      ln -sfv $DOTS_PATH/rofi rofi
         rm -rf dunst
-	      ln -sfv $DOTS_PATH/linux-only/dunst dunst
+	      ln -sfv $DOTS_PATH/dunst dunst
         rm -rf hypr
-        ln -sfv $DOTS_PATH/linux-only/hypr hypr
+        ln -sfv $DOTS_PATH/hypr hypr
         rm -rf waybar
-        ln -sfv $DOTS_PATH/linux-only/waybar waybar
+        ln -sfv $DOTS_PATH/waybar waybar
         rm -rf wofi 
         ln -sfv $DOTS_PATH/wofi wofi
         rm -rf spotify-tui
