@@ -1,11 +1,10 @@
 {
     "layer": "top",
-    // Using negative value to reduce the space between Hyprland window and waybar
-    "margin-bottom": -10,
+    "margin-bottom": -10, // Using negative value to reduce the space between Hyprland window and waybar
     "margin-top": 10,
     "modules-left": ["custom/launcher", "custom/wallpaper", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["cpu", "temperature", "memory", "network","pulseaudio","clock", "battery", "tray", "custom/power"],
+    "modules-center": ["hyprland/workspaces", "clock"],
+    "modules-right": ["cpu", "temperature", "memory", "network","pulseaudio", "battery", "tray", "custom/power"],
 
     "pulseaudio": {
         "tooltip": true,
