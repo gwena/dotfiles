@@ -106,6 +106,8 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/waybar waybar
         rm -rf wofi 
         ln -sfv $DOTS_PATH/wofi wofi
+        rm -rf swappy 
+        ln -sfv $DOTS_PATH/swappy swappy
         rm -rf spotify-tui
         ln -sfv $SCRIPTS/linux-only-perso/spotify-tui spotify-tui
         rm -rf idasen-controller
