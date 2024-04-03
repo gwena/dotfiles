@@ -1,4 +1,5 @@
 {
+    "reload_style_on_change": true, // not fully working
     "layer": "top",
     "margin-bottom": -10, // Using negative value to reduce the space between Hyprland window and waybar
     "margin-top": 10,
