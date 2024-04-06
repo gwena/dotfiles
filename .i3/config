@@ -313,7 +313,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id copyq
-# exec --no-startup-id pasystray  # installed wayland version (not compatible with X)
+exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
 exec --no-startup-id xautolock -time 30 -locker blurlock
