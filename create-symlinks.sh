@@ -88,10 +88,10 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/.urxvt .urxvt
         rm -rf .screenlayout
         ln -sfv $DOTS_PATH/.screenlayout .screenlayout
-        rm -rf .i3 
-        ln -sfv $DOTS_PATH/.i3 .i3
 
         cd $HOME/.config
+        rm -rf i3 
+        ln -sfv $DOTS_PATH/i3 i3
         rm -rf pcmanfm
         ln -sfv $DOTS_PATH/pcmanfm pcmanfm
         rm -rf i3status-rust
