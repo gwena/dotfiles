@@ -7,7 +7,6 @@ ln -sfv $DOTS_PATH/.zshrc .zshrc
 # with list of choices
 # ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
-ln -sfv $DOTS_PATH/.alacritty.toml .alacritty.toml
 ln -sfv $DOTS_PATH/.vimrc .vimrc
 # not needed anymore and obsolete
 # ln -sfv $DOTS_PATH/.bashrc .bashrc
@@ -30,6 +29,9 @@ cd ~/.config
 
 rm -rf git
 ln -sfv $DOTS_PATH/git git
+
+rm -rf alacritty
+ln -sfv $DOTS_PATH/alacritty alacritty
 
 rm -rf ranger
 ln -sfnv $DOTS_PATH/ranger ranger
