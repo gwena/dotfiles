@@ -8,12 +8,10 @@ ln -sfv $DOTS_PATH/.zshrc .zshrc
 # ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
 ln -sfv $DOTS_PATH/.alacritty.toml .alacritty.toml
+ln -sfv $DOTS_PATH/.vimrc .vimrc
 # not needed anymore and obsolete
 # ln -sfv $DOTS_PATH/.bashrc .bashrc
-ln -sfv $DOTS_PATH/.vimrc .vimrc
 # ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
-ln -sfv $DOTS_PATH/.gitconfig .gitconfig
-ln -sfv $DOTS_PATH/.gitignore_global .gitignore_global
 # ln -sfv $DOTS_PATH/.ackrc .ackrc
 # ln -sfv $DOTS_PATH/.agignore .agignore
 # ln -sfv $DOTS_PATH/.inputrc .inputrc # was only for sbt (bug)
@@ -29,6 +27,9 @@ ln -sfnv ${SCRIPTS}.ssh .ssh
 ln -sfnv ${SCRIPTS}doom.d .doom.d
 
 cd ~/.config
+
+rm -rf git
+ln -sfv $DOTS_PATH/git git
 
 rm -rf ranger
 ln -sfnv $DOTS_PATH/ranger ranger
