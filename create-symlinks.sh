@@ -11,11 +11,11 @@ ln -sfv $DOTS_PATH/.alacritty.toml .alacritty.toml
 # not needed anymore and obsolete
 # ln -sfv $DOTS_PATH/.bashrc .bashrc
 ln -sfv $DOTS_PATH/.vimrc .vimrc
-ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
+# ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
 ln -sfv $DOTS_PATH/.gitconfig .gitconfig
 ln -sfv $DOTS_PATH/.gitignore_global .gitignore_global
-ln -sfv $DOTS_PATH/.ackrc .ackrc
-ln -sfv $DOTS_PATH/.agignore .agignore
+# ln -sfv $DOTS_PATH/.ackrc .ackrc
+# ln -sfv $DOTS_PATH/.agignore .agignore
 # ln -sfv $DOTS_PATH/.inputrc .inputrc # was only for sbt (bug)
 # ln -sfv $DOTS_PATH/.haskeline .haskeline
 # ln -sfv $DOTS_PATH/.gemrc .gemrc
@@ -83,7 +83,7 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/.xprofile .xprofile
 
         ln -sfv $DOTS_PATH/.hidden .hidden # Nautilus but also PCManFM
-        ln -sfv $DOTS_PATH/.gvimrc .gvimrc
+        # ln -sfv $DOTS_PATH/.gvimrc .gvimrc
         ln -sfv $DOTS_PATH/.Xresources .Xresources
         ln -sfv $DOTS_PATH/.urxvt .urxvt
         rm -rf .screenlayout
