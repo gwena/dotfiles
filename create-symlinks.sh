@@ -1,14 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 echo "Create Symbolic links for dotfiles/config files"
 
-cd $HOME
+cd "$HOME"
 ln -sfv $DOTS_PATH/.zshrc .zshrc
-# might be better to regenerate each time
-# with list of choices
-# ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
 ln -sfv $DOTS_PATH/.vimrc .vimrc
-# not needed anymore and obsolete
+# Not needed anymore/currently, might be outdated
+# ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh # Regenerate each time with list of choices
 # ln -sfv $DOTS_PATH/.bashrc .bashrc
 # ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
 # ln -sfv $DOTS_PATH/.ackrc .ackrc
@@ -20,12 +18,13 @@ ln -sfv $DOTS_PATH/.vimrc .vimrc
 # ln -sfv $DOTS_PATH/.joker .joker
 # ln -sfv $DOTS_PATH/.tmux.conf .tmux.conf
 # ln -sfv $DOTS_PATH/.spacemacs .spacemacs
+# ln -sfv $DOTS_PATH/.gvimrc .gvimrc
 
 # Not in dotfiles
 ln -sfnv ${SCRIPTS}.ssh .ssh
 ln -sfnv ${SCRIPTS}doom.d .doom.d
 
-cd ~/.config
+cd "$HOME/.config"
 
 rm -rf git
 ln -sfv $DOTS_PATH/git git
@@ -86,7 +85,6 @@ case "$(uname -s)" in
         ln -sfv $DOTS_PATH/.xprofile .xprofile
 
         ln -sfv $DOTS_PATH/.hidden .hidden # Nautilus but also PCManFM
-        # ln -sfv $DOTS_PATH/.gvimrc .gvimrc
         ln -sfv $DOTS_PATH/.Xresources .Xresources
         ln -sfv $DOTS_PATH/.urxvt .urxvt
         rm -rf .screenlayout
