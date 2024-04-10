@@ -47,9 +47,10 @@ mkdir -p $HOME/.lein
 cd $HOME/.lein
 ln -sfv $DOTS_PATH/.lein/profiles.clj profiles.clj
 
-mkdir -p $HOME/.clojure
-cd $HOME/.clojure
-ln -sfv $DOTS_PATH/.clojure/deps.edn deps.edn
+mkdir -p $HOME/.config/clojure
+cd $HOME/.config/clojure
+ln -sfv $DOTS_PATH/clojure/deps.edn deps.edn
+ln -sfv $DOTS_PATH/clojure/tools tools
 
 # mkdir -p $HOME/.jokerd
 # cd $HOME/.jokerd
