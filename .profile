@@ -19,8 +19,8 @@ if [ $XDG_CURRENT_DESKTOP = "i3" ]; then
     xcape -t 150 -e 'Super_L=Super_L|Escape'
 fi
 
+# $SCRIPTS is defined in /etc/environment (and can be used in Hyprland)
 export ORG="$HOME/Documents/Self/NotesOrgMode"
-export SCRIPTS="$HOME/Documents/Scripts/"
 export PATH="$PATH:$SCRIPTS"
 export DOTS_PATH="$SCRIPTS/dotfiles"
 
