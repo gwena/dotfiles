@@ -22,9 +22,10 @@ ln -sfv $DOTS_PATH/.vimrc .vimrc
 
 # Not in dotfiles
 ln -sfnv ${SCRIPTS}.ssh .ssh
-ln -sfnv ${SCRIPTS}doom.d .doom.d
 
 cd "$HOME/.config"
+
+ln -sfnv ${SCRIPTS}doom doom
 
 rm -rf git
 ln -sfv $DOTS_PATH/git git
