@@ -5,20 +5,6 @@ cd "$HOME"
 ln -sfv $DOTS_PATH/.zshrc .zshrc
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
 ln -sfv $DOTS_PATH/.vimrc .vimrc
-# Not needed anymore/currently, might be outdated
-# ln -sfv $DOTS_PATH/.p10k.zsh .p10k.zsh # Regenerate each time with list of choices
-# ln -sfv $DOTS_PATH/.bashrc .bashrc
-# ln -sfv $DOTS_PATH/.ideavimrc .ideavimrc
-# ln -sfv $DOTS_PATH/.ackrc .ackrc
-# ln -sfv $DOTS_PATH/.agignore .agignore
-# ln -sfv $DOTS_PATH/.inputrc .inputrc # was only for sbt (bug)
-# ln -sfv $DOTS_PATH/.haskeline .haskeline
-# ln -sfv $DOTS_PATH/.gemrc .gemrc
-# ln -sfv $DOTS_PATH/.pryrc .pryrc
-# ln -sfv $DOTS_PATH/.joker .joker
-# ln -sfv $DOTS_PATH/.tmux.conf .tmux.conf
-# ln -sfv $DOTS_PATH/.spacemacs .spacemacs
-# ln -sfv $DOTS_PATH/.gvimrc .gvimrc
 
 # Not in dotfiles
 ln -sfnv ${SCRIPTS}.ssh .ssh
@@ -52,31 +38,6 @@ mkdir -p $HOME/.config/clojure
 cd $HOME/.config/clojure
 ln -sfv $DOTS_PATH/clojure/deps.edn deps.edn
 ln -sfv $DOTS_PATH/clojure/tools tools
-
-# mkdir -p $HOME/.jokerd
-# cd $HOME/.jokerd
-# ln -sfv $DOTS_PATH/joker-linter.cljc linter.cljc
-
-# Haskell - Not used at the moment
-# mkdir -p $HOME/.ghc
-# chmod go-w $HOME/.ghc
-# cd $HOME/.ghc
-# ln -sfv $DOTS_PATH/ghci.conf ghci.conf
-# mkdir -p $HOME/.stack
-# cd $HOME/.stack
-# ln -sfv $DOTS_PATH/.stack/config.yaml config.yaml
-
-# Scala/SBT - Not used at the moment, and next will be 1.x anyway
-# sbtConfigFolder=.sbt/0.13/
-# sbtPlugins=$sbtConfigFolder/plugins
-# mkdir -p $HOME/$sbtPlugins
-# cd $HOME/$sbtPlugins
-# ln -sfv $DOTS_PATH/$sbtPlugins/plugins.sbt plugins.sbt
-# cd $HOME/.sbt
-# ln -sfv $DOTS_PATH/linux-only-perso/sbt-credentials-nexus .credentials
-# Disable for now
-# cd $HOME/$sbtConfigFolder
-# ln -sfv $DOTS_PATH/$sbtConfigFolder/global.sbt global.sbt
 
 cd $HOME
 case "$(uname -s)" in
