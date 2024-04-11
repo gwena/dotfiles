@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Create Symbolic links for dotfiles/config files"
 
+# In HOME folder, adapt and move to .config when possible
 cd "$HOME"
 ln -sfv $DOTS_PATH/.zshrc .zshrc
 ln -sfv $DOTS_PATH/.sharedrc .sharedrc
@@ -15,11 +16,12 @@ rm -rf .screenlayout
 ln -sfv $DOTS_PATH/.screenlayout .screenlayout
 #
 # Not in dotfiles
-ln -sfnv ${SCRIPTS}.ssh .ssh
+ln -sfnv ${SCRIPTS}/.ssh .ssh
 
+# In .config folder
 cd "$HOME/.config"
 
-ln -sfnv ${SCRIPTS}doom doom
+ln -sfnv ${SCRIPTS}/doom doom
 
 rm -rf git
 ln -sfv $DOTS_PATH/git git
