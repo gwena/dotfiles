@@ -1,13 +1,14 @@
 #!/bin/bash
 echo "Create Symbolic links for dotfiles/config files. Should be idempotent"
 
+# Once-off with sudo (commented after for simplicity)
+# sudo ln -sfnv ${DOTS_PATH}/etc/profile.d/home.sh /etc/profile.d/home.sh
+
 # ----- In HOME folder, adapt and move to .config when possible
 cd ${HOME}
 ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.sharedrc .sharedrc
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
-ln -sfnv ${DOTS_PATH}/.profile .profile
-ln -sfnv ${DOTS_PATH}/.xprofile .xprofile
 ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${DOTS_PATH}/.urxvt .urxvt

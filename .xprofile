@@ -1,4 +1,0 @@
-# Should not need to source .profile, even from Wayland
-# as done from /etc/profile.d/gwena.sh
-# [ -f "$HOME/.profile" ] && . "$HOME/.profile"
-
