@@ -32,9 +32,9 @@ ln -sfnv ${DOTS_PATH}/waybar waybar
 ln -sfnv ${DOTS_PATH}/wofi wofi
 ln -sfnv ${DOTS_PATH}/swappy swappy
 ln -sfnv ${SCRIPTS}/doom doom
-ln -sfnv ${SCRIPTS}/rclone rclone
-ln -sfnv ${SCRIPTS}/linux-only-perso/spotify-tui spotify-tui
-ln -sfnv ${SCRIPTS}/linux-only-perso/idasen-controller idasen-controller
+ln -sfnv ${SCRIPTS}/private/rclone rclone
+ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
+ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
 
 # ----- Special cases where not the whole folder is symlinked
 mkdir -p ${HOME}/.lein
