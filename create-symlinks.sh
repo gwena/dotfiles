@@ -13,7 +13,7 @@ ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${DOTS_PATH}/.urxvt .urxvt
 ln -sfnv ${DOTS_PATH}/.screenlayout .screenlayout
-ln -sfnv ${SCRIPTS}/.ssh .ssh
+ln -sfnv ${SCRIPTS}/private/ssh .ssh
 
 # ----- In .config folder
 cd ${HOME}/.config
