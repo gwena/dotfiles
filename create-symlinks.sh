@@ -8,29 +8,34 @@ echo "Create Symbolic links for dotfiles/config files. Should be idempotent"
 cd ${HOME}
 ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.sharedrc .sharedrc
-ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
-ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
+ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.urxvt .urxvt
 ln -sfnv ${DOTS_PATH}/.screenlayout .screenlayout
+ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${SCRIPTS}/private/ssh .ssh
 
 # ----- In .config folder
 cd ${HOME}/.config
 ln -sfnv ${DOTS_PATH}/git git
 ln -sfnv ${DOTS_PATH}/alacritty alacritty
-ln -sfnv ${DOTS_PATH}/ranger ranger
-ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf
 ln -sfnv ${DOTS_PATH}/kitty kitty
-ln -sfnv ${DOTS_PATH}/i3 i3
 ln -sfnv ${DOTS_PATH}/pcmanfm pcmanfm
-ln -sfnv ${DOTS_PATH}/i3status-rust i3status-rust
+ln -sfnv ${DOTS_PATH}/ranger ranger
 ln -sfnv ${DOTS_PATH}/rofi rofi
 ln -sfnv ${DOTS_PATH}/dunst dunst
+
+# X/i3wm specific
+ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf
+ln -sfnv ${DOTS_PATH}/i3 i3
+ln -sfnv ${DOTS_PATH}/i3status-rust i3status-rust
+
+# Wayland specific
 ln -sfnv ${DOTS_PATH}/hypr hypr
 ln -sfnv ${DOTS_PATH}/waybar waybar
 ln -sfnv ${DOTS_PATH}/wofi wofi
 ln -sfnv ${DOTS_PATH}/swappy swappy
+
 ln -sfnv ${SCRIPTS}/doom doom
 ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
