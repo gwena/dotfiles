@@ -2,6 +2,7 @@
 echo "Create Symbolic links for dotfiles/config files. Should be idempotent"
 
 # Once-off with sudo (commented after for simplicity)
+echo "Skipping /etc/profile.d/home.sh"
 # sudo ln -sfnv ${DOTS_PATH}/etc/profile.d/home.sh /etc/profile.d/home.sh
 
 # ----- In HOME folder, adapt and move to .config when possible
@@ -50,4 +51,3 @@ mkdir -p ${HOME}/.config/clojure
 cd ${HOME}/.config/clojure
 ln -sfnv ${DOTS_PATH}/clojure/deps.edn deps.edn
 ln -sfnv ${DOTS_PATH}/clojure/tools tools
-
