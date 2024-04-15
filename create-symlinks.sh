@@ -7,6 +7,7 @@ echo "Skipping /etc/profile.d/home.sh"
 
 # ----- In HOME folder, adapt and move to .config when possible
 cd ${HOME}
+ln -sfnv ${DOTS_PATH}/.bashrc .bashrc
 ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc

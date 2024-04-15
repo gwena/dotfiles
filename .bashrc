@@ -112,3 +112,5 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
+FILE=~/.config/broot/launcher/bash/br && test -f "$FILE" && source "$FILE"
