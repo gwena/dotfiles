@@ -4,8 +4,12 @@ export ORG="${HOME}/Documents/Self/NotesOrgMode"
 export PATH="${PATH}:${SCRIPTS}"
 
 # In theory, if $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config
-# should be used, however not always respected (e.g. Clojure)
+# should be used, however it is not always respected (e.g. Clojure). So defining them for all.
 export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+export XDG_CACHE_HOME="${HOME}/.cache"
+
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtkrc-2.0"
 
 export GDK_SCALE=1 # 2 will too big for Thunar
