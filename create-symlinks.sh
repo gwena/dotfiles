@@ -8,7 +8,6 @@ echo "Skipping /etc/profile.d/home.sh"
 # ----- In HOME folder, adapt and move to .config when possible
 cd ${HOME}
 ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
-ln -sfnv ${DOTS_PATH}/.sharedrc .sharedrc
 ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.urxvt .urxvt
@@ -18,6 +17,7 @@ ln -sfnv ${SCRIPTS}/private/ssh .ssh
 
 # ----- In .config folder
 cd ${HOME}/.config
+ln -sfnv ${DOTS_PATH}/sharedrc sharedrc
 ln -sfnv ${DOTS_PATH}/git git
 ln -sfnv ${DOTS_PATH}/alacritty alacritty
 ln -sfnv ${DOTS_PATH}/kitty kitty

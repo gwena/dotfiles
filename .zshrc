@@ -133,7 +133,7 @@ bindkey "^S" history-incremental-pattern-search-forward
 unalias grv
 
 # Shared Aliases and Exports by Bash and Zsh
-. ~/.sharedrc
+. ~/.config/sharedrc
 
 # Fzf
 source /usr/share/fzf/key-bindings.zsh
