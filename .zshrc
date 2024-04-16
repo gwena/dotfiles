@@ -132,15 +132,6 @@ bindkey "^S" history-incremental-pattern-search-forward
 # Alias defined for git remote -v, but grv needed
 unalias grv
 
-# Shared Aliases and Exports by Bash and Zsh
-. ~/.config/sharedrc
-
-# Fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-source /home/gwena/.config/broot/launcher/bash/br
-
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -148,3 +139,6 @@ source /home/gwena/.config/broot/launcher/bash/br
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+# Shared between Bash and Zsh (aliases, exports, sources, ...)
+FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
