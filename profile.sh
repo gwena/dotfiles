@@ -3,14 +3,20 @@
 export ORG="${HOME}/Documents/Self/NotesOrgMode"
 export PATH="${PATH}:${SCRIPTS}"
 
-# In theory, if $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config
-# should be used, however it is not always respected (e.g. Clojure). So defining them for all.
+# In theory, the $XDG folders should not have to be set if using default
+# However, it is not always respected (e.g. Clojure, Nvidia)
+# See Supported/Partial section of https://wiki.archlinux.org/title/XDG_Base_Directory
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtkrc-2.0"
+export _Z_DATA="${XDG_DATA_HOME}/z"
+# Only partially supporded, do not use
+# export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+# export XINITRC="${XDG_CONFIG_HOME}/xinitrc"
+# export XAUTHORITY="${XDG_CACHE_HOME}/Xauthority"
 
 export GDK_SCALE=1 # 2 will too big for Thunar
 export GDK_DPI_SCALE=1
