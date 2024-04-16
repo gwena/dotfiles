@@ -112,5 +112,7 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+export HISTFILE=$HOME/.config/bash_history
+
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
