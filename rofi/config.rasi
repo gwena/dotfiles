@@ -1,9 +1,9 @@
 configuration {
-    font: "Hack:style=Bold 32";
+    font: "Noto Color Emoji:style=Bold 32";
     show-icons: true;
-    display-drun: "𓂀";
-    drun-display-format : "{name}";
-    display-window: "🗔";
+    display-drun: "🐯";
+    drun-display-format: "{name}";
+    display-window: "🪟";
     disable-history: false;
     sidebar-mode: false;
     icon-theme: "Faenza"; /* not working */ 
