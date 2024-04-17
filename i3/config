@@ -50,6 +50,8 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+z exec --no-startup-id morc_menu
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
+bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
+
 # Funky - not needed at the moment, even just alias: i3-dmenu-desktop --dmenu=fzf
 # bindsym $mod+d exec --no-startup-id urxvt -title "fzf-menu-random123" -e bash -c 'i3-dmenu-desktop --dmenu=fzf'
 # for_window [title="fzf-menu-random123"] floating enable
