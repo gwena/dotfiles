@@ -3,6 +3,7 @@ set nocompatible
 
 "" BASIC CONFIG
 syntax on
+set viminfo+=n$XDG_DATA_HOME/viminfo
 set hidden
 set history=2000
 "" timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays.
