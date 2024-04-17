@@ -44,9 +44,9 @@ ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
 ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
 
 # ----- Special cases where not the whole folder is symlinked
-mkdir -p ${HOME}/.lein
-cd ${HOME}/.lein
-ln -sfnv ${DOTS_PATH}/.lein/profiles.clj profiles.clj
+mkdir -p ${HOME}/.config/lein
+cd ${HOME}/.confing/lein
+ln -sfnv ${DOTS_PATH}/lein/profiles.clj profiles.clj
 
 mkdir -p ${HOME}/.config/clojure
 cd ${HOME}/.config/clojure
