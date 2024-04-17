@@ -14,6 +14,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtkrc-2.0"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${XDG_CONFIG_HOME}/java"
 export LEIN_HOME="${XDG_CONFIG_HOME}/lein"
+export GRADLE_USER_HOME="${XDG_CACHE_HOME}/gradle"
 export _Z_DATA="${XDG_DATA_HOME}/z"
 
 # Only partially supporded, do not use
