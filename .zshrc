@@ -22,6 +22,7 @@ export HISTFILE=$HOME/.config/zsh_history
 # ZSH_THEME="ys" "agnoster" "kolo" "robbyrussell"
 # See installation for git repo to clone
 ZSH_THEME="powerlevel10k/powerlevel10k"
+export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/p10k.zsh"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -135,11 +136,12 @@ unalias grv
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.config/p10k.zsh.
+[[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
+
