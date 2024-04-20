@@ -145,3 +145,4 @@ complete -o nospace -C /usr/bin/terraform terraform
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
 
+FILE=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh && test -f "$FILE" && source "$FILE"
