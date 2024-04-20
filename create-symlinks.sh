@@ -12,7 +12,6 @@ ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.hidden .hidden # Nautilus but also PCManFM
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.urxvt .urxvt
-ln -sfnv ${DOTS_PATH}/.screenlayout .screenlayout
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${SCRIPTS}/private/ssh .ssh
 
@@ -27,6 +26,7 @@ ln -sfnv ${DOTS_PATH}/pcmanfm pcmanfm
 ln -sfnv ${DOTS_PATH}/ranger ranger
 ln -sfnv ${DOTS_PATH}/rofi rofi
 ln -sfnv ${DOTS_PATH}/dunst dunst
+ln -sfnv ${DOTS_PATH}/screenlayout screenlayout
 
 # X/i3wm specific
 ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf
