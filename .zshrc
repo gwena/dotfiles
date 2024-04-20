@@ -131,16 +131,13 @@ bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-# Alias defined for git remote -v, but grv needed
-unalias grv
-
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/p10k.zsh.
 [[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
+# complete -o nospace -C /usr/bin/terraform terraform
 
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
