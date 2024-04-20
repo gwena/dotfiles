@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 # More generic version for Linux and macos
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.config/oh-my-zsh
 
 export HISTSIZE=1000000
 export HISTFILE=$HOME/.config/zsh_history
