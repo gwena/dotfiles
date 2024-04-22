@@ -2,7 +2,6 @@ export HISTFILE=$HOME/.config/zsh_history
 export HISTSIZE=1000000
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST # Avoid multiple .zcompdump created in ~/
-# Setting fd as the default source for fzf (use full name as if use alias then issue)
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -31,8 +30,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
 
-# Do the initialization when the script is sourced (i.e. Initialize instantly)
-# Neede for conflict between fzf and zsh-vi-mode
+# Needed for conflict between fzf and zsh-vi-mode (Initialization when the script is sourced)
 ZVM_INIT_MODE=sourcing
 
 # Before antidote
