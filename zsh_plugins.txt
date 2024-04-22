@@ -14,11 +14,6 @@ ohmyzsh/ohmyzsh path:plugins/history
 ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/fzf
 
-# To check
-# ohmyzsh/ohmyzsh path:plugins/lein
-# ohmyzsh/ohmyzsh path:plugins/ripgrep
-# ohmyzsh/ohmyzsh path:plugins/fd
-
 # oh-my-zsh - Not currently used (or obsolete)
-# colorize # Use with ccat/cless - rather use bat
+# colorize (Use with ccat/cless - rather use bat). Not updated (and not working anymore): lein, ripgrep, fd
 # osx, cabal, autojump (issue), npm, sbt, scala, kubectl, httpie, terraform, emacs, vi-mode (replaced by zsh-vi-mode)
