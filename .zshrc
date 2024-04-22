@@ -28,14 +28,15 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
-autoload -U +X bashcompinit && bashcompinit
-
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
 
 # Do the initialization when the script is sourced (i.e. Initialize instantly)
 # Neede for conflict between fzf and zsh-vi-mode
 ZVM_INIT_MODE=sourcing
+
+# Before antidote
+autoload -Uz compinit && compinit
 
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load $HOME/.config/zsh_plugins.txt
