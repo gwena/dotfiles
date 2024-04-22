@@ -17,9 +17,10 @@ ln -sfnv ${SCRIPTS}/private/ssh .ssh
 
 # ----- In .config folder
 cd ${HOME}/.config
+ln -sfnv ${DOTS_PATH}/zsh_plugins.txt zsh_plugins.txt
+ln -sfnv ${DOTS_PATH}/p10k.zsh p10k.zsh 
 ln -sfnv ${DOTS_PATH}/git git
 ln -sfnv ${DOTS_PATH}/sharedrc sharedrc
-ln -sfnv ${DOTS_PATH}/p10k.zsh p10k.zsh 
 ln -sfnv ${DOTS_PATH}/alacritty alacritty
 ln -sfnv ${DOTS_PATH}/kitty kitty
 ln -sfnv ${DOTS_PATH}/pcmanfm pcmanfm
