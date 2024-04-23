@@ -1,8 +1,8 @@
 export HISTFILE=$HOME/.config/zsh_history
 export HISTSIZE=1000000
 export SSH_KEY_PATH="~/.ssh/rsa_id"
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST # Avoid multiple .zcompdump created in ~/
 export FZF_DEFAULT_COMMAND='fd --type f'
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zcompdump-$ZSH_VERSION # needed for export, and use with compinit
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -34,7 +34,7 @@ FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
 ZVM_INIT_MODE=sourcing
 
 # Before antidote
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load $HOME/.config/zsh_plugins.txt
