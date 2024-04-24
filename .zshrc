@@ -1,3 +1,8 @@
+# Print the first prompt and redirect standard file descriptors.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export HISTFILE=$HOME/.config/zsh_history
 export HISTSIZE=1000000
 export SSH_KEY_PATH="~/.ssh/rsa_id"
