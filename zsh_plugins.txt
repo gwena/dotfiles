@@ -1,7 +1,8 @@
 zsh-users/zsh-syntax-highlighting
 jeffreytse/zsh-vi-mode
 rupa/z
-romkatv/powerlevel10k
+# romkatv/powerlevel10k # uncomment top lines in .zshrc too
+sindresorhus/pure
 
 # --- oh-my-zsh ---
 
