@@ -48,5 +48,5 @@ antidote load $HOME/.config/zsh_plugins.txt
 bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.config/p10k.zsh.
-export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/p10k.zsh"
-[[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
+# export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/p10k.zsh"
+# [[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
