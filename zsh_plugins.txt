@@ -1,20 +1,17 @@
-zsh-users/zsh-syntax-highlighting
 jeffreytse/zsh-vi-mode
+zsh-users/zsh-syntax-highlighting
 rupa/z
-# romkatv/powerlevel10k # uncomment top lines in .zshrc too
+# romkatv/powerlevel10k # uncomment top and bottom lines in .zshrc too
 sindresorhus/pure
 
 # --- oh-my-zsh ---
 
-ohmyzsh/ohmyzsh
+ohmyzsh/ohmyzsh # needed for tabs and more, else select ohmyzsh/lib/...
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/git
-ohmyzsh/ohmyzsh path:plugins/git-extras
-ohmyzsh/ohmyzsh path:plugins/github
-ohmyzsh/ohmyzsh path:plugins/history
-ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/fzf
 
 # oh-my-zsh - Not currently used (or obsolete)
 # colorize (Use with ccat/cless - rather use bat). Not updated (and not working anymore): lein, ripgrep, fd
 # osx, cabal, autojump (issue), npm, sbt, scala, kubectl, httpie, terraform, emacs, vi-mode (replaced by zsh-vi-mode)
+# git-extras (not used), docker (need ohmyzsh -> slow), github (not used), history (moved to sharedrc)
