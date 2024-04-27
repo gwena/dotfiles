@@ -4,13 +4,8 @@ rupa/z
 sindresorhus/pure
 
 # --- oh-my-zsh ---
-
-ohmyzsh/ohmyzsh # needed for tabs and more, else select ohmyzsh/lib/...
+ohmyzsh/ohmyzsh # for tabs and more, else select ohmyzsh/lib/...
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/fzf
 
-# oh-my-zsh - Not currently used (or obsolete)
-# colorize (Use with ccat/cless - rather use bat). Not updated (and not working anymore): lein, ripgrep, fd
-# osx, cabal, autojump (issue), npm, sbt, scala, kubectl, httpie, terraform, emacs, vi-mode (replaced by zsh-vi-mode)
-# git-extras (not used), docker (need ohmyzsh -> slow), github (not used), history (moved to sharedrc)
