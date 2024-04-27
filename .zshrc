@@ -28,7 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
-FILE=~/.config/sharedrc && test -f "$FILE" && source "$FILE"
+FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
 
 # Needed for conflict between fzf and zsh-vi-mode (Initialization when the script is sourced)
 ZVM_INIT_MODE=sourcing
