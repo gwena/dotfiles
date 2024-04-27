@@ -1,6 +1,5 @@
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-syntax-highlighting
-rupa/z
 sindresorhus/pure
 
 # --- oh-my-zsh ---
@@ -8,4 +7,3 @@ ohmyzsh/ohmyzsh # for tabs and more, else select ohmyzsh/lib/...
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/fzf
-
