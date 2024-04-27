@@ -1,8 +1,3 @@
-# Print the first prompt and redirect standard file descriptors.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 export HISTFILE=$HOME/.config/zsh_history
 export HISTSIZE=1000000
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -46,7 +41,3 @@ antidote load $HOME/.config/zsh_plugins.txt
 
 # Specific Zsh's Vim Binding
 bindkey -v
-
-# To customize prompt, run `p10k configure` or edit ~/.config/p10k.zsh.
-# export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/p10k.zsh"
-# [[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
