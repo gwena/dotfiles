@@ -1,5 +1,6 @@
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
 sindresorhus/pure
 
 # --- oh-my-zsh ---
