@@ -41,3 +41,4 @@ if [ $XDG_CURRENT_DESKTOP = "i3" ]; then
     # Map Super to "non" existing key, will be used by i3wm to map Super alone (simpler, same as Gnome)
     xcape -t 150 -e 'Super_L=Super_L|Escape'
 fi
+
