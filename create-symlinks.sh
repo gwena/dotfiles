@@ -43,6 +43,7 @@ ln -sfnv ${SCRIPTS}/doom doom
 ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
 ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
+ln -sfnv ${SCRIPTS}/private/hg hg
 
 # ----- Special cases where not the whole folder is symlinked
 mkdir -p ${HOME}/.config/lein
