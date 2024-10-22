@@ -4,9 +4,6 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
-
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
 default_floating_border normal
@@ -14,14 +11,12 @@ default_floating_border normal
 # Hide borders
 hide_edge_borders none
 
-# change borders
+# Change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# Crazy monitor (11 on Awesome)
+# Font for window titles. Crazy monitor (11 on Awesome)
 font pango:monospace 13
 
 # Use Mouse+$mod to drag floating windows
@@ -33,35 +28,38 @@ bindsym $mod+Ctrl+Return exec kitty
 bindsym $mod+Shift+Return exec tabby
 bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
+# Kill window
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Lock screen
+bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
+
+# Hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
 # Launchers
-# only need to press Super, however make sure xcape in .profile has been setup
+# Only need to press Super, however make sure xcape in .profile has been setup
 # i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
 bindsym $mod+Escape exec rofi -modes combi -combi-modi window#drun -show combi
 bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
 bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
-# similar to i3status without the location
-bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
-# start program launcher (original Manjaro i3)
-bindsym $mod+d exec --no-startup-id dmenu_recency
-# launch categorized menu (original Manjaro i3)
-bindsym $mod+Ctrl+z exec --no-startup-id morc_menu
-bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
-
 bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
-
-# Funky - not needed at the moment, even just alias: i3-dmenu-desktop --dmenu=fzf
-# bindsym $mod+d exec --no-startup-id urxvt -title "fzf-menu-random123" -e bash -c 'i3-dmenu-desktop --dmenu=fzf'
-# for_window [title="fzf-menu-random123"] floating enable
-
-################################################################################################
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# Similar to i3status without the location
+bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
+# Start program launcher, and categorized menu (original Manjaro i3)
+# bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+Ctrl+z exec --no-startup-id morc_menu
+bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 # Launch Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
@@ -83,78 +81,77 @@ bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
 bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
 bindsym $mod+Ctrl+p exec "CM_LAUNCHER=rofi clipmenu"
 
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+# Screen layouts
+set $screen ~/.config/screenlayout
+bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
+bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
+bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 
-# speed up - scrolling wheel
-bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
-bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
-
-# change focus, removed vim version due to colemak/moonlander
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-
-# split orientation
-bindsym $mod+backslash split h;exec notify-send 'tile horizontally'
-bindsym $mod+minus     split v;exec notify-send 'tile vertically'
-# bindsym $mod+q split toggle
-
-# toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating - Swap binding with below (as more common)
-bindsym $mod+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+Shift+space focus mode_toggle
-
-# toggle sticky
-bindsym $mod+Shift+s sticky toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# move the currently focused window to the scratchpad
-bindsym $mod+Ctrl+minus move scratchpad
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+Shift+minus scratchpad show
-
-# next/previous workspace
-bindsym $mod+comma workspace prev
-bindsym $mod+period workspace next
-
-# ai-magic
+# AI magic
 bindsym $mod+Ctrl+y exec "$SCRIPTS/ai-magic.sh"
 bindsym --whole-window button9 exec "$SCRIPTS/ai-magic.sh clip default magic"
 # bindsym --whole-window button8 exec "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec "$SCRIPTS/word-lookup.sh"
 
-# move the current workspace to right/left output (to change if screens not horizontal)
+# Speed up - scrolling wheel
+bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
+bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
+
+# Change focus, removed vim version due to colemak/moonlander
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# Split orientation
+bindsym $mod+backslash split h;exec notify-send 'tile horizontally'
+bindsym $mod+minus     split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle;exec notify-send 'split toggle'
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating - Swap binding with below (as more common)
+bindsym $mod+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# Toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Ctrl+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+Shift+minus scratchpad show
+
+# Next/Previous workspace
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+
+# Move the current workspace to right/left output (to change if screens not horizontal)
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+Right move workspace to output right
 
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 set $ws0 0
 set $ws1 1
 set $ws2 2
@@ -166,7 +163,7 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+0 workspace $ws0
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -265,14 +262,8 @@ for_window [class="(?i)nvidia-settings"]      floating enable
 # Limit floating window sizes
 floating_maximum_size 1400 x 1200
 
-# switch to workspace with urgent window automatically
+# Switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+e mode "$mode_system"
@@ -309,12 +300,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# Lock screen
-bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
-
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "nitrogen --set-auto --random ~/Pictures/Wallpapers/Wallpaper-5120x2160/; sleep 1; picom -b"
@@ -329,12 +314,6 @@ exec --no-startup-id flameshot
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-# Screen layouts
-set $screen ~/.config/screenlayout
-bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
-bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
-bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 set_from_resource $term_background background
