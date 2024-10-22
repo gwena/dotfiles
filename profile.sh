@@ -31,6 +31,7 @@ export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export BROWSER=/usr/bin/firefox
+export LSP_USE_PLISTS=true
 
 source "${SCRIPTS}/fix-desktop-apps.sh"
 
