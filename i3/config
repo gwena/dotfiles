@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
-default_floating_border normal
+default_floating_border pixel 1
 
 # Hide borders
 hide_edge_borders none
@@ -224,29 +224,29 @@ for_window [window_role="Preferences"]        floating enable
 for_window [window_type="dialog"]             floating enable
 for_window [window_type="menu"]               floating enable
 for_window [title="File Transfer*"]           floating enable
-for_window [title="alsamixer"]                floating enable border pixel 1
-for_window [title="i3_help"]                  floating enable sticky enable border normal
+for_window [title="alsamixer"]                floating enable
+for_window [title="i3_help"]                  floating enable
 for_window [title="MuseScore: Play Panel"]    floating enable
 for_window [title="About Pale Moon"]          floating enable
-for_window [class="GParted"]                  floating enable border normal
-for_window [class="Lxappearance"]             floating enable sticky enable border normal
+for_window [class="GParted"]                  floating enable
+for_window [class="Lxappearance"]             floating enable sticky enable
 for_window [class="Manjaro-hello"]            floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [class="Nitrogen"]                 floating enable sticky enable border normal
+for_window [class="Manjaro Settings Manager"] floating enable
+for_window [class="Nitrogen"]                 floating enable
 for_window [class="octopi"]                   floating enable
 for_window [class="Pamac-manager"]            floating enable
-for_window [class="Pavucontrol"]              floating enable
-for_window [class="qt5ct"]                    floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"]             floating enable sticky enable border normal
-for_window [class="Simple-scan"]              floating enable border normal
-for_window [class="Skype"]                    floating enable border normal
+for_window [class="pavucontrol-qt"]           floating enable
+for_window [class="qt5ct"]                    floating enable
+for_window [class="Qtconfig-qt4"]             floating enable
+for_window [class="Simple-scan"]              floating enable
+for_window [class="Skype"]                    floating enable
 for_window [class="Evernote Web Clipper"]     floating enable
-for_window [class="Zeal"]                     floating enable
-for_window [class="(?i)zenity"]               floating enable
-for_window [class="(?i)arandr"]               floating enable
-for_window [class="(?i)virtualbox"]           floating enable border normal
-for_window [class="(?i)config-printer.py"]    floating enable border normal
-for_window [class="(?i)calculator"]           floating enable border pixel 1
+for_window [class="Zeal"]                     floating enable sticky enable
+for_window [class="(?i)zenity"]               floating enable sticky enable
+for_window [class="(?i)arandr"]               floating enable sticky enable
+for_window [class="(?i)virtualbox"]           floating enable
+for_window [class="(?i)config-printer.py"]    floating enable
+for_window [class="(?i)calculator"]           floating enable sticky enable
 for_window [class="(?i)blueman"]              floating enable
 for_window [class="(?i)nm-connection-editor"] floating enable
 for_window [class="(?i)copyq"]                floating enable
