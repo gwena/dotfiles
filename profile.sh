@@ -18,9 +18,9 @@ export GRADLE_USER_HOME="${XDG_CACHE_HOME}/gradle"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
 export _Z_DATA="${XDG_DATA_HOME}/z"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
-export DVDCSS_CACHE="${XDG_DATA_HOME}/dvdcss
-export ANDROID_USER_HOME="{$XDG_DATA_HOME}/android"
-export XCURSOR_PATH=/usr/share/icons:$XDG_DATA_HOME/icons
+export DVDCSS_CACHE="${XDG_DATA_HOME}/dvdcss"
+export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 
 # Only partially supporded, do not use
 # export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
