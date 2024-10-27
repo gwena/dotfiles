@@ -41,3 +41,5 @@ antidote load $HOME/.config/zsh_plugins.txt
 
 # Specific Zsh's Vim Binding
 bindkey -v
+
+eval "$(oh-my-posh init zsh)"

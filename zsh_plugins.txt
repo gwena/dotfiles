@@ -1,7 +1,7 @@
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
-sindresorhus/pure
+#sindresorhus/pure # using oh-my-posh, see .zshrc
 
 # --- oh-my-zsh ---
 ohmyzsh/ohmyzsh path:lib # for tabs and more, else select ohmyzsh/lib/...
