@@ -42,4 +42,5 @@ antidote load $HOME/.config/zsh_plugins.txt
 # Specific Zsh's Vim Binding
 bindkey -v
 
-eval "$(oh-my-posh init zsh)"
+# eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/gruvbox.omp.json)"
+eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/lambda-gruvbox.omp.json)"
