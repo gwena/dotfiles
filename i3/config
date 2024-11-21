@@ -90,7 +90,7 @@ bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2
 # AI magic
 bindsym $mod+Ctrl+y exec "$SCRIPTS/ai-magic.sh"
 bindsym --whole-window button9 exec "$SCRIPTS/ai-magic.sh clip default magic"
-# bindsym --whole-window button8 exec "$SCRIPTS/ai-magic.sh clip magic magic"
+bindsym --whole-window Ctrl+button9 exec "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec "$SCRIPTS/word-lookup.sh"
 
 # Speed up - scrolling wheel
