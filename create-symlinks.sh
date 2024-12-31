@@ -13,6 +13,7 @@ ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${SCRIPTS}/private/ssh .ssh
+ln -sfnv ${SCRIPTS}/private/myclirc .myclirc
 
 # ----- In .config folder
 cd ${HOME}/.config
