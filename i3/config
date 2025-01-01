@@ -309,7 +309,7 @@ exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# catppuccin-mocha color palette
+# Color palette (limited impact): catppuccin-mocha
 set $rosewater #f5e0dc
 set $flamingo #f2cdcd
 set $pink #f5c2e7
@@ -337,6 +337,14 @@ set $base #1e1e2e
 set $mantle #181825
 set $crust #11111b
 
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
 bar {
   # See i3status-rust integrate it into i3 section for correctly
   # naming the fonts, Pro version seems to change chevron around battery
@@ -345,15 +353,6 @@ bar {
   position top
   status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
 }
-
-# Theme colors
-# class                 border  backgr. text    indic.   child_border (not specified)
-client.focused          #556064 #556064 #80FFF9 #FDF6E3
-client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000
-client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
