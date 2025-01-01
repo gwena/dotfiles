@@ -1,8 +1,9 @@
 [theme]
 #theme = "slick" 
 #theme = "solarized-dark"
-theme = "nord-dark"
+#theme = "nord-dark"
 #theme = "gruvbox-dark"
+theme = "ctp-mocha"
 [icons]
 icons = "awesome6"
 [icons.overrides]
