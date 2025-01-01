@@ -23,6 +23,7 @@ export _Z_DATA="${XDG_DATA_HOME}/z"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export DVDCSS_CACHE="${XDG_DATA_HOME}/dvdcss"
 export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
+export MYCLI_HISTFILE="${XDG_DATA_HOME}/mycli/history"
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 
 # Only partially supporded, do not use
@@ -46,5 +47,4 @@ if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
 fi
 
 source "${SCRIPTS}/fix-desktop-apps-and-more.sh"
-
 

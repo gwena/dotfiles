@@ -13,7 +13,6 @@ ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${SCRIPTS}/private/ssh .ssh
-ln -sfnv ${SCRIPTS}/private/myclirc .myclirc
 
 # ----- In .config folder
 cd ${HOME}/.config
@@ -45,6 +44,7 @@ ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
 ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
 ln -sfnv ${SCRIPTS}/private/hg hg
+ln -sfnv ${SCRIPTS}/private/mycli mycli
 
 # ----- Special cases where not the whole folder is symlinked
 mkdir -p ${HOME}/.config/lein
