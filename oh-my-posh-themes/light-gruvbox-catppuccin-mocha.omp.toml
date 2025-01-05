@@ -1,0 +1,69 @@
+console_title_template = '{{ .Folder }}'
+version = 3
+final_space = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    style = 'powerline'
+    template = ' {{ .Path }} '
+    foreground = '#282828'
+    powerline_symbol = ''
+    background ='#89B4FA'
+    type = 'path'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    style = 'powerline'
+    leading_diamond = ''
+    trailing_diamond = ''
+    template = ' {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
+    foreground = '#282828'
+    powerline_symbol = ''
+    background = '#A6E3A1'
+    type = 'git'
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}#FAB387{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#F38BA8{{ end }}', '{{ if gt .Ahead 0 }}#CBA6F7{{ end }}', '{{ if gt .Behind 0 }}#CBA6F7{{ end }}']
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      branch_identical_icon = '●'
+      branch_max_length = 25.0
+      fetch_stash_count = true
+      fetch_status = true
+
+  [[blocks.segments]]
+    style = 'powerline'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+    foreground = '#111111'
+    powerline_symbol = ''
+    background = '#F9E2AF'
+    type = 'python'
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_virtual_env = false
+
+  [[blocks.segments]]
+    style = 'powerline'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+    foreground = '#ffffff'
+    powerline_symbol = ''
+    background = '#AE1401'
+    type = 'ruby'
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_version = true
+
+  [[blocks.segments]]
+    style = 'powerline'
+    template = '  '
+    foreground = '#111111'
+    powerline_symbol = ''
+    background = '#ffff66'
+    type = 'root'
+
