@@ -18,7 +18,6 @@ ln -sfnv ${SCRIPTS}/private/ssh .ssh
 cd ${HOME}/.config
 ln -sfnv ${DOTS_PATH}/zsh_plugins.txt zsh_plugins.txt
 ln -sfnv ${DOTS_PATH}/p10k.zsh p10k.zsh 
-ln -sfnv ${DOTS_PATH}/git git
 ln -sfnv ${DOTS_PATH}/alacritty alacritty
 ln -sfnv ${DOTS_PATH}/kitty kitty
 ln -sfnv ${DOTS_PATH}/pcmanfm pcmanfm
@@ -26,6 +25,7 @@ ln -sfnv ${DOTS_PATH}/ranger ranger
 ln -sfnv ${DOTS_PATH}/rofi rofi
 ln -sfnv ${DOTS_PATH}/dunst dunst
 ln -sfnv ${DOTS_PATH}/screenlayout screenlayout
+ln -sfnv ${DOTS_PATH}/fontconfig fontconfig
 
 # X/i3wm specific
 ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf
@@ -43,6 +43,7 @@ ln -sfnv ${SCRIPTS}/doom doom
 ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
 ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
+ln -sfnv ${SCRIPTS}/private/git git
 ln -sfnv ${SCRIPTS}/private/hg hg
 ln -sfnv ${SCRIPTS}/private/mycli mycli
 
