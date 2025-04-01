@@ -33,6 +33,7 @@ ln -sfnv ${DOTS_PATH}/i3 i3
 ln -sfnv ${DOTS_PATH}/i3status-rust i3status-rust
 
 # Wayland specific
+ln -sfnv ${DOTS_PATH}/sway sway
 ln -sfnv ${DOTS_PATH}/hypr hypr
 ln -sfnv ${DOTS_PATH}/waybar waybar
 ln -sfnv ${DOTS_PATH}/wofi wofi
