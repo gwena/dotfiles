@@ -79,7 +79,7 @@ bindsym $mod+Ctrl+m exec pavucontrol-qt
 bindsym $mod+Print exec flameshot gui
 bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
 bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
-bindsym $mod+Ctrl+p exec "CM_LAUNCHER=rofi clipmenu"
+bindsym $mod+Ctrl+p exec copyq show
 
 # Screen layouts
 set $screen ~/.config/screenlayout
@@ -300,7 +300,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id copyq
-exec --no-startup-id clipmenud
 exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
