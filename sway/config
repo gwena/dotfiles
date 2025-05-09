@@ -1,0 +1,423 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+# Needed with Sway
+input * {
+    xkb_layout "us"
+    xkb_variant "colemak"
+}
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 1
+default_floating_border pixel 1
+
+# Hide borders
+hide_edge_borders none
+
+# Change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
+
+# Font for window titles. Crazy monitor (11 on Awesome)
+font pango:monospace 13
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# Options for terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Ctrl+Return exec kitty
+bindsym $mod+Shift+Return exec tabby
+bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Kill window
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Lock screen
+bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
+
+# Hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
+# Launchers
+# Only need to press Super, however make sure xcape in .profile has been setup
+# i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with #
+bindsym $mod+Escape exec rofi -modes combi -combi-modi window#drun -show combi
+bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
+bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
+bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
+bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
+# Similar to i3status without the location
+bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
+# Start program launcher, and categorized menu (original Manjaro i3)
+# bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+Ctrl+z exec --no-startup-id morc_menu
+bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
+
+# Launch Applications
+# -s for presentatino, -f for fullscreen (headings on the side)
+bindsym $mod+j exec thunar
+bindsym $mod+k exec alacritty -T Ranger -e ranger
+bindsym $mod+c exec zenity --calendar
+bindsym $mod+x exec /usr/bin/emacs -fs
+bindsym $mod+z exec zeal
+bindsym $mod+g exec prime-run gthumb
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+m exec pavucontrol-qt
+
+# Screenshot, clipboard and special
+bindsym $mod+Print exec flameshot gui
+bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
+bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
+bindsym $mod+Ctrl+p exec copyq show
+
+# Screen layouts
+set $screen ~/.config/screenlayout
+bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
+bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
+bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
+
+# AI magic
+bindsym $mod+Ctrl+y exec "$SCRIPTS/ai-magic.sh"
+bindsym --whole-window button9 exec "$SCRIPTS/ai-magic.sh clip default magic"
+bindsym --whole-window Ctrl+button9 exec "$SCRIPTS/ai-magic.sh clip magic magic"
+bindsym --whole-window button8 exec "$SCRIPTS/word-lookup.sh"
+
+# Speed up - scrolling wheel
+bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
+bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
+
+# Change focus, removed vim version due to colemak/moonlander
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# Split orientation
+bindsym $mod+backslash split h;exec notify-send 'tile horizontally'
+bindsym $mod+minus     split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle;exec notify-send 'split toggle'
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating - Swap binding with below (as more common)
+bindsym $mod+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# Toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Ctrl+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+Shift+minus scratchpad show
+
+# Next/Previous workspace
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+
+# Move the current workspace to right/left output (to change if screens not horizontal)
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+
+# Workspace names
+set $ws0 0
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+# Switch to workspace
+bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+# Move focused container to workspace, and switch to that workspace
+bindsym $mod+Ctrl+0 move container to workspace $ws0, workspace $ws0
+bindsym $mod+Ctrl+1 move container to workspace $ws1, workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2, workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3, workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4, workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5, workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6, workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7, workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8, workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9, workspace $ws9
+
+# Move to workspace with focused container
+bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+
+# Open applications on specific workspaces
+assign [class="(?i)firefox"] $ws1
+assign [class="(?i)slack"] $ws9
+assign [class="(?i)teams"] $ws9
+assign [class="(?i)edge"] $ws9
+assign [class="(?i)spotify"] $ws0
+
+# Open specific applications in floating mode
+# Use xprop:
+# class -> WM_CLASS
+# title -> WM_NAME
+
+# Border none
+for_window [class="(?i)Chromium"] border none
+for_window [class="(?i)Chrome"]   border none
+for_window [class="(?i)spotify"]  border none
+for_window [class="(?i)Slack"]    border none
+
+for_window [window_role="pop-up"]             floating enable
+for_window [window_role="bubble"]             floating enable
+for_window [window_role="task_dialog"]        floating enable
+for_window [window_role="Preferences"]        floating enable
+for_window [window_type="dialog"]             floating enable
+for_window [window_type="menu"]               floating enable
+for_window [title="File Transfer*"]           floating enable
+for_window [title="alsamixer"]                floating enable
+for_window [title="i3_help"]                  floating enable
+for_window [title="MuseScore: Play Panel"]    floating enable
+for_window [title="About Pale Moon"]          floating enable
+for_window [class="GParted"]                  floating enable
+for_window [class="Lxappearance"]             floating enable sticky enable
+for_window [class="Manjaro-hello"]            floating enable
+for_window [class="Manjaro Settings Manager"] floating enable
+for_window [class="Nitrogen"]                 floating enable
+for_window [class="octopi"]                   floating enable
+for_window [class="Pamac-manager"]            floating enable
+for_window [class="pavucontrol-qt"]           floating enable
+for_window [class="qt5ct"]                    floating enable
+for_window [class="Qtconfig-qt4"]             floating enable
+for_window [class="Simple-scan"]              floating enable
+for_window [class="Skype"]                    floating enable
+for_window [class="Evernote Web Clipper"]     floating enable
+for_window [class="Zeal"]                     floating enable sticky enable
+for_window [class="(?i)zenity"]               floating enable sticky enable
+for_window [class="(?i)arandr"]               floating enable sticky enable
+for_window [class="(?i)virtualbox"]           floating enable
+for_window [class="(?i)config-printer.py"]    floating enable
+for_window [class="(?i)calculator"]           floating enable sticky enable
+for_window [class="(?i)blueman"]              floating enable
+for_window [class="(?i)nm-connection-editor"] floating enable
+for_window [class="(?i)copyq"]                floating enable
+for_window [class="(?i)nvidia-settings"]      floating enable
+
+# Limit floating window sizes
+floating_maximum_size 1400 x 1200
+
+# Switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# Set shut down, restart and locking features
+bindsym $mod+Shift+e mode "$mode_system"
+set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, re(Shift+b)oot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym Shift+b exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # move fast
+    bindsym Shift+Left  move left  20 px
+    bindsym Shift+Down  move down  20 px
+    bindsym Shift+Up    move up    20 px
+    bindsym Shift+Right move right 20 px
+
+    # exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id "nitrogen --set-auto --random ~/Pictures/Wallpapers/Wallpaper-5120x2160/; sleep 1; picom -b"
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id copyq
+exec --no-startup-id pasystray
+exec --no-startup-id gammastep -l "$HOME_COORDINATES" 
+exec --no-startup-id flameshot
+exec --no-startup-id openvpn3-indicator
+exec --no-startup-id xautolock -time 30 -locker blurlock
+exec --no-startup-id solaar --window=hide
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+
+# Color palette (limited impact): catppuccin-mocha
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+bar {
+  # See i3status-rust integrate it into i3 section for correctly
+  # naming the fonts, Pro version seems to change chevron around battery
+  # Size should not change a lot, more control by ppi in .Xresources
+  font pango:DejaVu Sans Mono, FontAwesome 6 Free 12
+  position top
+  status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
+}
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+gaps inner 14
+gaps outer -2
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+# To disable if want to use center unique window
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Center on ultrawide monitor when one window, but won't work if smart_gaps on. To be refined
+bindsym $mod+o gaps horizontal current set 800
+bindsym $mod+i gaps horizontal current set 0
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     gaps inner current set 0
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     gaps inner all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     gaps outer current set 0
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     gaps outer all set 0
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
