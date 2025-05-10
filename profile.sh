@@ -38,13 +38,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export BROWSER=/usr/bin/firefox
 export LSP_USE_PLISTS=true
 
-# For i3 only
-if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
-    # Default behavior of xcape: map Control_L to Esc if released
-    xcape
-    # Map Super to "non" existing key, used by i3wm to map Super alone (simpler, same as Gnome)
-    xcape -t 150 -e 'Super_L=Super_L|Escape'
-fi
-
 source "${SCRIPTS}/fix-desktop-apps-and-more.sh"
 
