@@ -62,6 +62,7 @@ bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn
 
 # Launch Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
+bindsym $mod+F10 exec firefox
 bindsym $mod+j exec thunar
 bindsym $mod+k exec alacritty -T Ranger -e ranger
 bindsym $mod+c exec zenity --calendar
