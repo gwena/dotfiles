@@ -78,7 +78,7 @@ bindsym $mod+Ctrl+m exec pavucontrol-qt
 # Screenshot, clipboard and special
 bindsym $mod+Print exec flameshot gui
 bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
-bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
+bindsym $mod+Ctrl+Print exec "$SCRIPTS/i3-floating-shortcuts.sh"
 bindsym $mod+Ctrl+p exec copyq show
 
 # Screen layouts
