@@ -92,7 +92,7 @@ bindsym $mod+Ctrl+m exec pavucontrol-qt
 # Screenshot, clipboard and special
 # bindsym $mod+Print exec flameshot gui
 bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f - 
-bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
+bindsym $mod+Ctrl+Print exec evince "$ORG/IT/Shortcut/Shortcuts_Wallpaper.pdf"
 bindsym $mod+Ctrl+p exec copyq show
 
 # Screen layouts
@@ -107,7 +107,7 @@ bindsym --whole-window button9 exec "$SCRIPTS/ai-magic.sh clip default magic"
 bindsym --whole-window Ctrl+button9 exec "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec "$SCRIPTS/word-lookup.sh"
 
-# Speed up - scrolling wheel
+# Speed up - scrolling wheel - TODO (fix with wayland)
 bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
 bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
 
