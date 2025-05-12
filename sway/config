@@ -98,7 +98,7 @@ bindsym $mod+Ctrl+p exec copyq show
 # Screen layouts
 set $screen ~/.config/screenlayout
 bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
-bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
+bindsym $mod+semicolon  exec --no-startup-id $screen/on-xps-craziness.sh
 bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 
 # AI magic
@@ -296,7 +296,6 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "nitrogen --set-auto --random ~/Pictures/Wallpapers/Wallpaper-5120x2160/; sleep 1; picom -b"
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -307,6 +306,7 @@ exec --no-startup-id flameshot
 exec --no-startup-id openvpn3-indicator
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec --no-startup-id solaar --window=hide
+exec --no-startup-id swaybg --image "$HOME/Pictures/Wallpapers/Wallpaper-5120x2160/Not5K-Gnarl-Synapse.jpeg"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
