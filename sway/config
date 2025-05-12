@@ -90,8 +90,8 @@ bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+m exec pavucontrol-qt
 
 # Screenshot, clipboard and special
-bindsym $mod+Print exec flameshot gui
-bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
+# bindsym $mod+Print exec flameshot gui
+bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f - 
 bindsym $mod+Ctrl+Print exec "$SCRIPTS/floating-shortcuts.sh"
 bindsym $mod+Ctrl+p exec copyq show
 
