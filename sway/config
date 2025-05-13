@@ -313,6 +313,7 @@ exec --no-startup-id solaar --window=hide
 exec --no-startup-id swaybg --image "$HOME/Pictures/Wallpapers/Wallpaper-5120x2160/Not5K-Gnarl-Synapse.jpeg"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id waybar --config "$DOTS_PATH/waybar/config-sway"
 
 # Color palette (limited impact): catppuccin-mocha
 set $rosewater #f5e0dc
@@ -349,15 +350,6 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-
-bar {
-  # See i3status-rust integrate it into i3 section for correctly
-  # naming the fonts, Pro version seems to change chevron around battery
-  # Size should not change a lot, more control by ppi in .Xresources
-  font pango:DejaVu Sans Mono, FontAwesome 6 Free 12
-  position top
-  status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
-}
 
 #############################
 ### settings for i3-gaps: ###
