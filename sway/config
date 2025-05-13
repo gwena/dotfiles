@@ -18,6 +18,10 @@ input type:pointer {
     natural_scroll enabled
 }
 
+# Needed for Dunst
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_RUNTIME_DIR DISPLAY
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_RUNTIME_DIR DISPLAY
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
 default_floating_border pixel 1
