@@ -312,7 +312,7 @@ exec --no-startup-id solaar --window=hide
 exec --no-startup-id swaybg --image "$HOME/Pictures/Wallpapers/Wallpaper-5120x2160/Not5K-Gnarl-Synapse.jpeg"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id waybar --config "$DOTS_PATH/waybar/config-sway"
+exec_always --no-startup-id "pkill waybar; sleep 1; waybar --config $DOTS_PATH/waybar/config-sway"
 
 # Color palette (limited impact): catppuccin-mocha
 set $rosewater #f5e0dc
