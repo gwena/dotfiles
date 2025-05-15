@@ -155,7 +155,7 @@ window#waybar.hidden {
     background: @blue;
 }
 
-#tray, #custom-launcher {
+#tray {
     color: @black-write;
     background: @black-light;
 }
@@ -180,7 +180,12 @@ window#waybar.hidden {
     background: @green-spotify;
 }
 
-#custom-weather, #custom-wallpaper {
+#custom-weather {
+    color: @yellow;
+    background: @black-light;
+}
+
+#custom-launcher, #custom-wallpaper {
     color: @black-write;
     background: @yellow;
 }
