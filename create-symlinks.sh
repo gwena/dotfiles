@@ -38,6 +38,7 @@ ln -sfnv ${DOTS_PATH}/hypr hypr
 ln -sfnv ${DOTS_PATH}/waybar waybar
 ln -sfnv ${DOTS_PATH}/wofi wofi
 ln -sfnv ${DOTS_PATH}/swappy swappy
+ln -sfnv ${DOTS_PATH}/wlogout wlogout
 
 # Symlinks in $SCRIPTS
 ln -sfnv ${SCRIPTS}/doom doom
