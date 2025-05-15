@@ -1,0 +1,118 @@
+{
+    "reload_style_on_change": true, // not fully working
+    "layer": "top",
+    "margin-bottom": 5,
+    "margin-top": -5, // Using negative value to reduce the space between Sway window and waybar
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["custom/launcher", "custom/wallpaper", "custom/idasen-stand", "custom/idasen-sit", "custom/weather", "custom/spotify"],
+    "modules-right": ["cpu", "temperature", "memory", "network","pulseaudio", "battery", "clock", "tray", "custom/power"],
+
+    "pulseaudio": {
+        "tooltip": true,
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} {volume}%",
+        "on-click": "pavucontrol-qt",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "tray":{
+        "icon-size":24,
+        "spacing": 8
+    },
+    "clock": {
+        "format": "{:%H:%M %m-%d}",
+        "on-click": "zenity --calendar",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    }
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "format": "{temperatureC}°C "
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used}GB",
+        "max-length": 15
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": "",
+        "on-click": "wlogout -l $DOTS_PATH/wlogout/layout-sway"
+    },
+    "custom/wallpaper":{
+        "format": "\uf5aa",
+        "on-click": "wallpaper-random-selection.sh"
+    },
+    "custom/idasen-stand":{
+        "format": "\uf70c",
+        "on-click": "idasen-controller --move-to stand",
+    },
+    "custom/idasen-sit":{
+        "format": "\uf6c1",
+        "on-click": "idasen-controller --move-to sit",
+    },
+    "custom/weather": {
+        "format": "{} °",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --location Amsterdam",
+        "return-type": "json"
+    },
+    "sway/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "swayms workspace next",
+        "on-scroll-down": "swaymsg workspace previous",
+        "on-click": "activate"
+    }
+}
