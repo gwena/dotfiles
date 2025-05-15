@@ -19,7 +19,7 @@ do
 done
 
 if [ $XDG_CURRENT_DESKTOP = "sway" ]; then
-  wlr-randr --output $dp --mode 5120x2160 --pos 0,0 --transform normal --output eDP-1 --off
+  wlr-randr --output $dp --mode 5120x2160 --pos 0,0 --transform normal --scale 1.2 --output eDP-1 --off
 else
   xrandr --output $dp --mode 5120x2160 --rate 72 --pos 0x0 --rotate normal $other $rest
 fi
