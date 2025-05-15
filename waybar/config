@@ -92,7 +92,7 @@
     },
     "custom/wallpaper":{
         "format": "\uf5aa",
-        "on-click": "hyprpaper-random-selection.sh"
+        "on-click": "wallpaper-random-selection.sh"
     },
     "custom/idasen-stand":{
         "format": "\uf70c",
