@@ -276,7 +276,7 @@ floating_maximum_size 1400 x 1200
 for_window [urgent=latest] focus
 
 # Set shut down, restart and locking features
-bindsym $mod+Shift+e exec wlogout
+bindsym $mod+Shift+e exec wlogout -l "$XDG_CONFIG_HOME/wlogout/layout-sway"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
