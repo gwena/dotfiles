@@ -1,6 +1,3 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -49,21 +46,17 @@ bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Kill window
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart Sway inplace (preserves your layout/session)
 bindsym $mod+Shift+r restart
 
 # Lock screen
-bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
+bindsym Ctrl+Mod1+L exec --no-startup-id swaylock
 
-# Hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
-
+# Hide/unhide waybar
+bindsym $mod+m exec killall -SIGUSR1 waybar
 # Launchers
 # Commas in config can cause issues. To bind a key to launch rofi, use a config file or replace the commas with #
 bindsym --release Super_L exec rofi -modes combi -combi-modi window#drun -show combi
@@ -71,11 +64,8 @@ bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -fi
 bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
 bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
-# Similar to i3status without the location
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 # Start program launcher, and categorized menu (original Manjaro i3)
-# bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+Ctrl+z exec --no-startup-id morc_menu
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 # Launch Applications
@@ -87,9 +77,6 @@ bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+z exec zeal
 bindsym $mod+g exec prime-run gthumb
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+m exec pavucontrol-qt
 
@@ -110,10 +97,6 @@ bindsym $mod+Ctrl+y exec "$SCRIPTS/ai-magic.sh"
 bindsym --whole-window button9 exec "$SCRIPTS/ai-magic.sh clip default magic"
 bindsym --whole-window Ctrl+button9 exec "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec "$SCRIPTS/word-lookup.sh"
-
-# Speed up - scrolling wheel - TODO (fix with wayland)
-bindsym --whole-window Shift+button5 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
-bindsym --whole-window Shift+button4 exec "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
 
 # Change focus, removed vim version due to colemak/moonlander
 bindsym $mod+Left focus left
@@ -243,7 +226,6 @@ for_window [window_type="dialog"]             floating enable
 for_window [window_type="menu"]               floating enable
 for_window [title="File Transfer*"]           floating enable
 for_window [title="alsamixer"]                floating enable
-for_window [title="i3_help"]                  floating enable
 for_window [title="MuseScore: Play Panel"]    floating enable
 for_window [title="About Pale Moon"]          floating enable
 for_window [class="GParted"]                  floating enable
@@ -307,11 +289,9 @@ exec --no-startup-id pasystray
 exec --no-startup-id gammastep -l "$HOME_COORDINATES" 
 exec --no-startup-id flameshot
 exec --no-startup-id openvpn3-indicator
-exec --no-startup-id xautolock -time 30 -locker blurlock
+exec --no-startup-id xautolock -time 30 -locker swaylock
 exec --no-startup-id solaar --window=hide
 exec --no-startup-id swaybg --image "$HOME/Pictures/Wallpapers/Wallpaper-5120x2160/Not5K-Gnarl-Synapse.jpeg"
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id "pkill waybar; sleep 1; waybar --config $DOTS_PATH/waybar/config-sway"
 
 # Color palette (limited impact): catppuccin-mocha
@@ -350,9 +330,8 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
-#############################
-### settings for i3-gaps: ###
-#############################
+
+### Gaps
 
 # Set inner/outer gaps
 gaps inner 14
