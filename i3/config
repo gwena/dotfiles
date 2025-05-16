@@ -57,7 +57,6 @@ bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 # Start program launcher, and categorized menu (original Manjaro i3)
 # bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+Ctrl+z exec --no-startup-id morc_menu
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 # Launch Applications
@@ -69,9 +68,6 @@ bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+z exec zeal
 bindsym $mod+g exec prime-run gthumb
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Ctrl+m exec pavucontrol-qt
 
@@ -281,12 +277,6 @@ mode "resize" {
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
-
-    # move fast
-    bindsym Shift+Left  move left  20 px
-    bindsym Shift+Down  move down  20 px
-    bindsym Shift+Up    move up    20 px
-    bindsym Shift+Right move right 20 px
 
     # exit resize mode: Enter or Escape
     bindsym Return mode "default"
