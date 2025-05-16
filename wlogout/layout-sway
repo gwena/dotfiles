@@ -28,3 +28,9 @@
     "text" : "Reboot (r)",
     "keybind" : "r"
 }
+{
+    "label" : "meta",
+    "action" : "zenity --calendar",
+    "text" : "Μεταμόρφωση της Θήρας",
+    "keybind" : "m"
+}
