@@ -22,12 +22,6 @@ font pango:monospace 13
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# Options for terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Ctrl+Return exec kitty
-bindsym $mod+Shift+Return exec tabby
-bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -53,13 +47,16 @@ bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -fi
 bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
 bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
-# Similar to i3status without the location
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
-# Start program launcher, and categorized menu (original Manjaro i3)
-# bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
-# Launch Applications
+# Launchers for terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Ctrl+Return exec kitty
+bindsym $mod+Shift+Return exec tabby
+bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
+
+# Launchers Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
 bindsym $mod+F10 exec firefox
 bindsym $mod+j exec thunar
@@ -343,9 +340,7 @@ bar {
   status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
 }
 
-#############################
-### settings for i3-gaps: ###
-#############################
+### Gaps
 
 # Set inner/outer gaps
 gaps inner 14
