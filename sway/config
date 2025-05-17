@@ -37,12 +37,6 @@ font pango:monospace 13
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# Options for terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Ctrl+Return exec kitty
-bindsym $mod+Shift+Return exec tabby
-bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -55,9 +49,13 @@ bindsym $mod+Shift+r restart
 # Lock screen
 bindsym Ctrl+Mod1+L exec --no-startup-id swaylock
 
+# Set shut down, restart and locking features
+bindsym $mod+Shift+e exec wlogout -l "$XDG_CONFIG_HOME/wlogout/layout-sway"
+
 # Hide/unhide waybar
 bindsym $mod+m exec killall -SIGUSR1 waybar
-# Launchers
+
+# Launchers Rofi/Menu
 # Commas in config can cause issues. To bind a key to launch rofi, use a config file or replace the commas with #
 bindsym --release Super_L exec rofi -modes combi -combi-modi window#drun -show combi
 bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
@@ -65,10 +63,15 @@ bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
 bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
-# Start program launcher, and categorized menu (original Manjaro i3)
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
-# Launch Applications
+# Launchers for terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Ctrl+Return exec kitty
+bindsym $mod+Shift+Return exec tabby
+bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
+
+# Launchers Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
 bindsym $mod+F10 exec firefox
 bindsym $mod+j exec thunar
@@ -208,7 +211,7 @@ assign [class="(?i)edge"] $ws9
 assign [class="(?i)spotify"] $ws0
 
 # Open specific applications in floating mode
-# Use xprop:
+# Use wlprop:
 # class -> WM_CLASS
 # title -> WM_NAME
 
@@ -257,9 +260,6 @@ floating_maximum_size 1400 x 1200
 # Switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# Set shut down, restart and locking features
-bindsym $mod+Shift+e exec wlogout -l "$XDG_CONFIG_HOME/wlogout/layout-sway"
-
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -267,12 +267,6 @@ mode "resize" {
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
-
-    # move fast
-    bindsym Shift+Left  move left  20 px
-    bindsym Shift+Down  move down  20 px
-    bindsym Shift+Up    move up    20 px
-    bindsym Shift+Right move right 20 px
 
     # exit resize mode: Enter or Escape
     bindsym Return mode "default"
