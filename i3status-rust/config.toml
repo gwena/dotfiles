@@ -106,6 +106,14 @@ cmd = "idasen-controller --move-to stand"
 
 [[block]]
 block = "custom"
+command =  "echo \uf436"
+interval = "once"
+[[block.click]]
+button = "left"
+cmd = "idasen-controller --move-to ball"
+
+[[block]]
+block = "custom"
 command =  "echo \uf6c1"
 interval = "once"
 [[block.click]]
