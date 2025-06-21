@@ -44,7 +44,7 @@ ln -sfnv ${DOTS_PATH}/wlogout wlogout
 ln -sfnv ${SCRIPTS}/doom doom
 ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
-ln -sfnv ${SCRIPTS}/private/idasen-controller idasen-controller
+ln -sfnv ${SCRIPTS}/private/idasen-controller linak-controller
 ln -sfnv ${SCRIPTS}/private/git git
 ln -sfnv ${SCRIPTS}/private/hg hg
 ln -sfnv ${SCRIPTS}/private/mycli mycli
