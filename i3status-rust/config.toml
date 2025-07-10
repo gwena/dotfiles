@@ -1,9 +1,10 @@
 [theme]
+# Themes in /usr/share/i3status-rust/themes/
 #theme = "slick" 
 #theme = "solarized-dark"
 #theme = "nord-dark"
 #theme = "gruvbox-dark"
-theme = "ctp-mocha"
+theme = "ctp-mocha" # see https://github.com/catppuccin/catppuccin
 [icons]
 icons = "awesome6"
 [icons.overrides]
@@ -73,11 +74,15 @@ format = " $icon $weather $temp, $wind_kmh km/h $direction "
 [block.service]
 name = "openweathermap"
 units = "metric"
+[block.theme_overrides]
+idle_fg = "#a6e3a1"
 
 [[block]]
 block = "custom"
 command = "so-status.sh"
 interval = "once"
+[block.theme_overrides]
+idle_bg = "#89b4fa"
 
 # [[block]]
 # block = "pomodoro"
@@ -103,6 +108,8 @@ interval = "once"
 [[block.click]]
 button = "left"
 cmd = "idasen-controller --move-to stand"
+[block.theme_overrides]
+idle_fg = "#f9e2af"
 
 [[block]]
 block = "custom"
@@ -111,6 +118,8 @@ interval = "once"
 [[block.click]]
 button = "left"
 cmd = "idasen-controller --move-to ball"
+[block.theme_overrides]
+idle_fg = "#f9e2af"
 
 [[block]]
 block = "custom"
@@ -119,6 +128,8 @@ interval = "once"
 [[block.click]]
 button = "left"
 cmd = "idasen-controller --move-to sit"
+[block.theme_overrides]
+idle_fg = "#f9e2af"
 
 [[block]]
 block = "custom"
