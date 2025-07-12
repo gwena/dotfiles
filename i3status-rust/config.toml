@@ -203,6 +203,14 @@ cmd = "zenity --calendar"
 
 [[block]]
 block = "custom"
+command = "echo \uf8df"
+interval = "once"
+[[block.click]]
+button = "left"
+cmd = "play-on-speakers.sh"
+
+[[block]]
+block = "custom"
 interval = 60
 signal = 0 # corresponds to -SIGRTMIN sent at the end of click below
 command = "mic-icon.sh"
