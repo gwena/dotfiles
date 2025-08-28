@@ -19,14 +19,19 @@ family = "FiraCode Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
 action = "Paste"
 key = "V"
 mods = "Control|Alt"
 
 [[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Alt"
+action = "Paste"
+key = "V"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "ScrollPageUp"
