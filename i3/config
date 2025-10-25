@@ -44,15 +44,15 @@ bindsym $mod+m bar mode toggle
 # Commas in config can cause issues. To bind a key to launch rofi, use a config file or replace the commas with #
 bindsym --release Super_L exec rofi -modes combi -combi-modi window#drun -show combi
 bindsym $mod+Shift+x exec rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
-bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
+# bindsym $mod+Ctrl+s exec rofi -terminal alacritty -show ssh
 bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 # Launchers for terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Ctrl+Return exec kitty
+bindsym $mod+Return exec kitty 
+bindsym $mod+Ctrl+Return exec alacritty
 bindsym $mod+Shift+Return exec tabby
 bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 
@@ -60,7 +60,7 @@ bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 # -s for presentatino, -f for fullscreen (headings on the side)
 bindsym $mod+F10 exec firefox
 bindsym $mod+j exec thunar
-bindsym $mod+k exec alacritty -T Ranger -e ranger
+bindsym $mod+k exec kitty -T Yazi -e yazi
 bindsym $mod+c exec zenity --calendar
 bindsym $mod+x exec /usr/bin/emacs -fs
 bindsym $mod+z exec zeal
