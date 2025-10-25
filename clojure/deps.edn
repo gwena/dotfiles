@@ -37,8 +37,13 @@
                                                 :sha     "df552797a198b6701fb2d92390fce7c59205ea77"}}
                    :main-opts  ["-m" "carve.main"]}
 
+           :splint {:extra-deps {io.github.noahtheduke/splint {:mvn/version "1.21.0"}}
+                   :main-opts ["-m" "noahtheduke.splint"]}
+
            :outdated {:deps      {com.github.liquidz/antq {:mvn/version "RELEASE"}}
                       :main-opts ["-m" "antq.core"]}
+           :cljfmt {:deps {dev.weavejester/cljfmt {:mvn/version "0.13.1"}}
+                    :main-opts ["-m" "cljfmt.main" "fix"]}
            }
 
  ;; Provider attributes
