@@ -22,6 +22,7 @@ ln -sfnv ${DOTS_PATH}/alacritty alacritty
 ln -sfnv ${DOTS_PATH}/kitty kitty
 ln -sfnv ${DOTS_PATH}/pcmanfm pcmanfm
 ln -sfnv ${DOTS_PATH}/ranger ranger
+ln -sfnv ${DOTS_PATH}/yazi yazi
 ln -sfnv ${DOTS_PATH}/rofi rofi
 ln -sfnv ${DOTS_PATH}/dunst dunst
 ln -sfnv ${DOTS_PATH}/screenlayout screenlayout
