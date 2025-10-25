@@ -133,6 +133,16 @@ idle_fg = "#f9e2af"
 
 [[block]]
 block = "custom"
+command =  "echo \uf0eb"
+interval = "once"
+[[block.click]]
+button = "left"
+cmd = "ha-scene-turnon.sh studio_study"
+[block.theme_overrides]
+idle_fg = "#f9e2af"
+
+[[block]]
+block = "custom"
 command = "echo \uf1ec"
 interval = "once"
 [[block.click]]
