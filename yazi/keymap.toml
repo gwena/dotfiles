@@ -1,0 +1,6 @@
+[mgr]
+prepend_keymap = [
+    { on = "<Delete>", run = 'remove --force', desc = "Trash selected file(s) without confirmation" },
+    { on = "!",        run = 'shell "$SHELL" --block', desc = "Open $SHELL here" }
+]
+
