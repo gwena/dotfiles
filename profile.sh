@@ -13,7 +13,6 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 
 # XDG_CONFIG_HOME
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtkrc-2.0"
-export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java -Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 export LEIN_HOME="${XDG_CONFIG_HOME}/lein"
 # XDG XDG_CACHE_HOME
 export GRADLE_USER_HOME="${XDG_CACHE_HOME}/gradle"
