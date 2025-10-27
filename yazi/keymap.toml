@@ -2,5 +2,12 @@
 prepend_keymap = [
     { on = "<Delete>", run = 'remove --force', desc = "Trash selected file(s) without confirmation" },
     { on = "<Enter>",  run = 'plugin smart-enter', desc = "Enter the child directory, or open the file" },
-    { on = "!",        run = 'shell "$SHELL" --block', desc = "Open $SHELL here" }
+    { on = "!",        run = 'shell "$SHELL" --block', desc = "Open $SHELL here" },
+
+    # cd/goto - gh, gc, gd gf and g<Space> defined in default
+   	{ on = [ "g", "D" ], run = "cd ~/Documents", desc = "Go ~/Documents" },
+   	{ on = [ "g", "l", "a" ], run = "cd ~/Lang", desc = "Go ~/Lang" },
+   	{ on = [ "g", "l", "i" ], run = "cd ~/Lib", desc = "Go ~/Lib" },
+   	{ on = [ "g", "p", "i" ], run = "cd ~/Pictures", desc = "Go ~/Pictures" },
+   	{ on = [ "g", "p", "r" ], run = "cd ~/Projects", desc = "Go ~/Projects" },
 ]
