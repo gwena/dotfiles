@@ -49,6 +49,7 @@ bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
+bindsym $mod+F12 exec "x=$(cat $SCRIPTS/double-tap-menu.txt | rofi -dmenu -p 'Run'); $SCRIPTS/$x"
 
 # Launchers for terminal
 bindsym $mod+Return exec kitty 
@@ -72,7 +73,6 @@ bindsym $mod+Ctrl+m exec pavucontrol-qt
 bindsym $mod+Print exec flameshot gui
 bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
 bindsym $mod+Ctrl+Print exec "$SCRIPTS/i3-floating-shortcuts.sh"
-bindsym $mod+F12 exec "$SCRIPTS/i3-floating-learn.sh"
 bindsym $mod+Ctrl+p exec copyq show
 
 # Screen layouts
