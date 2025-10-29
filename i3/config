@@ -49,7 +49,10 @@ bindsym $mod+Ctrl+e exec rofi -modi emoji -show emoji
 bindsym $mod+Ctrl+c exec rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec rofi -modi window -no-fixed-num-lines -show window
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
-bindsym $mod+F12 exec "x=$(cat $SCRIPTS/double-tap-menu.txt | rofi -dmenu -p 'Run'); $SCRIPTS/$x"
+# Max is F12 (left side: F10 double-tap bottom, F11 tap, F12 double-tap)
+bindsym $mod+F10 exec "x=$(cat $SCRIPTS/double-tap-menu.txt | rofi -dmenu -p 'Run'); $SCRIPTS/$x"
+bindsym $mod+F11 exec "$SCRIPTS/ai-cleanup.sh"
+bindsym $mod+F12 exec "x=$(cat $SCRIPTS/funky-double-tap-menu.txt | rofi -dmenu -p 'Run'); $SCRIPTS/$x"
 
 # Launchers for terminal
 bindsym $mod+Return exec kitty 
@@ -59,7 +62,6 @@ bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 
 # Launchers Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
-bindsym $mod+F10 exec firefox
 bindsym $mod+j exec thunar
 bindsym $mod+k exec kitty -T Yazi -e yazi
 bindsym $mod+c exec zenity --calendar
