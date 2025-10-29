@@ -25,13 +25,13 @@ floating_modifier $mod
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Kill window
+# Kill window with cursor
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves layout/session)
 bindsym $mod+Shift+r restart
 
 # Lock screen
@@ -54,13 +54,13 @@ bindsym $mod+F10 exec "x=$(cat $SCRIPTS/double-tap-menu.txt | rofi -dmenu -p 'Ru
 bindsym $mod+F11 exec "$SCRIPTS/ai-cleanup.sh"
 bindsym $mod+F12 exec "x=$(cat $SCRIPTS/funky-double-tap-menu.txt | rofi -dmenu -p 'Run'); $SCRIPTS/$x"
 
-# Launchers for terminal
+# Launchers - Terminal
 bindsym $mod+Return exec kitty 
 bindsym $mod+Ctrl+Return exec alacritty
 bindsym $mod+Shift+Return exec tabby
 bindsym $mod+Ctrl+Shift+Return exec urxvt -fn 'xft:MesloLGSNF'
 
-# Launchers Applications
+# Launchers - Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
 bindsym $mod+j exec thunar
 bindsym $mod+k exec kitty -T Yazi -e yazi
@@ -213,6 +213,7 @@ for_window [class="(?i)Chrome"]   border none
 for_window [class="(?i)spotify"]  border none
 for_window [class="(?i)Slack"]    border none
 
+# Floating enable
 for_window [window_role="pop-up"]             floating enable
 for_window [window_role="bubble"]             floating enable
 for_window [window_role="task_dialog"]        floating enable
@@ -225,7 +226,6 @@ for_window [title="i3_help"]                  floating enable
 for_window [title="MuseScore: Play Panel"]    floating enable
 for_window [title="About Pale Moon"]          floating enable
 for_window [class="GParted"]                  floating enable
-for_window [class="Lxappearance"]             floating enable sticky enable
 for_window [class="Manjaro-hello"]            floating enable
 for_window [class="Manjaro Settings Manager"] floating enable
 for_window [class="Nitrogen"]                 floating enable
@@ -237,22 +237,23 @@ for_window [class="Qtconfig-qt4"]             floating enable
 for_window [class="Simple-scan"]              floating enable
 for_window [class="Skype"]                    floating enable
 for_window [class="Evernote Web Clipper"]     floating enable
-for_window [class="Zeal"]                     floating enable sticky enable
-for_window [class="(?i)zenity"]               floating enable sticky enable
-for_window [class="(?i)arandr"]               floating enable sticky enable
 for_window [class="(?i)virtualbox"]           floating enable
 for_window [class="(?i)config-printer.py"]    floating enable
-for_window [class="(?i)calculator"]           floating enable sticky enable
 for_window [class="(?i)blueman"]              floating enable
 for_window [class="(?i)nm-connection-editor"] floating enable
 for_window [class="(?i)copyq"]                floating enable
 for_window [class="(?i)nvidia-settings"]      floating enable
-
-# Limit floating window sizes
-floating_maximum_size 1400 x 1200
+for_window [class="Lxappearance"]             floating enable sticky enable
+for_window [class="Zeal"]                     floating enable sticky enable
+for_window [class="(?i)zenity"]               floating enable sticky enable
+for_window [class="(?i)arandr"]               floating enable sticky enable
+for_window [class="(?i)calculator"]           floating enable sticky enable
 
 # Switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+
+# Limit floating window sizes
+floating_maximum_size 1400 x 1200
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+e mode "$mode_system"
