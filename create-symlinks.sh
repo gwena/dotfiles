@@ -13,6 +13,7 @@ ln -sfnv ${DOTS_PATH}/.zshrc .zshrc
 ln -sfnv ${DOTS_PATH}/.vimrc .vimrc
 ln -sfnv ${DOTS_PATH}/.Xresources .Xresources
 ln -sfnv ${SCRIPTS}/private/ssh .ssh
+ln -sfnv ${SCRIPTS}/private/.sqa.edn .sqa.edn
 
 # ----- In .config folder
 cd ${HOME}/.config
@@ -59,3 +60,14 @@ mkdir -p ${HOME}/.config/clojure
 cd ${HOME}/.config/clojure
 ln -sfnv ${DOTS_PATH}/clojure/deps.edn deps.edn
 ln -sfnv ${DOTS_PATH}/clojure/tools tools
+
+mkdir -p ${HOME}/.config/obs-studio
+cd ${HOME}/.config/obs-studio
+ln -sfnv ${SCRIPTS}/private/obs-studio-basic basic
+
+
+mkdir -p ${HOME}/.config/systemd/user
+cd ${HOME}/.config/systemd/user
+ln -sfnv ${DOTS_PATH}/systemd-user-backup/backup.service backup.service
+ln -sfnv ${DOTS_PATH}/systemd-user-backup/backup.timer backup.timer
+
