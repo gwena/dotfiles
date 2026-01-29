@@ -299,6 +299,8 @@ exec --no-startup-id openvpn3-indicator
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec --no-startup-id solaar --window=hide
+exec --no-startup-id opensnitch-ui
+# to be restarted after each reload (i3 script to fix root cursor)
 exec_always --no-startup-id fix_xcursor
 
 # Color palette (limited impact): catppuccin-mocha
