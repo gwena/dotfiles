@@ -77,12 +77,12 @@ units = "metric"
 [block.theme_overrides]
 idle_fg = "#a6e3a1"
 
-[[block]]
-block = "custom"
-command = "so-status.sh"
-interval = "once"
-[block.theme_overrides]
-idle_bg = "#89b4fa"
+# [[block]]
+# block = "custom"
+# command = "so-status.sh"
+# interval = "once"
+# [block.theme_overrides]
+# idle_bg = "#89b4fa"
 
 # [[block]]
 # block = "pomodoro"
