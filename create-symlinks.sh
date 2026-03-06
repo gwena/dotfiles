@@ -33,6 +33,7 @@ ln -sfnv ${DOTS_PATH}/fontconfig fontconfig
 ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf
 ln -sfnv ${DOTS_PATH}/i3 i3
 ln -sfnv ${DOTS_PATH}/i3status-rust i3status-rust
+ln -sfnv ${DOTS_PATH}/picom picom
 
 # Wayland specific
 ln -sfnv ${DOTS_PATH}/sway sway
