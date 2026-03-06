@@ -49,7 +49,7 @@ ln -sfnv ${SCRIPTS}/private/rclone rclone
 ln -sfnv ${SCRIPTS}/private/spotify-tui spotify-tui
 ln -sfnv ${SCRIPTS}/private/idasen-controller linak-controller
 ln -sfnv ${SCRIPTS}/private/git git
-ln -sfnv ${SCRIPTS}/private/hg hg
+# ln -sfnv ${SCRIPTS}/private/hg hg
 ln -sfnv ${SCRIPTS}/private/mycli mycli
 
 # ----- Special cases where not the whole folder is symlinked
