@@ -14,16 +14,20 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 # XDG_CONFIG_HOME
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtkrc-2.0"
 export LEIN_HOME="${XDG_CONFIG_HOME}/lein"
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 # XDG XDG_CACHE_HOME
 export GRADLE_USER_HOME="${XDG_CACHE_HOME}/gradle"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
 # XDG_DATA_HOME
-export _Z_DATA="${XDG_DATA_HOME}/z"
-export CARGO_HOME="${XDG_DATA_HOME}/cargo"
-export DVDCSS_CACHE="${XDG_DATA_HOME}/dvdcss"
 export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export DOTNET_CLI_HOME="${XDG_DATA_HOME}/dotnet" 
+export DVDCSS_CACHE="${XDG_DATA_HOME}/dvdcss"
 export MYCLI_HISTFILE="${XDG_DATA_HOME}/mycli/history"
+export RXVT_SOCKET="${XDG_RUNTIME_DIR}/urxvtd"
+export WINEPREFIX="${XDG_DATA_HOME}/wine"
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export _Z_DATA="${XDG_DATA_HOME}/z"
 
 # Only partially supporded, do not use
 # export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
