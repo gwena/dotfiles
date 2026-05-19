@@ -45,7 +45,7 @@ bindsym $mod+m bar mode toggle
 bindsym --release Super_L exec --no-startup-id rofi -modes combi -combi-modi window#drun -show combi
 bindsym $mod+Shift+x exec --no-startup-id rofi -modi window -no-fixed-num-lines -show window -filter "emacs "
 # bindsym $mod+Ctrl+s exec --no-startup-id rofi -terminal alacritty -show ssh
-bindsym $mod+Ctrl+e exec --no-startup-id rofi -modi emoji -show emoji
+bindsym $mod+Ctrl+e exec --no-startup-id rofimoji
 bindsym $mod+Ctrl+c exec --no-startup-id rofi -modi calc -show calc -no-show-match -no-sort
 bindsym $mod+Tab exec --no-startup-id rofi -modi window -no-fixed-num-lines -show window
 bindsym $mod+Shift+z exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
