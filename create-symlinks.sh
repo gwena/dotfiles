@@ -28,6 +28,7 @@ ln -sfnv ${DOTS_PATH}/rofi rofi
 ln -sfnv ${DOTS_PATH}/dunst dunst
 ln -sfnv ${DOTS_PATH}/screenlayout screenlayout
 ln -sfnv ${DOTS_PATH}/fontconfig fontconfig
+ln -sfnv ${DOTS_PATH}/rofimoji.rc rofimoji.rc
 
 # X/i3wm specific
 ln -sfnv ${DOTS_PATH}/redshift.conf redshift.conf

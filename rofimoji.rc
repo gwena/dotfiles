@@ -1,0 +1,3 @@
+files = [emoji, chess_symbols, fontawesome6]
+action = type
+skin-tone = moderate
