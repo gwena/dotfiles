@@ -299,6 +299,7 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec --no-startup-id solaar --window=hide
 exec --no-startup-id opensnitch-ui
+exec --no-startup-id kDrive
 exec_always --no-startup-id pkill picom; picom -b
 exec_always --no-startup-id fix_xcursor
 
