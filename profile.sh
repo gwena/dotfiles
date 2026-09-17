@@ -29,6 +29,10 @@ export WINEPREFIX="${XDG_DATA_HOME}/wine"
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export _Z_DATA="${XDG_DATA_HOME}/z"
 
+if [ "$DESKTOP_SESSION" = "sway" ]; then
+    export SWAY_UNSUPPORTED_GPU=1
+fi
+
 # Only partially supporded, do not use
 # export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 # export XINITRC="${XDG_CONFIG_HOME}/xinitrc"
