@@ -64,7 +64,7 @@ bindsym $mod+Ctrl+m exec --no-startup-id pavucontrol-qt
 
 # Screenshot, clipboard and special
 bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+Shift+Print exec --no-startup-id i3-scrot # fullscreen
+bindsym $mod+Shift+Print exec --no-startup-id flameshot full
 # Also mapped on the StreamDeck
 bindsym $mod+Ctrl+Print exec --no-startup-id "$SCRIPTS/i3-floating-shortcuts.sh"
 bindsym $mod+Ctrl+p exec --no-startup-id copyq show
