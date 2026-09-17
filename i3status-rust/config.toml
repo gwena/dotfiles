@@ -6,6 +6,8 @@
 #theme = "gruvbox-dark"
 theme = "ctp-mocha" # see https://github.com/catppuccin/catppuccin
 [icons]
+# Use https://www.nerdfonts.com/cheat-sheet to find the code
+# See i3 bar section config for the font used
 icons = "awesome6"
 [icons.overrides]
 pomodoro = "\ue082"
@@ -122,7 +124,7 @@ idle_fg = "#f9e2af"
 
 [[block]]
 block = "custom"
-command =  "echo \uf436"
+command =  "echo \ued5e"
 interval = "once"
 [[block.click]]
 button = "left"
@@ -195,7 +197,7 @@ interval = 5
 [[block]]
 block = "nvidia_gpu"
 interval = 5
-format = " $icon $utilization $temperature $clocks"
+format = " $utilization $temperature $memory "
 
 [[block]]
 block = "battery"
