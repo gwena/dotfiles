@@ -240,12 +240,11 @@ floating_maximum_size 1400 x 1200
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+e mode "$mode_system"
-set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, (Shift+r)reboot, (Shift+o)off/shutdown
+set $mode_system (l)ock, (e)xit, (s)uspend, (Shift+r)reboot, (Shift+o)off/shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym Shift+r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+o exec --no-startup-id i3exit shutdown, mode "default"
 
