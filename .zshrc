@@ -45,6 +45,31 @@ antidote load $HOME/.config/zsh_plugins.txt
 # Specific Zsh's Vim Binding
 bindkey -v
 
+# Kitty Drag and Drop with fzf (Ctrl-o)
+fzf-kitty-dnd-widget() {
+  local selected_files
+
+  # FIX: We pipe 'find' or 'fd' directly into fzf so it isn't starved by ZLE
+  if command -v fd &> /dev/null; then
+    selected_files=$(fd --hidden --follow --exclude .git . | fzf -m --height 40% --layout=reverse --border --prompt="Select files to drag > ")
+  else
+    selected_files=$(find . -mindepth 1 -not -path '*/.*' | fzf -m --height 40% --layout=reverse --border --prompt="Select files to drag > ")
+  fi
+
+  if [ -n "$selected_files" ]; then
+    zle -I
+
+    local -a files
+    IFS=$'\n' files=($(echo "$selected_files"))
+
+    kitten dnd "${files[@]}"
+  fi
+
+  zle reset-prompt
+}
+
+zle -N fzf-kitty-dnd-widget
+bindkey '^O' fzf-kitty-dnd-widget
+
 # eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/gruvbox.omp.json)"
 eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml)"
-
