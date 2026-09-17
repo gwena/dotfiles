@@ -50,7 +50,6 @@ bindsym $mod+F12 exec --no-startup-id "x=$(cat $SCRIPTS/funky-double-tap-menu.tx
 bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+Ctrl+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id tabby
-bindsym $mod+Ctrl+Shift+Return exec --no-startup-id urxvt -fn 'xft:MesloLGSNF'
 
 # Launchers - Applications
 # -s for presentatino, -f for fullscreen (headings on the side)
