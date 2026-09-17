@@ -32,6 +32,8 @@ bindsym Ctrl+Mod1+L exec --no-startup-id blurlock
 
 # Hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
+# Force refresh
+bindsym $mod+Shift+m exec --no-startup-id killall -SIGUSR1 i3status-rs
 
 # Launchers
 # Commas in config can cause issues. To bind a key to launch rofi, use a config file or replace the commas with #
