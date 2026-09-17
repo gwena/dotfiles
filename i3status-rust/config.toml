@@ -94,6 +94,15 @@ idle_fg = "#a6e3a1"
 
 [[block]]
 block = "custom"
+command = "notes-watcher.sh"
+json = true
+interval = 900
+[block.theme_overrides]
+idle_bg = "#005500"
+warning_bg = "#FF0000"
+
+[[block]]
+block = "custom"
 command = "echo \uf2d2"
 interval = "once"
 [[block.click]]
