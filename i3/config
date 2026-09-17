@@ -4,13 +4,6 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border pixel 1
-
-# Hide borders
-hide_edge_borders none
-
 # Change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
@@ -347,6 +340,17 @@ bar {
   status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
 }
 
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 1
+default_floating_border pixel 1
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Hide borders
+hide_edge_borders smart
+
 ### Gaps
 
 # Set inner/outer gaps
@@ -358,9 +362,6 @@ gaps outer -2
 # gaps inner all set 10
 # gaps outer all plus 5
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
 
 # Smart gaps and inverse_outer for single window
 smart_gaps inverse_outer
