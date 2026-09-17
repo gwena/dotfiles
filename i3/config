@@ -300,7 +300,7 @@ exec --no-startup-id solaar --window=hide
 exec --no-startup-id opensnitch-ui
 exec --no-startup-id kDrive
 exec --no-startup-id picom -b
-exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id setcursor
 
 # Color palette (limited impact): catppuccin-mocha
 set $rosewater #f5e0dc
