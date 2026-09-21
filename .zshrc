@@ -71,5 +71,7 @@ fzf-kitty-dnd-widget() {
 zle -N fzf-kitty-dnd-widget
 bindkey '^O' fzf-kitty-dnd-widget
 
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/gruvbox.omp.json)"
 eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml)"
