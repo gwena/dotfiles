@@ -9,4 +9,9 @@ yazi/theme.toml
 yazi/flavors
 yazi/plugins
 yazi/*-backup
-
+# Ignore for now (review later)
+clojure/tools/
+dunst/icons/
+hypr/hyprpaper.conf
+p10k.zsh
+waybar/scripts/
