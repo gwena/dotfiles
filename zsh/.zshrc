@@ -45,6 +45,8 @@ antidote load $HOME/.config/zsh_plugins.txt
 # Specific Zsh's Vim Binding
 bindkey -v
 
+source $IT/private/lscolors.sh
+
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
   local selected_files
