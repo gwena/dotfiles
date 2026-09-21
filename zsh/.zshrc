@@ -46,6 +46,8 @@ antidote load $HOME/.config/zsh_plugins.txt
 bindkey -v
 
 source $IT/private/lscolors.sh
+# I prefer symlinks in a more visible color
+export LS_COLORS="${LS_COLORS}:ln=01;36:"
 
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
