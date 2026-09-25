@@ -83,9 +83,9 @@ bindsym --whole-window button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip d
 bindsym --whole-window Ctrl+button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec --no-startup-id "$SCRIPTS/word-lookup.sh"
 
-# Speed up - scrolling wheel
-bindsym --whole-window Shift+button5 exec --no-startup-id "xdotool click --clearmodifiers --repeat 10 --delay 0 5 mouseup --clearmodifiers 5"
-bindsym --whole-window Shift+button4 exec --no-startup-id "xdotool click --clearmodifiers --repeat 10 --delay 0 4 mouseup --clearmodifiers 4"
+# Speed up scrolling wheel (for Alacritty, not working with Kitty) - button4: scroll up, button5: scroll down
+bindsym --whole-window Ctrl+button4 exec --no-startup-id "xdotool click --clearmodifiers --repeat 10 --delay 1 4 mouseup --clearmodifiers 4"
+bindsym --whole-window Ctrl+button5 exec --no-startup-id "xdotool click --clearmodifiers --repeat 10 --delay 1 5 mouseup --clearmodifiers 5"
 
 # Change focus, removed vim version due to colemak/moonlander
 bindsym $mod+Left focus left
