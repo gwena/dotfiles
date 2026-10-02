@@ -46,4 +46,5 @@ export BROWSER=/usr/bin/firefox
 export LSP_USE_PLISTS=true
 
 source "${SCRIPTS}/fix-desktop-apps-and-more.sh"
+source "${SCRIPTS}/fix-thunderbird-dictionary.sh"
 
