@@ -1,10 +1,10 @@
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
-#sindresorhus/pure # using oh-my-posh, see .zshrc
 
 # --- oh-my-zsh ---
-ohmyzsh/ohmyzsh path:lib # for tabs and more, else select ohmyzsh/lib/...
+ohmyzsh/ohmyzsh path:lib/completion.zsh
+ohmyzsh/ohmyzsh path:lib/directories.zsh
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/fzf
