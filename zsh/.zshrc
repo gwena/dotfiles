@@ -30,9 +30,6 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
-# Shared between Bash and Zsh (aliases, exports, sources, ...)
-FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
-
 # Needed for conflict between fzf and zsh-vi-mode (Initialization when the script is sourced)
 ZVM_INIT_MODE=sourcing
 
@@ -71,6 +68,10 @@ fzf-kitty-dnd-widget() {
 
   zle reset-prompt
 }
+
+# Shared between Bash and Zsh (aliases, exports, sources, ...)
+# Todo after antidote plugins to overwrite, e.g. aliases, if needed
+FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
 
 zle -N fzf-kitty-dnd-widget
 bindkey '^O' fzf-kitty-dnd-widget
