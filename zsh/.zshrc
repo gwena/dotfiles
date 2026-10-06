@@ -67,9 +67,8 @@ fzf-kitty-dnd-widget() {
     zle -I
 
     local -a files
-    IFS=$'\n' files=($(echo "$selected_files"))
-
-    kitten dnd "${files[@]}"
+    files=("${(@f)selected_files}")
+    kitten dnd --drag-thumbnail /usr/share/icons/Faenza/apps/96/application-x-clementine.png -- "${files[@]}"
   fi
 
   zle reset-prompt
