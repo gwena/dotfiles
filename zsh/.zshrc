@@ -80,4 +80,4 @@ bindkey -M viins '^O' fzf-kitty-dnd-widget
 # Must be last: make vi insertion mode the default ZLE keymap
 bindkey -A viins main
 
-eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml)"
+eval "$(oh-my-posh init zsh --config "${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml")"
