@@ -76,5 +76,9 @@ FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
 zle -N fzf-kitty-dnd-widget
 bindkey '^O' fzf-kitty-dnd-widget
 
-eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml)"
+
+# Atuin must initialize after zsh-vi-mode
+zvm_after_init_commands+=(
+  'eval "$(atuin init zsh --disable-up-arrow)"'
+)
