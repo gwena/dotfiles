@@ -1,6 +1,6 @@
 [theme]
 # Themes in /usr/share/i3status-rust/themes/
-#theme = "slick" 
+#theme = "slick"
 #theme = "solarized-dark"
 #theme = "nord-dark"
 #theme = "gruvbox-dark"
@@ -197,7 +197,7 @@ interval = 5
 [[block]]
 block = "nvidia_gpu"
 interval = 5
-format = " $utilization $temperature $memory "
+format = " $utilization $temperature $memory.eng(unit:B,prefix:Mi,force_prefix) "
 
 [[block]]
 block = "battery"
