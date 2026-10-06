@@ -1,7 +1,7 @@
 export HISTFILE=$HOME/.config/zsh_history
 export HISTSIZE=1000000 # history in memory
 export SAVEHIST=1000000 # history in file
-export SSH_KEY_PATH="/$HOME/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zcompdump-$ZSH_VERSION # needed for export, and use with compinit
 
@@ -37,9 +37,9 @@ ZVM_INIT_MODE=sourcing
 autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 
 source '/usr/share/zsh-antidote/antidote.zsh'
-antidote load $HOME/.config/zsh_plugins.txt
+antidote load "$HOME/.config/zsh_plugins.txt"
 
-source $IT/private/lscolors.sh
+source "$IT/private/lscolors.sh"
 # I prefer symlinks in a more visible color
 export LS_COLORS="${LS_COLORS}:ln=01;36:"
 
