@@ -39,12 +39,18 @@ autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load $HOME/.config/zsh_plugins.txt
 
-# Specific Zsh's Vim Binding
-bindkey -v
-
 source $IT/private/lscolors.sh
 # I prefer symlinks in a more visible color
 export LS_COLORS="${LS_COLORS}:ln=01;36:"
+
+# Shared between Bash and Zsh (aliases, exports, sources, ...)
+# Todo after antidote plugins to overwrite, e.g. aliases, if needed
+FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
+
+# Atuin must initialize after zsh-vi-mode
+zvm_after_init_commands+=(
+  'eval "$(atuin init zsh --disable-up-arrow)"'
+)
 
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
@@ -69,16 +75,10 @@ fzf-kitty-dnd-widget() {
   zle reset-prompt
 }
 
-# Shared between Bash and Zsh (aliases, exports, sources, ...)
-# Todo after antidote plugins to overwrite, e.g. aliases, if needed
-FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
-
 zle -N fzf-kitty-dnd-widget
-bindkey '^O' fzf-kitty-dnd-widget
+bindkey -M viins '^O' fzf-kitty-dnd-widget
+
+# Must be last: make vi insertion mode the default ZLE keymap
+bindkey -A viins main
 
 eval "$(oh-my-posh init zsh --config ${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml)"
-
-# Atuin must initialize after zsh-vi-mode
-zvm_after_init_commands+=(
-  'eval "$(atuin init zsh --disable-up-arrow)"'
-)
