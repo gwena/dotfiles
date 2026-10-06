@@ -14,6 +14,12 @@
 ## windows: %USERPROFILE%/.local/share/atuin/key
 # key_path = "~/.key"
 
+[logs]
+enabled = false # if enabled then specify dir below (else will be $HOME)
+# dir = "~/.local/state/atuin/logs"
+# level = "info"
+# retention = "4d"
+
 ## date format used, either "us" or "uk"
 # dialect = "us"
 
