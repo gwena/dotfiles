@@ -1,6 +1,6 @@
 jeffreytse/zsh-vi-mode
-zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
 
 # --- oh-my-zsh ---
 ohmyzsh/ohmyzsh path:lib/completion.zsh
