@@ -25,8 +25,8 @@ source "$IT/private/lscolors.sh"
 export LS_COLORS="${LS_COLORS}:ln=01;36:"
 
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
-# Todo after antidote plugins to overwrite, e.g. aliases, if needed
-FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
+# After antidote plugins to overwrite, e.g. aliases, if needed
+[[ -f $SCRIPTS/sharedrc ]] && source $SCRIPTS/sharedrc
 
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
