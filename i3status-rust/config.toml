@@ -96,7 +96,7 @@ idle_fg = "#a6e3a1"
 
 [[block]]
 block = "custom"
-command = "notes-watcher.sh"
+command = "$SCRIPTS/fix-spelling/dictionaries-watcher.sh"
 json = true
 interval = 900
 [block.theme_overrides]
