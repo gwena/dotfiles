@@ -54,7 +54,7 @@ fzf-kitty-dnd-widget() {
 zle -N fzf-kitty-dnd-widget
 bindkey -M viins '^O' fzf-kitty-dnd-widget
 
-# Must be last: make vi insertion mode the default ZLE keymap
+# Needed for Esc. Must be last rebind of keys
 bindkey -A viins main
 
 eval "$(oh-my-posh init zsh --config "${DOTS_PATH}/oh-my-posh-themes/light-gruvbox-catppuccin-mocha.omp.toml")"
