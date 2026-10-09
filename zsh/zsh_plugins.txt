@@ -1,11 +1,10 @@
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-
-# --- oh-my-zsh ---
 ohmyzsh/ohmyzsh path:lib/completion.zsh
 ohmyzsh/ohmyzsh path:lib/directories.zsh       # Needed for .. ... and more
 ohmyzsh/ohmyzsh path:lib/history.zsh           # Needed for history, date
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/fzf
+# Must be last
+zsh-users/zsh-syntax-highlighting
