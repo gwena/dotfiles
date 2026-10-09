@@ -31,21 +31,15 @@ export LS_COLORS="${LS_COLORS}:ln=01;38;5;208"
 
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
-  local selected_files
+  # Pipe directly into fzf so it isn't starved by ZLE
+  local selected=$(
+    fd --hidden --follow --exclude .git |
+      fzf -m --height 40% --layout=reverse --border --prompt='Select files to drag > '
+  )
 
-  # FIX: We pipe 'find' or 'fd' directly into fzf so it isn't starved by ZLE
-  if command -v fd &> /dev/null; then
-    selected_files=$(fd --hidden --follow --exclude .git . | fzf -m --height 40% --layout=reverse --border --prompt="Select files to drag > ")
-  else
-    selected_files=$(find . -mindepth 1 -not -path '*/.*' | fzf -m --height 40% --layout=reverse --border --prompt="Select files to drag > ")
-  fi
-
-  if [ -n "$selected_files" ]; then
+  if [[ -n $selected ]]; then
     zle -I
-
-    local -a files
-    files=("${(@f)selected_files}")
-    kitten dnd --drag-thumbnail /usr/share/icons/Faenza/apps/96/application-x-clementine.png -- "${files[@]}"
+    kitten dnd --drag-thumbnail /usr/share/icons/Faenza/apps/96/application-x-clementine.png -- "${(@f)selected}"
   fi
 
   zle reset-prompt
