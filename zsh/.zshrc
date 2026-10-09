@@ -20,10 +20,12 @@ autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load "$HOME/.config/zsh_plugins.txt"
 
-source "$IT/private/lscolors.sh"
+# Work with eza as well
+[[ -f "$IT/private/lscolors.sh" ]] && source "$IT/private/lscolors.sh"
 # I prefer symlinks in a more visible color
-export LS_COLORS="${LS_COLORS}:ln=01;36:"
+export LS_COLORS="${LS_COLORS}:ln=01;38;5;208"
 
+# export EZA_COLORS="ln=01;36"
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 # After antidote plugins to overwrite, e.g. aliases, if needed
 [[ -f $SCRIPTS/sharedrc ]] && source $SCRIPTS/sharedrc
