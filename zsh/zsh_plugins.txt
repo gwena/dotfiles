@@ -1,6 +1,7 @@
+ohmyzsh/ohmyzsh path:lib/completion.zsh
+Aloxaf/fzf-tab
 jeffreytse/zsh-vi-mode
 zsh-users/zsh-autosuggestions
-ohmyzsh/ohmyzsh path:lib/completion.zsh
 ohmyzsh/ohmyzsh path:lib/directories.zsh       # Needed for .. ... and more
 ohmyzsh/ohmyzsh path:lib/history.zsh           # Needed for history, date
 ohmyzsh/ohmyzsh path:plugins/command-not-found

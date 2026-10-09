@@ -7,7 +7,6 @@ export ZSH_COMPDUMP=$XDG_CACHE_HOME/zcompdump-$ZSH_VERSION # needed for export, 
 setopt hist_ignore_space # prevent history entry to be recorded if started with at least one space
 
 HYPHEN_INSENSITIVE="true"
-COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Needed for conflict between fzf and zsh-vi-mode (Initialization when the script is sourced)
