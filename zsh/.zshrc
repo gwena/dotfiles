@@ -47,11 +47,6 @@ export LS_COLORS="${LS_COLORS}:ln=01;36:"
 # Todo after antidote plugins to overwrite, e.g. aliases, if needed
 FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
 
-# Atuin must initialize after zsh-vi-mode
-zvm_after_init_commands+=(
-  'eval "$(atuin init zsh --disable-up-arrow)"'
-)
-
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
   local selected_files
