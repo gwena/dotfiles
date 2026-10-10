@@ -12,6 +12,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Needed for conflict between fzf and zsh-vi-mode (Initialization when the script is sourced)
 ZVM_INIT_MODE=sourcing
 
+# See https://github.com/Aloxaf/fzf-tab#configure
 zstyle ':completion:*' menu no
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
