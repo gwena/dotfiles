@@ -494,3 +494,10 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
+[block-kdrive-updates]
+    appname = "kDrive"
+    summary = "New update available."
+    match_transient = true
+    skip_display = true
+
