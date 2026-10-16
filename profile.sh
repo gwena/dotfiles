@@ -45,6 +45,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export BROWSER=/usr/bin/firefox
 export LSP_USE_PLISTS=true
 
-source "${SCRIPTS}/fix-desktop-apps-and-more.sh"
-source "${SCRIPTS}/fix-spelling/fix-dictionaries.sh"
+[[ -f  "${SCRIPTS}/fix-desktop-apps-and-more.sh" ]] && source "${SCRIPTS}/fix-desktop-apps-and-more.sh"
+[[ -f  "${SCRIPTS}/spell-and-dictionaries/fix-dictionaries.sh" ]] && source "${SCRIPTS}/spell-and-dictionaries/fix-dictionaries.sh"
 
