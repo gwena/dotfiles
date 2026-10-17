@@ -19,7 +19,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Kill window with cursor
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym --release $mod+Ctrl+x exec --no-startup-id xkill
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
