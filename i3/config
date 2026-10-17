@@ -323,8 +323,7 @@ bar {
 default_border pixel 1
 default_floating_border pixel 1
 
-# Hide borders
-hide_edge_borders smart
+hide_edge_borders smart_no_gaps
 
 ### Gaps
 
@@ -336,7 +335,6 @@ gaps outer 0
 # gaps inner|outer current|all set|plus|minus <px>
 # gaps inner all set 10
 # gaps outer all plus 5
-
 
 # Smart gaps and inverse_outer for single window
 smart_gaps inverse_outer
