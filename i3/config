@@ -227,8 +227,8 @@ for_window [urgent=latest] focus
 floating_maximum_size 1400 x 1200
 
 # Set shut down, restart and locking features
-bindsym $mod+Shift+e mode "$mode_system"
 set $mode_system 'L'ock | 'E'xit | 'S'uspend | Shift-'R'eboot | Shift-'O'ff
+bindsym $mod+Shift+e mode "$mode_system"
 mode "$mode_system" {
     bindsym l       exec --no-startup-id blurlock, mode "default"
     bindsym s       exec --no-startup-id systemctl suspend, mode "default"
