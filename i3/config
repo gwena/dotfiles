@@ -54,13 +54,13 @@ bindsym $mod+Ctrl+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id tabby
 
 # Launchers - Applications
-# -s for presentatino, -f for fullscreen (headings on the side)
-bindsym $mod+j exec thunar
+# -s for presentation, -f for fullscreen (headings on the side)
+bindsym $mod+j exec --no-startup-id thunar
 bindsym $mod+k exec --no-startup-id kitty -T Yazi -e yazi
 bindsym $mod+c exec --no-startup-id zenity --calendar
-bindsym $mod+x exec /usr/bin/emacs -fs
+bindsym $mod+x exec --no-startup-id /usr/bin/emacs -fs
 bindsym $mod+z exec --no-startup-id zeal
-bindsym $mod+g exec prime-run gthumb
+bindsym $mod+g exec --no-startup-id prime-run gthumb
 bindsym $mod+Ctrl+b exec --no-startup-id terminal -e 'bmenu'
 bindsym $mod+Ctrl+m exec --no-startup-id pavucontrol-qt
 
