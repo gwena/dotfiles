@@ -76,10 +76,10 @@ bindsym $mod+apostrophe exec --no-startup-id $screen/on-xps-laptop.sh
 bindsym $mod+semicolon  exec --no-startup-id "$screen/on-xps-craziness.sh;nitrogen --random --set-scaled $HOME/Pictures/Wallpapers/Wallpaper-5120x2160"
 bindsym $mod+equal      exec --no-startup-id $screen/on-xps-craziness-and-hdmi-2k.sh
 
-# AI magic
-bindsym $mod+Ctrl+y exec --no-startup-id "$SCRIPTS/ai-magic.sh"
-bindsym --whole-window button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip default magic"
-bindsym --whole-window Ctrl+button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip magic magic"
+# AI magic - Pending
+# bindsym $mod+Ctrl+y exec --no-startup-id "$SCRIPTS/ai-magic.sh"
+# bindsym --whole-window button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip default magic"
+# bindsym --whole-window Ctrl+button9 exec --no-startup-id "$SCRIPTS/ai-magic.sh clip magic magic"
 bindsym --whole-window button8 exec --no-startup-id "$SCRIPTS/word-lookup.sh"
 
 # Speed up scrolling wheel (for Alacritty, not working with Kitty) - button4: scroll up, button5: scroll down
