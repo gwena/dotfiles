@@ -1,0 +1,3 @@
+i3-floating-learn.sh
+word-lookup.sh
+(ai-cleanup.sh)
