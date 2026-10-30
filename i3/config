@@ -52,7 +52,7 @@ bindsym $mod+F11 exec --no-startup-id "$SCRIPTS/i3-floating-learn.sh"
 # Launchers - Terminal
 bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+Ctrl+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+Return exec --no-startup-id tabby
+bindsym $mod+Shift+Return exec --no-startup-id ghostty
 
 # Launchers - Applications
 # -s for presentation, -f for fullscreen (headings on the side)
