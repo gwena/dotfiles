@@ -21,6 +21,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # Before Antidote
 autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 
+# Needed for Ghostty, else $SCRIPTS, $DOTS_PATH, etc. not defined
+if [[ "$TERM" == "xterm-ghostty" && -r /etc/profile.d/home.sh ]]; then
+    source /etc/profile.d/home.sh
+fi
+
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load "$HOME/.config/zsh_plugins.txt"
 
