@@ -115,4 +115,4 @@ shopt -s histappend
 export HISTFILE=$HOME/.config/bash_history
 
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
-FILE=$SCRIPTS/sharedrc && test -f "$FILE" && source "$FILE"
+FILE=$SCRIPTS/profile/sharedrc && test -f "$FILE" && source "$FILE"

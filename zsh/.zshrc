@@ -37,7 +37,7 @@ export LS_COLORS="${LS_COLORS}:ln=01;38;5;208"
 # export EZA_COLORS="ln=01;36"
 # Shared between Bash and Zsh (aliases, exports, sources, ...)
 # After antidote plugins to overwrite, e.g. aliases, if needed
-[[ -f $SCRIPTS/sharedrc ]] && source $SCRIPTS/sharedrc
+[[ -f $SCRIPTS/profile/sharedrc ]] && source $SCRIPTS/profile/sharedrc
 
 # Kitty Drag and Drop with fzf (Ctrl-o)
 fzf-kitty-dnd-widget() {
