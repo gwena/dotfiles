@@ -21,7 +21,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # Before Antidote
 autoload -Uz compinit && compinit -d $ZSH_COMPDUMP
 
-# Needed for Ghostty, else $SCRIPTS, $DOTS_PATH, etc. not defined
+# Needed for Ghostty (if first one launched from DE, not i3) else $SCRIPTS, $DOTS_PATH, etc. not defined
 if [[ "$TERM" == "xterm-ghostty" && -r /etc/profile.d/home.sh ]]; then
     source /etc/profile.d/home.sh
 fi
